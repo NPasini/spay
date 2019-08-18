@@ -1,0 +1,43 @@
+PODS:
+  - Nimble (8.0.2)
+  - Quick (2.1.0)
+  - ReactiveCocoa (10.0.0):
+    - ReactiveSwift (~> 6.0)
+  - ReactiveSwift (6.0.0)
+  - Result (5.0.0)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+  - Swinject (2.6.2)
+
+DEPENDENCIES:
+  - Nimble
+  - Quick
+  - ReactiveCocoa
+  - ReactiveSwift
+  - Result
+  - SDWebImage
+  - Swinject
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+    - Quick
+    - ReactiveCocoa
+    - ReactiveSwift
+    - Result
+    - SDWebImage
+    - Swinject
+
+SPEC CHECKSUMS:
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+  ReactiveCocoa: 6d4c37ba236f5d9a7a55b2172cd09f19ba85f574
+  ReactiveSwift: 24b7ed245617bbfd30ee0c87779b6c64ac1b4518
+  Result: ed341d2f236af425b803e690e9bd8fd0a0cb7c5a
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
+
+PODFILE CHECKSUM: 242a80650c64d500b293f304fccafb75d48bd80f
+
+COCOAPODS: 1.6.1
