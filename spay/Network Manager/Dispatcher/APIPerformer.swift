@@ -28,8 +28,6 @@ class APIPerformer: NetworkService {
     
     private var memorizedDispatchQueues: [QualityOfService: DispatchQueue] = [:]
     
-    private init() {}
-    
     private func dispatchQueueForQoS(_ QoS: QualityOfService) -> DispatchQueue {
         OSLogger.log(category: .network, message: "Locking \(#function)", access: .public, type: .debug)
         lock()
@@ -59,13 +57,13 @@ class APIPerformer: NetworkService {
                 completion(Result(error: SPError(networkError: .invalidRequest)))
                 return
             }
-
+            
             let processedRequest = endpoint.processRequest(request)
-
+            
             OSLogger.log(category: .network, message: "Connecting to endpoint: \(String(describing: processedRequest.url))", access: .public, type: .debug)
-
+            
             let _ = self.requestPerformerFactory.requestPerformerForQoS(QoS).performRequest(processedRequest) { (result: Result<APIResponse, NSError>) in
-
+                
                 switch result {
                 case .failure(let error):
                     OSLogger.log(category: .network, message: "Error: \(error)", access: .public, type: .error)
@@ -76,21 +74,21 @@ class APIPerformer: NetworkService {
                         completion(Result(error: SPError(networkError: .unknownError)))
                         return
                     }
-
+                    
                     if let validationError: NSError = endpoint.validateResponse(httpResponse) {
                         OSLogger.log(category: .network, message: "Response validation error", access: .public, type: .error)
                         completion(Result(error: validationError))
                         return
                     }
-
+                    
                     guard let data: Data = response.data else {
                         OSLogger.log(category: .network, message: "Missing data in response error", access: .public, type: .error)
                         completion(Result(error: SPError(networkError: .missingData)))
                         return
                     }
-
+                    
                     let statusCode = httpResponse.statusCode
-
+                    
                     OSLogger.log(category: .network, message: "Valid response received with status code \(statusCode)", access: .public, type: .debug)
                     completion(Result(value: (data, statusCode)))
                     return

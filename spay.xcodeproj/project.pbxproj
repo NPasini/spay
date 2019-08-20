@@ -201,7 +201,7 @@
 				74E98E522309F0D900EB41E0 /* NetworkError.swift */,
 				74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */,
 				74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */,
-				74E98E6C2309F25700EB41E0 /* API Performer */,
+				74E98E6C2309F25700EB41E0 /* Dispatcher */,
 				74E98E5C2309F16A00EB41E0 /* Request */,
 				74E98E672309F1CA00EB41E0 /* Response */,
 			);
@@ -229,12 +229,12 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
-		74E98E6C2309F25700EB41E0 /* API Performer */ = {
+		74E98E6C2309F25700EB41E0 /* Dispatcher */ = {
 			isa = PBXGroup;
 			children = (
 				74E98E6D2309F29100EB41E0 /* APIPerformer.swift */,
 			);
-			path = "API Performer";
+			path = Dispatcher;
 			sourceTree = "<group>";
 		};
 		74E98E6F2309F88900EB41E0 /* Log */ = {
