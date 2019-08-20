@@ -11,6 +11,7 @@ import Foundation
 class APIRequest<T>: Requestable, Validatable, Processable where T: CustomDecodable {
     let host: String
     let path: String
+    let version: String
     let method: HTTPMethod
     let headerParameters: HTTPHeaders?
     let bodyParameters: HTTPBodyParameters?
@@ -24,6 +25,7 @@ class APIRequest<T>: Requestable, Validatable, Processable where T: CustomDecoda
     
     init(host: String,
          path: String,
+         version: String,
          method: HTTPMethod,
          headerParameters: HTTPHeaders? = nil,
          bodyParameters: HTTPBodyParameters? = nil,
@@ -32,6 +34,7 @@ class APIRequest<T>: Requestable, Validatable, Processable where T: CustomDecoda
         self.host = host
         self.path = path
         self.method = method
+        self.version = version
         self.bodyParameters = bodyParameters
         self.queryParameters = queryParameters
         
@@ -67,10 +70,11 @@ class APIRequest<T>: Requestable, Validatable, Processable where T: CustomDecoda
 class GetRequest<T>: APIRequest<T> where T: CustomDecodable {
     init(host: String,
          path: String,
+         version: String,
          headerParameters: HTTPHeaders? = nil,
          bodyParameters: HTTPBodyParameters? = nil,
          queryParameters: HTTPQueryParameters? = nil) {
         
-        super.init(host: host, path: path, method: HTTPMethod.get, headerParameters: headerParameters, bodyParameters: bodyParameters, queryParameters: queryParameters)
+        super.init(host: host, path: path, version: version, method: HTTPMethod.get, headerParameters: headerParameters, bodyParameters: bodyParameters, queryParameters: queryParameters)
     }
 }
