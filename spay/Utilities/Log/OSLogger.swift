@@ -11,6 +11,8 @@ import os.log
 import Foundation
 
 class OSLogger {
+    private static var categorizedLogObjects: [LogCategory: OSLog] = [:]
+    
     private static func getCurrentThread() -> String {
         if Thread.isMainThread {
             return "main"
@@ -26,7 +28,13 @@ class OSLogger {
     }
     
     private static func createOSLog(category: LogCategory) -> OSLog {
-        return OSLog(subsystem: Bundle.main.bundleIdentifier ?? "spay", category: category.rawValue)
+        if let categoryLog = categorizedLogObjects[category] {
+            return categoryLog
+        } else {
+            let log = OSLog(subsystem: Bundle.main.bundleIdentifier ?? "spay", category: category.rawValue)
+            categorizedLogObjects[category] = log
+            return log
+        }
     }
     
     private static func getOSLogType(type: LogType) -> OSLogType {
