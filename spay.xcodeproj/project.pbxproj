@@ -13,6 +13,7 @@
 		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
 		743C6A8F230C997100646300 /* BeersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8E230C997100646300 /* BeersRequest.swift */; };
 		743C6A91230C99D700646300 /* BeersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A90230C99D700646300 /* BeersResponse.swift */; };
+		743C6A93230C9B1C00646300 /* StatusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A92230C9B1C00646300 /* StatusError.swift */; };
 		745A72812309E2320000C436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72802309E2320000C436 /* AppDelegate.swift */; };
 		745A72832309E2320000C436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72822309E2320000C436 /* ViewController.swift */; };
 		745A72862309E2320000C436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A72842309E2320000C436 /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		743C6A8E230C997100646300 /* BeersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersRequest.swift; sourceTree = "<group>"; };
 		743C6A90230C99D700646300 /* BeersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersResponse.swift; sourceTree = "<group>"; };
+		743C6A92230C9B1C00646300 /* StatusError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusError.swift; sourceTree = "<group>"; };
 		745A727D2309E2320000C436 /* spay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745A72802309E2320000C436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		745A72822309E2320000C436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				74E98E7A230B01D700EB41E0 /* SPError.swift */,
+				743C6A92230C9B1C00646300 /* StatusError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				743C6A8F230C997100646300 /* BeersRequest.swift in Sources */,
 				74E98E622309F1C400EB41E0 /* APIRequestProtocols.swift in Sources */,
 				74E98E662309F1C400EB41E0 /* APIRequestPerformer.swift in Sources */,
+				743C6A93230C9B1C00646300 /* StatusError.swift in Sources */,
 				74E98E5A2309F0D900EB41E0 /* NetworkError.swift in Sources */,
 				74E98E642309F1C400EB41E0 /* APIRequestBuilder.swift in Sources */,
 				745A72832309E2320000C436 /* ViewController.swift in Sources */,
