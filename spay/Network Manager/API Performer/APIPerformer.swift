@@ -1,0 +1,167 @@
+//
+//  APIPerformer.swift
+//  spay
+//
+//  Created by Pasini, Nicolò on 18/08/2019.
+//  Copyright © 2019 Pasini, Nicolò. All rights reserved.
+//
+
+import Result
+import Foundation
+
+private extension QualityOfService {
+    var dispatchQualityOfService: DispatchQoS {
+        switch self {
+        case .default: return DispatchQoS.default
+        case .utility: return DispatchQoS.utility
+        case .background: return DispatchQoS.background
+        case .userInitiated: return DispatchQoS.userInitiated
+        case .userInteractive: return DispatchQoS.userInteractive
+        @unknown default: return DispatchQoS.default
+        }
+    }
+}
+
+class APIPerformer {
+    static let shared: APIPerformer = APIPerformer()
+    
+    private let requestBuilder: APIRequestBuilder = APIRequestBuilder()
+    private let requestPerformerFactory: APIRequestPerformerFactoryProtocol = APIRequestPerformerFactory.shared
+    
+    private var memorizedDispatchQueues: [QualityOfService: DispatchQueue] = [:]
+    
+    private init() {}
+    
+    private func dispatchQueueForQoS(_ QoS: QualityOfService) -> DispatchQueue {
+        OSLogger.log(category: .network, message: "Locking \(#function)", access: .public, type: .debug)
+        lock()
+        
+        defer{
+            OSLogger.log(category: .network, message: "Unlocking \(#function)", access: .public, type: .debug)
+            unlock()
+        }
+        
+        if let queue = self.memorizedDispatchQueues[QoS] {
+            return queue
+        }
+        
+        let newQueue = DispatchQueue(label: "APIPerformer.\(QoS).queue", qos: QoS.dispatchQualityOfService, attributes: .concurrent)
+        
+        self.memorizedDispatchQueues[QoS] = newQueue
+        
+        return newQueue
+    }
+    
+    private func connectTo<T: Decodable>(_ endpoint: APIRequest<T>,
+                                         QoS: QualityOfService,
+                                         completion: @escaping (Result<(Data, Int), NSError>) -> Void) -> APISubscriptionProtocol {
+        
+        let item = DispatchWorkItem {
+            guard let request: URLRequest = self.requestBuilder.requestFrom(endpoint) else {
+                completion(Result(error: SPError(networkError: .invalidRequest)))
+                return
+            }
+
+            let processedRequest = endpoint.processRequest(request)
+
+            OSLogger.log(category: .network, message: "Connecting to endpoint: \(String(describing: processedRequest.url))", access: .public, type: .debug)
+
+            let _ = self.requestPerformerFactory.requestPerformerForQoS(QoS).performRequest(processedRequest) { (result: Result<APIResponse, NSError>) in
+
+                switch result {
+                case .failure(let error):
+                    OSLogger.log(category: .network, message: "Error: \(error)", access: .public, type: .error)
+                    completion(Result(error: error))
+                case .success(let response):
+                    guard let httpResponse = response.response as? HTTPURLResponse else {
+                        OSLogger.log(category: .network, message: "Unknown error in response", access: .public, type: .error)
+                        completion(Result(error: SPError(networkError: .unknownError)))
+                        return
+                    }
+
+                    if let validationError: NSError = endpoint.validateResponse(httpResponse) {
+                        OSLogger.log(category: .network, message: "Response validation error", access: .public, type: .error)
+                        completion(Result(error: validationError))
+                        return
+                    }
+
+                    guard let data: Data = response.data else {
+                        OSLogger.log(category: .network, message: "Missing data in response error", access: .public, type: .error)
+                        completion(Result(error: SPError(networkError: .missingData)))
+                        return
+                    }
+
+                    let statusCode = httpResponse.statusCode
+
+                    OSLogger.log(category: .network, message: "Valid response received with status code \(statusCode)", access: .public, type: .debug)
+                    completion(Result(value: (data, statusCode)))
+                    return
+                }
+            }
+        }
+        
+        dispatchQueueForQoS(QoS).async(execute: item)
+        
+        return DispatchWorkItemSubscription(item: item)
+    }
+    
+    func performWrappedApi<T: CustomDecodable>(_ request: APIRequest<T>,
+                                               QoS: QualityOfService,
+                                               completionQueue: DispatchQueue,
+                                               completion: @escaping (Result<APIResponseWrapper<T>, NSError>) -> Void) -> APISubscriptionProtocol {
+        return connectTo(request, QoS: QoS) { (result: Result<(Data, Int), NSError>) in
+            switch result{
+            case .success(let tuple):
+                guard let obj: T = T.decode(tuple.0) as? T else {
+                    completionQueue.async {
+                        OSLogger.log(category: .network, message: "Decoding error", access: .public, type: .error)
+                        completion(Result(error: SPError(networkError: .parserError)))
+                    }
+                    return
+                }
+                
+                if let error = request.validateResponseObject(obj) {
+                    completionQueue.async {
+                        OSLogger.log(category: .network, message: "Response object validation error", access: .public, type: .error)
+                        completion(Result(error: error))
+                    }
+                    return
+                }
+                
+                completionQueue.async {
+                    completion(Result(value: APIResponseWrapper(object: obj, statusCode: tuple.1)))
+                }
+                
+            case .failure(let error):
+                completionQueue.async {
+                    completion(Result(error: error))
+                }
+                
+            }
+        }
+    }
+    
+    func performApi<T: CustomDecodable>(_ request: APIRequest<T>,
+                                        QoS: QualityOfService,
+                                        completionQueue: DispatchQueue = DispatchQueue.main,
+                                        completion: @escaping (Result<T, NSError>) -> Void) -> APISubscriptionProtocol {
+        
+        return performWrappedApi(request, QoS: QoS, completionQueue: completionQueue) { (result: Result<APIResponseWrapper<T>, NSError>) in
+            
+            switch result {
+            case .failure(let error):
+                completion(Result(error: error))
+            case .success(let w):
+                completion(Result(value: w.object))
+            }
+        }
+    }
+    
+    private func lock() {
+        objc_sync_enter(self)
+    }
+    
+    private func unlock() {
+        objc_sync_exit(self)
+    }
+}
