@@ -22,9 +22,7 @@ private extension QualityOfService {
     }
 }
 
-class APIPerformer {
-    static let shared: APIPerformer = APIPerformer()
-    
+class APIPerformer: NetworkService {
     private let requestBuilder: APIRequestBuilder = APIRequestBuilder()
     private let requestPerformerFactory: APIRequestPerformerFactoryProtocol = APIRequestPerformerFactory.shared
     

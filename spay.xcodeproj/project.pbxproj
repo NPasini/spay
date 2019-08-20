@@ -33,6 +33,7 @@
 		74E98E752309F9BC00EB41E0 /* LogCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E722309F9BC00EB41E0 /* LogCategory.swift */; };
 		74E98E772309FA2A00EB41E0 /* OSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E762309FA2A00EB41E0 /* OSLogger.swift */; };
 		74E98E7B230B01D700EB41E0 /* SPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E7A230B01D700EB41E0 /* SPError.swift */; };
+		74E98E82230BB89000EB41E0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E81230BB89000EB41E0 /* NetworkService.swift */; };
 		A840BB6465BB2DA1CD25385E /* Pods_spayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 643CD1F6FF549F27DA013C42 /* Pods_spayUITests.framework */; };
 		CBEE61E01A2A3EA6E97C8FB9 /* Pods_spay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19A598D940E01299A7EDF9C /* Pods_spay.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		74E98E722309F9BC00EB41E0 /* LogCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCategory.swift; sourceTree = "<group>"; };
 		74E98E762309FA2A00EB41E0 /* OSLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSLogger.swift; sourceTree = "<group>"; };
 		74E98E7A230B01D700EB41E0 /* SPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPError.swift; sourceTree = "<group>"; };
+		74E98E81230BB89000EB41E0 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A4E937A5CCCE76AA5468DB1D /* Pods-spayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spayTests.debug.xcconfig"; path = "Target Support Files/Pods-spayTests/Pods-spayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B253ACC4A13B560AEEA02F02 /* Pods-spay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay.release.xcconfig"; path = "Target Support Files/Pods-spay/Pods-spay.release.xcconfig"; sourceTree = "<group>"; };
 		D19A598D940E01299A7EDF9C /* Pods_spay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				745A72802309E2320000C436 /* AppDelegate.swift */,
 				745A72822309E2320000C436 /* ViewController.swift */,
 				745A728A2309E2330000C436 /* Assets.xcassets */,
+				74E98E7C230BB36E00EB41E0 /* Dependency Injection */,
 				745A728C2309E2330000C436 /* LaunchScreen.storyboard */,
 				745A72842309E2320000C436 /* Main.storyboard */,
 				745A72B12309EF7B0000C436 /* Network Manager */,
@@ -250,6 +253,30 @@
 				74E98E7A230B01D700EB41E0 /* SPError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		74E98E7C230BB36E00EB41E0 /* Dependency Injection */ = {
+			isa = PBXGroup;
+			children = (
+				74E98E7D230BB3BA00EB41E0 /* Components */,
+				74E98E7E230BB3C000EB41E0 /* Services */,
+			);
+			path = "Dependency Injection";
+			sourceTree = "<group>";
+		};
+		74E98E7D230BB3BA00EB41E0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		74E98E7E230BB3C000EB41E0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				74E98E81230BB89000EB41E0 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B012FB7B15F4C85EDF0E3403 /* Pods */ = {
@@ -547,6 +574,7 @@
 				74E98E742309F9BC00EB41E0 /* LogType.swift in Sources */,
 				74E98E6A2309F21200EB41E0 /* APIResponse.swift in Sources */,
 				74E98E5B2309F0D900EB41E0 /* DispatchWorkItemSubscription.swift in Sources */,
+				74E98E82230BB89000EB41E0 /* NetworkService.swift in Sources */,
 				74E98E6E2309F29100EB41E0 /* APIPerformer.swift in Sources */,
 				74E98E632309F1C400EB41E0 /* APIRequestPerformerFactory.swift in Sources */,
 				74E98E6B2309F21200EB41E0 /* ResponseProtocols.swift in Sources */,
