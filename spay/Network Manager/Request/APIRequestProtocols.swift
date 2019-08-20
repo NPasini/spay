@@ -13,6 +13,7 @@ protocol Requestable {
     var body: Data? { get }
     var host: String { get }
     var path: String { get }
+    var version: String { get }
     var method: HTTPMethod { get }
     var headerParameters: HTTPHeaders? { get }
     var bodyParameters: HTTPBodyParameters? { get }
@@ -21,7 +22,7 @@ protocol Requestable {
 
 protocol Validatable {
     associatedtype Object
-
+    
     func validateResponseObject(_ object: Object) -> NSError?
     func validateResponse(_ response: URLResponse) -> NSError?
 }
