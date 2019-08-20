@@ -11,6 +11,7 @@
 		743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A85230C952B00646300 /* NetworkAssembly.swift */; };
 		743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A87230C97A800646300 /* AssemblerWrapper.swift */; };
 		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
+		743C6A8F230C997100646300 /* BeersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8E230C997100646300 /* BeersRequest.swift */; };
 		745A72812309E2320000C436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72802309E2320000C436 /* AppDelegate.swift */; };
 		745A72832309E2320000C436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72822309E2320000C436 /* ViewController.swift */; };
 		745A72862309E2320000C436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A72842309E2320000C436 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		743C6A85230C952B00646300 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		743C6A87230C97A800646300 /* AssemblerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerWrapper.swift; sourceTree = "<group>"; };
 		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		743C6A8E230C997100646300 /* BeersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersRequest.swift; sourceTree = "<group>"; };
 		745A727D2309E2320000C436 /* spay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745A72802309E2320000C436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		745A72822309E2320000C436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		743C6A89230C98F300646300 /* Beers Page */ = {
 			isa = PBXGroup;
 			children = (
+				743C6A8D230C995900646300 /* API */,
 				743C6A8A230C990F00646300 /* Models */,
 			);
 			path = "Beers Page";
@@ -155,6 +158,14 @@
 				743C6A8B230C992B00646300 /* Beer.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		743C6A8D230C995900646300 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				743C6A8E230C997100646300 /* BeersRequest.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		745A72742309E2320000C436 = {
@@ -588,6 +599,7 @@
 			files = (
 				74E98E572309F0D900EB41E0 /* NetworkProtocols.swift in Sources */,
 				74E98E7B230B01D700EB41E0 /* SPError.swift in Sources */,
+				743C6A8F230C997100646300 /* BeersRequest.swift in Sources */,
 				74E98E622309F1C400EB41E0 /* APIRequestProtocols.swift in Sources */,
 				74E98E662309F1C400EB41E0 /* APIRequestPerformer.swift in Sources */,
 				74E98E5A2309F0D900EB41E0 /* NetworkError.swift in Sources */,
