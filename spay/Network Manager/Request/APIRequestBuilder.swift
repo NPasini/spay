@@ -11,7 +11,7 @@ import Foundation
 class APIRequestBuilder: APIRequestBuilderProtocol {
     func requestFrom(_ requestable: Requestable) -> URLRequest? {
         
-        let urlString: String = "https://\(requestable.host)\(requestable.path)"
+        let urlString: String = "https://\(requestable.host)\(requestable.version)\(requestable.path)"
         
         guard let url: URL = URL(string: urlString) else {
             return nil
