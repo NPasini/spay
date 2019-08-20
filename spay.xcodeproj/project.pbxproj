@@ -10,6 +10,7 @@
 		5C9DDD06887B6155A33780F1 /* Pods_spayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC657C7E3227554F4D336498 /* Pods_spayTests.framework */; };
 		743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A85230C952B00646300 /* NetworkAssembly.swift */; };
 		743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A87230C97A800646300 /* AssemblerWrapper.swift */; };
+		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
 		745A72812309E2320000C436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72802309E2320000C436 /* AppDelegate.swift */; };
 		745A72832309E2320000C436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72822309E2320000C436 /* ViewController.swift */; };
 		745A72862309E2320000C436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A72842309E2320000C436 /* Main.storyboard */; };
@@ -65,6 +66,7 @@
 		643CD1F6FF549F27DA013C42 /* Pods_spayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		743C6A85230C952B00646300 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		743C6A87230C97A800646300 /* AssemblerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerWrapper.swift; sourceTree = "<group>"; };
+		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		745A727D2309E2320000C436 /* spay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745A72802309E2320000C436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		745A72822309E2320000C436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,22 @@
 			path = Assemblies;
 			sourceTree = "<group>";
 		};
+		743C6A89230C98F300646300 /* Beers Page */ = {
+			isa = PBXGroup;
+			children = (
+				743C6A8A230C990F00646300 /* Models */,
+			);
+			path = "Beers Page";
+			sourceTree = "<group>";
+		};
+		743C6A8A230C990F00646300 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				743C6A8B230C992B00646300 /* Beer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		745A72742309E2320000C436 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +186,7 @@
 				745A72802309E2320000C436 /* AppDelegate.swift */,
 				745A72822309E2320000C436 /* ViewController.swift */,
 				745A728A2309E2330000C436 /* Assets.xcassets */,
+				743C6A89230C98F300646300 /* Beers Page */,
 				74E98E7C230BB36E00EB41E0 /* Dependency Injection */,
 				745A728C2309E2330000C436 /* LaunchScreen.storyboard */,
 				745A72842309E2320000C436 /* Main.storyboard */,
@@ -586,6 +605,7 @@
 				743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */,
 				74E98E6B2309F21200EB41E0 /* ResponseProtocols.swift in Sources */,
 				743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */,
+				743C6A8C230C992B00646300 /* Beer.swift in Sources */,
 				745A72812309E2320000C436 /* AppDelegate.swift in Sources */,
 				74E98E752309F9BC00EB41E0 /* LogCategory.swift in Sources */,
 				74E98E652309F1C400EB41E0 /* APIRequest.swift in Sources */,
