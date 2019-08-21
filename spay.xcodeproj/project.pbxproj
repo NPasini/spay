@@ -23,7 +23,6 @@
 		745A72862309E2320000C436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A72842309E2320000C436 /* Main.storyboard */; };
 		745A728B2309E2330000C436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 745A728A2309E2330000C436 /* Assets.xcassets */; };
 		745A728E2309E2330000C436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A728C2309E2330000C436 /* LaunchScreen.storyboard */; };
-		745A72992309E2330000C436 /* spayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72982309E2330000C436 /* spayTests.swift */; };
 		745A72A42309E2330000C436 /* spayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72A32309E2330000C436 /* spayUITests.swift */; };
 		74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4D2309F0D900EB41E0 /* APISubscription.swift */; };
 		74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */; };
@@ -89,7 +88,6 @@
 		745A728D2309E2330000C436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		745A728F2309E2330000C436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		745A72942309E2330000C436 /* spayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		745A72982309E2330000C436 /* spayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spayTests.swift; sourceTree = "<group>"; };
 		745A729A2309E2330000C436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		745A729F2309E2330000C436 /* spayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		745A72A32309E2330000C436 /* spayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spayUITests.swift; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				743C6A94230C9F3700646300 /* Beers Page */,
-				745A72982309E2330000C436 /* spayTests.swift */,
 				745A729A2309E2330000C436 /* Info.plist */,
 			);
 			path = spayTests;
@@ -675,7 +672,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				745A72992309E2330000C436 /* spayTests.swift in Sources */,
 				743C6A9E230D2EEB00646300 /* BeersRequestTest.swift in Sources */,
 				743C6A97230C9FA900646300 /* BeersResponseTest.swift in Sources */,
 			);
