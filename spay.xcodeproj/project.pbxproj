@@ -19,7 +19,7 @@
 		743C6A9C230CA70700646300 /* beersIncompleteResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 743C6A9B230CA70700646300 /* beersIncompleteResponse.json */; };
 		743C6A9E230D2EEB00646300 /* BeersRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A9D230D2EEB00646300 /* BeersRequestTest.swift */; };
 		745A72812309E2320000C436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72802309E2320000C436 /* AppDelegate.swift */; };
-		745A72832309E2320000C436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72822309E2320000C436 /* ViewController.swift */; };
+		745A72832309E2320000C436 /* BeersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72822309E2320000C436 /* BeersListViewController.swift */; };
 		745A72862309E2320000C436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A72842309E2320000C436 /* Main.storyboard */; };
 		745A728B2309E2330000C436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 745A728A2309E2330000C436 /* Assets.xcassets */; };
 		745A728E2309E2330000C436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A728C2309E2330000C436 /* LaunchScreen.storyboard */; };
@@ -82,7 +82,7 @@
 		743C6A9D230D2EEB00646300 /* BeersRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersRequestTest.swift; sourceTree = "<group>"; };
 		745A727D2309E2320000C436 /* spay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745A72802309E2320000C436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		745A72822309E2320000C436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		745A72822309E2320000C436 /* BeersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersListViewController.swift; sourceTree = "<group>"; };
 		745A72852309E2320000C436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		745A728A2309E2330000C436 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		745A728D2309E2330000C436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -158,6 +158,7 @@
 			children = (
 				743C6A8D230C995900646300 /* API */,
 				743C6A8A230C990F00646300 /* Models */,
+				743C6AA0230D34C900646300 /* ViewControllers */,
 			);
 			path = "Beers Page";
 			sourceTree = "<group>";
@@ -206,6 +207,14 @@
 			path = jsons;
 			sourceTree = "<group>";
 		};
+		743C6AA0230D34C900646300 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				745A72822309E2320000C436 /* BeersListViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		745A72742309E2320000C436 = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +242,6 @@
 			children = (
 				745A728F2309E2330000C436 /* Info.plist */,
 				745A72802309E2320000C436 /* AppDelegate.swift */,
-				745A72822309E2320000C436 /* ViewController.swift */,
 				745A728A2309E2330000C436 /* Assets.xcassets */,
 				743C6A89230C98F300646300 /* Beers Page */,
 				74E98E7C230BB36E00EB41E0 /* Dependency Injection */,
@@ -646,7 +654,7 @@
 				743C6A93230C9B1C00646300 /* StatusError.swift in Sources */,
 				74E98E5A2309F0D900EB41E0 /* NetworkError.swift in Sources */,
 				74E98E642309F1C400EB41E0 /* APIRequestBuilder.swift in Sources */,
-				745A72832309E2320000C436 /* ViewController.swift in Sources */,
+				745A72832309E2320000C436 /* BeersListViewController.swift in Sources */,
 				74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */,
 				74E98E772309FA2A00EB41E0 /* OSLogger.swift in Sources */,
 				74E98E732309F9BC00EB41E0 /* LogAccessLevel.swift in Sources */,
