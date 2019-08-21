@@ -17,11 +17,10 @@ class BeersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        offersView.layer.cornerRadius = 10
-        
         setTitle()
         configureSearchBar()
         configureTableView()
+        offersView.layer.cornerRadius = 10
     }
     
     private func setTitle() {
@@ -48,6 +47,9 @@ class BeersListViewController: UIViewController {
     private func configureTableView() {
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.backgroundColor = UIColor(named: "BackGroundDarkBlue")
+        
+        let nib = UINib(nibName: "BeerTableViewCell", bundle: Bundle.main)
+        tableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
     }
 }
 
@@ -62,18 +64,14 @@ extension BeersListViewController: UITableViewDataSource {
 }
 
 extension BeersListViewController: UITableViewDelegate {
-    
-}
-
-extension BeersListViewController: UISearchBarDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
 
 extension BeersListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         
     }
-    
-    
 }
 
