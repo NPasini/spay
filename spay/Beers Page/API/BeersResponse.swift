@@ -19,10 +19,13 @@ struct BeersResponse {
 extension BeersResponse: CustomDecodable {
     static func decode(_ data: Data) -> CustomDecodable? {
         let beers = try? JSONDecoder().decode([Beer].self, from: data)
-        let beersArray = beers ?? []
         
-        OSLogger.log(category: .network, message: "Beers Response contains \(beersArray.count) objects", access: .public, type: .debug)
-        
-        return BeersResponse(beers: beersArray)
+        if let beersArray = beers {
+            OSLogger.log(category: .network, message: "Beers Response contains \(beersArray.count) objects", access: .public, type: .debug)
+            return BeersResponse(beers: beersArray)
+        } else {
+            OSLogger.log(category: .network, message: "Decoding of Beers Response was not successful", access: .public, type: .debug)
+            return nil
+        }
     }
 }
