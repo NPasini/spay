@@ -14,6 +14,10 @@
 		743C6A8F230C997100646300 /* BeersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8E230C997100646300 /* BeersRequest.swift */; };
 		743C6A91230C99D700646300 /* BeersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A90230C99D700646300 /* BeersResponse.swift */; };
 		743C6A93230C9B1C00646300 /* StatusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A92230C9B1C00646300 /* StatusError.swift */; };
+		743C6A97230C9FA900646300 /* BeersResponseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A96230C9FA900646300 /* BeersResponseTest.swift */; };
+		743C6A9A230CA09700646300 /* beersResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 743C6A99230CA09700646300 /* beersResponse.json */; };
+		743C6A9C230CA70700646300 /* beersIncompleteResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 743C6A9B230CA70700646300 /* beersIncompleteResponse.json */; };
+		743C6A9E230D2EEB00646300 /* BeersRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A9D230D2EEB00646300 /* BeersRequestTest.swift */; };
 		745A72812309E2320000C436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72802309E2320000C436 /* AppDelegate.swift */; };
 		745A72832309E2320000C436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72822309E2320000C436 /* ViewController.swift */; };
 		745A72862309E2320000C436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A72842309E2320000C436 /* Main.storyboard */; };
@@ -73,6 +77,10 @@
 		743C6A8E230C997100646300 /* BeersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersRequest.swift; sourceTree = "<group>"; };
 		743C6A90230C99D700646300 /* BeersResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersResponse.swift; sourceTree = "<group>"; };
 		743C6A92230C9B1C00646300 /* StatusError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusError.swift; sourceTree = "<group>"; };
+		743C6A96230C9FA900646300 /* BeersResponseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersResponseTest.swift; sourceTree = "<group>"; };
+		743C6A99230CA09700646300 /* beersResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beersResponse.json; sourceTree = "<group>"; };
+		743C6A9B230CA70700646300 /* beersIncompleteResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beersIncompleteResponse.json; sourceTree = "<group>"; };
+		743C6A9D230D2EEB00646300 /* BeersRequestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersRequestTest.swift; sourceTree = "<group>"; };
 		745A727D2309E2320000C436 /* spay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745A72802309E2320000C436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		745A72822309E2320000C436 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +181,33 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		743C6A94230C9F3700646300 /* Beers Page */ = {
+			isa = PBXGroup;
+			children = (
+				743C6A95230C9F9700646300 /* API */,
+			);
+			path = "Beers Page";
+			sourceTree = "<group>";
+		};
+		743C6A95230C9F9700646300 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				743C6A9D230D2EEB00646300 /* BeersRequestTest.swift */,
+				743C6A96230C9FA900646300 /* BeersResponseTest.swift */,
+				743C6A9F230D2EFB00646300 /* jsons */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		743C6A9F230D2EFB00646300 /* jsons */ = {
+			isa = PBXGroup;
+			children = (
+				743C6A9B230CA70700646300 /* beersIncompleteResponse.json */,
+				743C6A99230CA09700646300 /* beersResponse.json */,
+			);
+			path = jsons;
+			sourceTree = "<group>";
+		};
 		745A72742309E2320000C436 = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +250,7 @@
 		745A72972309E2330000C436 /* spayTests */ = {
 			isa = PBXGroup;
 			children = (
+				743C6A94230C9F3700646300 /* Beers Page */,
 				745A72982309E2330000C436 /* spayTests.swift */,
 				745A729A2309E2330000C436 /* Info.plist */,
 			);
@@ -463,6 +499,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				743C6A9C230CA70700646300 /* beersIncompleteResponse.json in Resources */,
+				743C6A9A230CA09700646300 /* beersResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +676,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				745A72992309E2330000C436 /* spayTests.swift in Sources */,
+				743C6A9E230D2EEB00646300 /* BeersRequestTest.swift in Sources */,
+				743C6A97230C9FA900646300 /* BeersResponseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
