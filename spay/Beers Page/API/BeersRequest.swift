@@ -9,12 +9,14 @@
 import Foundation
 
 class BeersRequest: GetRequest<BeersResponse> {
-    init() {
+    init(page: Int = 1) {
         let host = "api.punkapi.com"
         let version = "/v2"
         let path = "/beers"
         
-        super.init(host: host, path: path, version: version)
+        let queryParameters = ["page": page]
+        
+        super.init(host: host, path: path, version: version, queryParameters: queryParameters)
     }
     
     override func validateResponseObject(_ object: BeersResponse) -> NSError? {
