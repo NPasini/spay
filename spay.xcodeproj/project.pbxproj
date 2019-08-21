@@ -24,6 +24,8 @@
 		745A728B2309E2330000C436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 745A728A2309E2330000C436 /* Assets.xcassets */; };
 		745A728E2309E2330000C436 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 745A728C2309E2330000C436 /* LaunchScreen.storyboard */; };
 		745A72A42309E2330000C436 /* spayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 745A72A32309E2330000C436 /* spayUITests.swift */; };
+		7461CEE4230DE5FC00168408 /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461CEE2230DE5FC00168408 /* BeerTableViewCell.swift */; };
+		7461CEE5230DE5FC00168408 /* BeerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7461CEE3230DE5FC00168408 /* BeerTableViewCell.xib */; };
 		74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4D2309F0D900EB41E0 /* APISubscription.swift */; };
 		74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */; };
 		74E98E572309F0D900EB41E0 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */; };
@@ -92,6 +94,8 @@
 		745A729F2309E2330000C436 /* spayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = spayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		745A72A32309E2330000C436 /* spayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spayUITests.swift; sourceTree = "<group>"; };
 		745A72A52309E2330000C436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7461CEE2230DE5FC00168408 /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
+		7461CEE3230DE5FC00168408 /* BeerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerTableViewCell.xib; sourceTree = "<group>"; };
 		74E98E4D2309F0D900EB41E0 /* APISubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISubscription.swift; sourceTree = "<group>"; };
 		74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTypes.swift; sourceTree = "<group>"; };
 		74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				743C6A8D230C995900646300 /* API */,
 				743C6A8A230C990F00646300 /* Models */,
 				743C6AA0230D34C900646300 /* ViewControllers */,
+				7461CEE0230DE5CC00168408 /* Views */,
+				7461CEE1230DE5DC00168408 /* Xibs */,
 			);
 			path = "Beers Page";
 			sourceTree = "<group>";
@@ -284,6 +290,22 @@
 				74E98E672309F1CA00EB41E0 /* Response */,
 			);
 			path = "Network Manager";
+			sourceTree = "<group>";
+		};
+		7461CEE0230DE5CC00168408 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7461CEE2230DE5FC00168408 /* BeerTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7461CEE1230DE5DC00168408 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				7461CEE3230DE5FC00168408 /* BeerTableViewCell.xib */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 		74E98E5C2309F16A00EB41E0 /* Request */ = {
@@ -497,6 +519,7 @@
 				745A728E2309E2330000C436 /* LaunchScreen.storyboard in Resources */,
 				745A728B2309E2330000C436 /* Assets.xcassets in Resources */,
 				745A72862309E2320000C436 /* Main.storyboard in Resources */,
+				7461CEE5230DE5FC00168408 /* BeerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +684,7 @@
 				74E98E742309F9BC00EB41E0 /* LogType.swift in Sources */,
 				74E98E6A2309F21200EB41E0 /* APIResponse.swift in Sources */,
 				74E98E5B2309F0D900EB41E0 /* DispatchWorkItemSubscription.swift in Sources */,
+				7461CEE4230DE5FC00168408 /* BeerTableViewCell.swift in Sources */,
 				743C6A91230C99D700646300 /* BeersResponse.swift in Sources */,
 				74E98E82230BB89000EB41E0 /* NetworkService.swift in Sources */,
 				74E98E6E2309F29100EB41E0 /* APIPerformer.swift in Sources */,
