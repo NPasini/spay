@@ -9,7 +9,7 @@
 import Foundation
 
 class BeersRequest: GetRequest<BeersResponse> {
-    init(page: Int = 1) {
+    init(page: Int) {
         let host = "api.punkapi.com"
         let version = "/v2"
         let path = "/beers"
