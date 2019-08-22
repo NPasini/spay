@@ -11,4 +11,5 @@ import Foundation
 enum LogCategory: String {
     case ui
     case network
+    case dependencyInjection
 }
