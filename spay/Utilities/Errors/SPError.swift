@@ -15,6 +15,10 @@ class SPError: NSError {
         self.init(domain: SPDomain, code: networkError.rawValue, userInfo: [NSLocalizedDescriptionKey : String(describing: networkError)])
     }
     
+    convenience init(genericError: GenericError) {
+        self.init(domain: SPDomain, code: genericError.rawValue, userInfo: [NSLocalizedDescriptionKey : String(describing: genericError)])
+    }
+    
     convenience init(statusError: StatusError, statusCode: Int) {
         self.init(domain: SPDomain, code: statusError.rawValue, userInfo: [NSLocalizedDescriptionKey : String(describing: statusCode)])
     }
