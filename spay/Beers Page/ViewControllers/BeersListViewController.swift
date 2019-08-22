@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReactiveCocoa
+import ReactiveSwift
 
 class BeersListViewController: UIViewController {
     
@@ -14,13 +16,24 @@ class BeersListViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    var disposable: Disposable?
+    var viewModel: BeersViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = BeersViewModel()
         
         setTitle()
         configureSearchBar()
         configureTableView()
         offersView.layer.cornerRadius = 10
+    }
+    
+    override func didReceiveMemoryWarning() {
+        if let d = disposable, !d.isDisposed {
+            d.dispose()
+        }
     }
     
     private func setTitle() {
@@ -46,17 +59,23 @@ class BeersListViewController: UIViewController {
     }
     
     private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.backgroundColor = UIColor(named: "BackGroundDarkBlue")
         
         let nib = UINib(nibName: "BeerTableViewCell", bundle: Bundle.main)
         tableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
+        
+        if let vm = viewModel {
+            disposable = tableView.reactive.reloadData <~ vm.beersModelsList.signal.map({_ in return ()})
+        }
     }
 }
 
 extension BeersListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel?.beersModelsList.value.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,7 +85,6 @@ extension BeersListViewController: UITableViewDataSource {
 
 extension BeersListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 }
 
