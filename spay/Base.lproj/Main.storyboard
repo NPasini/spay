@@ -20,22 +20,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bmk-uo-uTq">
-                                <rect key="frame" x="16" y="15" width="382" height="71"/>
+                                <rect key="frame" x="16" y="15" width="382" height="72"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgd-O7-pC1">
-                                        <rect key="frame" x="25" y="10" width="52" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekend Offers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgd-O7-pC1">
+                                        <rect key="frame" x="15" y="15" width="131.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offer description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9v-As-pc2">
-                                        <rect key="frame" x="25" y="35.5" width="129.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free shipping on orders over 60€" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9v-As-pc2">
+                                        <rect key="frame" x="15" y="37.5" width="241" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gift" translatesAutoresizingMaskIntoConstraints="NO" id="IyT-CE-lbU">
-                                        <rect key="frame" x="311" y="15" width="46" height="41"/>
+                                        <rect key="frame" x="321" y="15.5" width="46" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="5CL-6E-Lpk"/>
                                             <constraint firstAttribute="height" constant="41" id="vKI-Kz-oC2"/>
@@ -45,24 +45,24 @@
                                 <color key="backgroundColor" name="BackGroundOrange"/>
                                 <constraints>
                                     <constraint firstItem="IyT-CE-lbU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a9v-As-pc2" secondAttribute="trailing" constant="15" id="65E-Wl-AK0"/>
-                                    <constraint firstItem="Wgd-O7-pC1" firstAttribute="leading" secondItem="Bmk-uo-uTq" secondAttribute="leading" constant="25" id="B5k-Bf-DVQ"/>
-                                    <constraint firstItem="Wgd-O7-pC1" firstAttribute="top" secondItem="Bmk-uo-uTq" secondAttribute="top" constant="10" id="F0w-kf-zl2"/>
+                                    <constraint firstItem="Wgd-O7-pC1" firstAttribute="leading" secondItem="Bmk-uo-uTq" secondAttribute="leading" constant="15" id="B5k-Bf-DVQ"/>
+                                    <constraint firstItem="Wgd-O7-pC1" firstAttribute="top" secondItem="Bmk-uo-uTq" secondAttribute="top" constant="15" id="F0w-kf-zl2"/>
                                     <constraint firstItem="a9v-As-pc2" firstAttribute="leading" secondItem="Wgd-O7-pC1" secondAttribute="leading" id="Wcb-34-L5b"/>
-                                    <constraint firstAttribute="trailing" secondItem="IyT-CE-lbU" secondAttribute="trailing" constant="25" id="eVu-Si-qbb"/>
+                                    <constraint firstAttribute="trailing" secondItem="IyT-CE-lbU" secondAttribute="trailing" constant="15" id="eVu-Si-qbb"/>
+                                    <constraint firstAttribute="bottom" secondItem="a9v-As-pc2" secondAttribute="bottom" constant="15" id="hck-LK-rb3"/>
                                     <constraint firstItem="IyT-CE-lbU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Wgd-O7-pC1" secondAttribute="trailing" constant="15" id="jKn-XV-dZx"/>
                                     <constraint firstItem="IyT-CE-lbU" firstAttribute="centerY" secondItem="Bmk-uo-uTq" secondAttribute="centerY" id="lCF-pP-fRs"/>
-                                    <constraint firstAttribute="bottom" secondItem="IyT-CE-lbU" secondAttribute="bottom" constant="15" id="lZb-eG-vK7"/>
-                                    <constraint firstItem="a9v-As-pc2" firstAttribute="top" secondItem="Wgd-O7-pC1" secondAttribute="bottom" constant="5" id="v8L-l3-gg7"/>
+                                    <constraint firstItem="a9v-As-pc2" firstAttribute="top" secondItem="Wgd-O7-pC1" secondAttribute="bottom" constant="2" id="v8L-l3-gg7"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzg-Sa-iGL">
-                                <rect key="frame" x="16" y="111" width="382" height="50"/>
+                                <rect key="frame" x="16" y="112" width="382" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5mP-HI-g1y"/>
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kro-lN-FPW">
-                                <rect key="frame" x="0.0" y="186" width="414" height="588"/>
+                                <rect key="frame" x="0.0" y="187" width="414" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
