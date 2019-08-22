@@ -37,11 +37,12 @@ class BeersListViewController: UIViewController {
         
         definesPresentationContext = true
         searchController.searchResultsUpdater = self
+        searchController.searchBar.barStyle = .black
         searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.searchBarStyle = .minimal
         searchController.obscuresBackgroundDuringPresentation = false
         
         self.navigationItem.searchController = searchController
-        self.navigationItem.searchController?.searchBar.backgroundColor = UIColor(named: "BackgroundGrey")
     }
     
     private func configureTableView() {
