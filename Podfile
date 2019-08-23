@@ -6,7 +6,6 @@ target 'spay' do
   use_frameworks!
 
   # Pods for spay
-  pod 'Result'
   pod 'Swinject'
   pod 'SDWebImage'
   pod 'ReactiveSwift'
