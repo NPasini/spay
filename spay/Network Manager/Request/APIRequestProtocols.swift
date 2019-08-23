@@ -6,7 +6,6 @@
 //  Copyright © 2019 Pasini, Nicolò. All rights reserved.
 //
 
-import Result
 import Foundation
 
 protocol Requestable {

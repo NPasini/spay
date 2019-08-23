@@ -6,7 +6,6 @@
 //  Copyright © 2019 Pasini, Nicolò. All rights reserved.
 //
 
-import Result
 import Foundation
 import ReactiveSwift
 
@@ -23,14 +22,14 @@ class BeerRepository {
             (observer, lifetime) in
             
             if let networkManager = self.networkManager {
-                let subscription = networkManager.performApi(request, QoS: .userInteractive, completionQueue: .main) { (result: Result<BeersResponse, NSError>) in
+                let subscription = networkManager.performApi(request, QoS: .background, completionQueue: .main) { (result: Result<BeersResponse, NSError>) in
                     
                     switch result {
                     case .success(let response):
-                        observer.send(value: Result(value: response.beers))
+                        observer.send(value: Result(success: response.beers))
                         observer.sendCompleted()
                     case .failure(let error):
-                        observer.send(value: (Result(error: error)))
+                        observer.send(value: (Result(failure: error)))
                     }
                 }
                 
@@ -39,7 +38,7 @@ class BeerRepository {
                 }
             } else {
                 OSLogger.log(category: .dependencyInjection, message: "Unable to retrieve implementation of Newtork Service", access: .public, type: .debug)
-                observer.send(value: Result(error: SPError(genericError: .networkServiceNotFound)))
+                observer.send(value: Result(failure: SPError(genericError: .networkServiceNotFound)))
             }
         }
     }

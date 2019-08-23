@@ -6,7 +6,6 @@
 //  Copyright © 2019 Pasini, Nicolò. All rights reserved.
 //
 
-import Result
 import Foundation
 
 private extension QualityOfService {
@@ -54,7 +53,7 @@ class APIPerformer: NetworkService {
         
         let item = DispatchWorkItem {
             guard let request: URLRequest = self.requestBuilder.requestFrom(endpoint) else {
-                completion(Result(error: SPError(networkError: .invalidRequest)))
+                completion(Result(failure: SPError(networkError: .invalidRequest)))
                 return
             }
             
@@ -67,30 +66,30 @@ class APIPerformer: NetworkService {
                 switch result {
                 case .failure(let error):
                     OSLogger.log(category: .network, message: "Error: \(error)", access: .public, type: .error)
-                    completion(Result(error: error))
+                    completion(Result(failure: error))
                 case .success(let response):
                     guard let httpResponse = response.response as? HTTPURLResponse else {
                         OSLogger.log(category: .network, message: "Unknown error in response", access: .public, type: .error)
-                        completion(Result(error: SPError(networkError: .unknownError)))
+                        completion(Result(failure: SPError(networkError: .unknownError)))
                         return
                     }
                     
                     if let validationError: NSError = endpoint.validateResponse(httpResponse) {
                         OSLogger.log(category: .network, message: "Response validation error", access: .public, type: .error)
-                        completion(Result(error: validationError))
+                        completion(Result(failure: validationError))
                         return
                     }
                     
                     guard let data: Data = response.data else {
                         OSLogger.log(category: .network, message: "Missing data in response error", access: .public, type: .error)
-                        completion(Result(error: SPError(networkError: .missingData)))
+                        completion(Result(failure: SPError(networkError: .missingData)))
                         return
                     }
                     
                     let statusCode = httpResponse.statusCode
                     
                     OSLogger.log(category: .network, message: "Valid response received with status code \(statusCode)", access: .public, type: .debug)
-                    completion(Result(value: (data, statusCode)))
+                    completion(Result(success: (data, statusCode)))
                     return
                 }
             }
@@ -111,7 +110,7 @@ class APIPerformer: NetworkService {
                 guard let obj: T = T.decode(tuple.0) as? T else {
                     completionQueue.async {
                         OSLogger.log(category: .network, message: "Decoding error", access: .public, type: .error)
-                        completion(Result(error: SPError(networkError: .parserError)))
+                        completion(Result(failure: SPError(networkError: .parserError)))
                     }
                     return
                 }
@@ -119,18 +118,18 @@ class APIPerformer: NetworkService {
                 if let error = request.validateResponseObject(obj) {
                     completionQueue.async {
                         OSLogger.log(category: .network, message: "Response object validation error", access: .public, type: .error)
-                        completion(Result(error: error))
+                        completion(Result(failure: error))
                     }
                     return
                 }
                 
                 completionQueue.async {
-                    completion(Result(value: APIResponseWrapper(object: obj, statusCode: tuple.1)))
+                    completion(Result(success: APIResponseWrapper(object: obj, statusCode: tuple.1)))
                 }
                 
             case .failure(let error):
                 completionQueue.async {
-                    completion(Result(error: error))
+                    completion(Result(failure: error))
                 }
                 
             }
@@ -146,9 +145,9 @@ class APIPerformer: NetworkService {
             
             switch result {
             case .failure(let error):
-                completion(Result(error: error))
+                completion(Result(failure: error))
             case .success(let w):
-                completion(Result(value: w.object))
+                completion(Result(success: w.object))
             }
         }
     }
