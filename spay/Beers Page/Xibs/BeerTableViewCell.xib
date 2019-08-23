@@ -51,22 +51,32 @@
                         <color key="textColor" name="BackGroundOrange"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epM-dy-Xvr" userLabel="Separator View">
+                        <rect key="frame" x="15" y="180.5" width="339" height="1"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="TIZ-px-ki1"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" name="BackGroundDarkBlue"/>
                 <constraints>
                     <constraint firstItem="Oeo-H2-AQs" firstAttribute="top" secondItem="5yo-kT-h54" secondAttribute="bottom" constant="35" id="1ZF-VE-u25"/>
                     <constraint firstItem="T5s-tO-NTN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="5wf-b3-7af"/>
                     <constraint firstItem="Gft-AQ-TOw" firstAttribute="leading" secondItem="Oeo-H2-AQs" secondAttribute="leading" id="F0r-vl-w4U"/>
+                    <constraint firstItem="epM-dy-Xvr" firstAttribute="top" secondItem="T5s-tO-NTN" secondAttribute="bottom" constant="15" id="HPo-j7-Byr"/>
                     <constraint firstItem="Oeo-H2-AQs" firstAttribute="leading" secondItem="5yo-kT-h54" secondAttribute="leading" id="LHW-4c-Yin"/>
                     <constraint firstItem="h9G-U9-cXP" firstAttribute="leading" secondItem="T5s-tO-NTN" secondAttribute="trailing" constant="25" id="Msl-EP-fw6"/>
                     <constraint firstItem="5yo-kT-h54" firstAttribute="top" secondItem="h9G-U9-cXP" secondAttribute="bottom" constant="2" id="N9Q-dP-Exc"/>
                     <constraint firstItem="5yo-kT-h54" firstAttribute="leading" secondItem="h9G-U9-cXP" secondAttribute="leading" id="P9Y-np-cHN"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oeo-H2-AQs" secondAttribute="trailing" constant="25" id="RBf-e2-Bv3"/>
+                    <constraint firstAttribute="trailing" secondItem="epM-dy-Xvr" secondAttribute="trailing" id="T15-0c-CTb"/>
                     <constraint firstItem="Gft-AQ-TOw" firstAttribute="bottom" secondItem="T5s-tO-NTN" secondAttribute="bottom" id="a4a-Rv-LbL"/>
                     <constraint firstItem="T5s-tO-NTN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="aDP-RQ-i1a"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5yo-kT-h54" secondAttribute="trailing" constant="25" id="hxc-wy-Ikg"/>
                     <constraint firstItem="h9G-U9-cXP" firstAttribute="top" secondItem="T5s-tO-NTN" secondAttribute="top" id="j0c-WP-fIA"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gft-AQ-TOw" secondAttribute="trailing" constant="25" id="mMo-rz-cqC"/>
+                    <constraint firstItem="epM-dy-Xvr" firstAttribute="leading" secondItem="T5s-tO-NTN" secondAttribute="leading" id="rFD-lp-HX3"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="h9G-U9-cXP" secondAttribute="trailing" constant="25" id="suV-26-oWO"/>
                     <constraint firstItem="Gft-AQ-TOw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Oeo-H2-AQs" secondAttribute="bottom" constant="2" id="tI3-wI-GxM"/>
                     <constraint firstAttribute="bottom" secondItem="T5s-tO-NTN" secondAttribute="bottom" constant="15" id="ziC-RS-NMz"/>
