@@ -77,7 +77,7 @@ class BeersResponseTest: QuickSpec {
             
             describe("should retrieve value"){
                 it("if response json is an array"){
-                    let request = BeersRequest()
+                    let request = BeersRequest(page: 1)
                     let networkDispatcher: NetworkService? = AssemblerWrapper.shared.resolve(NetworkService.self)
                     
                     waitUntil(timeout: 5) { done in
