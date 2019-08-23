@@ -9,46 +9,41 @@
 import Foundation
 import ReactiveSwift
 
+typealias BeersSignal = Signal<Result<[Beer], NSError>, Never>
+
 class BeersViewModel {
     let beersModelsList: MutableProperty<[Beer]>
     
     private var disposable: Disposable?
     private let repository: BeerRepository
-    private let beers: MutableProperty<[Beer]>
     private let serialDisposable: SerialDisposable
+    private let beersSignalPipe: (output: BeersSignal, input: BeersSignal.Observer)
 
     init() {
-        beers = MutableProperty([])
         repository = BeerRepository()
+        beersSignalPipe = BeersSignal.pipe()
         beersModelsList = MutableProperty([])
         serialDisposable = SerialDisposable(nil)
         
-        serialDisposable.inner = beers <~ repository.getBeers().map({ (result: Result<[Beer], NSError>) -> [Beer] in
+        serialDisposable.inner = repository.getBeers().start(beersSignalPipe.input)
+        
+        disposable = beersSignalPipe.output.signal.observeValues { [weak self] (result: Result<[Beer], NSError>) in
             switch result {
             case .success(let newBeers):
-                return newBeers
+                self?.beersModelsList.value.append(contentsOf: newBeers)
             case .failure:
-                return []
+               break
             }
-        })
-        
-        disposable = beers.signal.observeValues({ [weak self] (newBeers: [Beer]) in
-            self?.beersModelsList.value.append(contentsOf: newBeers)
-        })
+        }
     }
     
+    //MARK: Public Functions
     func getBeers(for page: Int) {
-        serialDisposable.inner = beers <~ repository.getBeers(page: page).map({ (result: Result<[Beer], NSError>) -> [Beer] in
-            switch result {
-            case .success(let newBeers):
-                return newBeers
-            case .failure:
-                return []
-            }
-        })
+        serialDisposable.inner = repository.getBeers(page: page).start(beersSignalPipe.input)
     }
 
-    func dispose() {
+    //MARK: Private Functions
+    private func dispose() {
         if (!serialDisposable.isDisposed) {
             serialDisposable.dispose()
         }

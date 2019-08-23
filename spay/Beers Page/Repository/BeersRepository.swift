@@ -12,11 +12,13 @@ import ReactiveSwift
 class BeerRepository {
     let networkManager: NetworkService? = AssemblerWrapper.shared.resolve(NetworkService.self)
     
+    //MARK: Public Functions
     func getBeers(page: Int = 1) -> SignalProducer<Result<[Beer], NSError>, Never> {
         let request = BeersRequest(page: page)
         return observableForGetBeers(request)
     }
     
+    //MARK: Private Functions
     private func observableForGetBeers(_ request: BeersRequest) -> SignalProducer<Result<[Beer], NSError>, Never> {
         return SignalProducer {
             (observer, lifetime) in
