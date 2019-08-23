@@ -12,5 +12,6 @@ struct Beer: Decodable {
     let id: Int
     let name: String
     let tagline: String
+    let image_url: String
     let description: String
 }
