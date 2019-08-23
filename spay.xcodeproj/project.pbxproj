@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C9DDD06887B6155A33780F1 /* Pods_spayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC657C7E3227554F4D336498 /* Pods_spayTests.framework */; };
+		740A421523102CC9000AE63C /* BeersViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A421423102CC9000AE63C /* BeersViewModelTest.swift */; };
 		743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A85230C952B00646300 /* NetworkAssembly.swift */; };
 		743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A87230C97A800646300 /* AssemblerWrapper.swift */; };
 		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
@@ -75,6 +76,7 @@
 		3FDC54364B2599A830323D42 /* Pods-spayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spayTests.release.xcconfig"; path = "Target Support Files/Pods-spayTests/Pods-spayTests.release.xcconfig"; sourceTree = "<group>"; };
 		63F9252241EF7A24960509AB /* Pods-spay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay.debug.xcconfig"; path = "Target Support Files/Pods-spay/Pods-spay.debug.xcconfig"; sourceTree = "<group>"; };
 		643CD1F6FF549F27DA013C42 /* Pods_spayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		740A421423102CC9000AE63C /* BeersViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersViewModelTest.swift; sourceTree = "<group>"; };
 		743C6A85230C952B00646300 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		743C6A87230C97A800646300 /* AssemblerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerWrapper.swift; sourceTree = "<group>"; };
 		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
@@ -155,6 +157,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		740A421323102CA7000AE63C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				740A421423102CC9000AE63C /* BeersViewModelTest.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		743C6A84230C94D800646300 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				743C6A95230C9F9700646300 /* API */,
+				740A421323102CA7000AE63C /* ViewModels */,
 			);
 			path = "Beers Page";
 			sourceTree = "<group>";
@@ -622,7 +633,6 @@
 				"${PODS_ROOT}/Target Support Files/Pods-spay/Pods-spay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 			);
@@ -632,7 +642,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 			);
@@ -734,6 +743,7 @@
 			files = (
 				743C6A9E230D2EEB00646300 /* BeersRequestTest.swift in Sources */,
 				743C6A97230C9FA900646300 /* BeersResponseTest.swift in Sources */,
+				740A421523102CC9000AE63C /* BeersViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,22 +7,40 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BeerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var tagline: UILabel!
+    @IBOutlet weak var beerImage: UIImageView!
+    @IBOutlet weak var beerDescription: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     override func prepareForReuse() {
+        name.text = ""
+        tagline.text = ""
+        beerDescription.text = ""
+        beerImage.image = UIImage()
+    }
+    
+    func configure(with model: Beer) {
+        name.text = model.name
+        tagline.text = model.tagline
+        beerDescription.text = model.description
         
+        if let imageURL = URL(string: model.image_url) {
+            beerImage.sd_setImage(with: imageURL) { [weak self] (image: UIImage?, error: Error?, cacheType: SDImageCacheType, imageURL: URL?) in
+                guard error == nil else { return }
+                
+                self?.beerImage.image = image
+            }
+        } else {
+            beerImage.image = UIImage()
+        }
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }
