@@ -61,8 +61,12 @@ class BeersListViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.backgroundColor = UIColor(named: "BackGroundDarkBlue")
+        
+        tableView.rowHeight = 180
+        tableView.estimatedRowHeight = UITableView.automaticDimension
         
         let nib = UINib(nibName: "BeerTableViewCell", bundle: Bundle.main)
         tableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
@@ -79,7 +83,13 @@ extension BeersListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        if let cellModel = viewModel?.beersModelsList.value[indexPath.row], let cell = tableView.dequeueReusableCell(withIdentifier: "BeerTableViewCell", for: indexPath) as? BeerTableViewCell {
+            cell.configure(with: cellModel)
+            return cell
+        } else {
+            return UITableViewCell()
+            
+        }
     }
 }
 
