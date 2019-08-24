@@ -61,6 +61,7 @@ class BeersListViewController: UIViewController {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
         
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.backgroundColor = UIColor(named: "BackGroundDarkBlue")
@@ -73,6 +74,14 @@ class BeersListViewController: UIViewController {
         
         if let vm = viewModel {
             disposable = tableView.reactive.reloadData <~ vm.beersModelsList.signal.map({_ in return ()})
+        }
+    }
+    
+    private func isLoadingCell(at indexPath: IndexPath) -> Bool {
+        if let currentCount = viewModel?.beersModelsList.value.count {
+            return indexPath.row >= (currentCount - 1)
+        } else {
+            return false
         }
     }
 }
@@ -88,13 +97,21 @@ extension BeersListViewController: UITableViewDataSource {
             return cell
         } else {
             return UITableViewCell()
-            
         }
     }
 }
 
 extension BeersListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+}
+
+extension BeersListViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if (indexPaths.contains(where: isLoadingCell(at:))) {
+            viewModel?.getBeers()
+        }
     }
 }
 
