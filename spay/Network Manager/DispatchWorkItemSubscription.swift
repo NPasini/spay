@@ -12,7 +12,9 @@ class DispatchWorkItemSubscription: APISubscriptionProtocol {
     private let item: DispatchWorkItem
     
     deinit {
-        OSLogger.log(category: .network, message: "deinit \(self)", access: .public, type: .debug)
+        if (!self.item.isCancelled) {
+            self.item.cancel()
+        }
     }
     
     init(item: DispatchWorkItem) {
@@ -20,7 +22,7 @@ class DispatchWorkItemSubscription: APISubscriptionProtocol {
     }
     
     func dispose() {
-        OSLogger.log(category: .network, message: "disposing \(self)", access: .public, type: .debug)
+        OSLogger.networkLog(message: "disposing \(self)", access: .public, type: .debug)
         self.item.cancel()
     }
     

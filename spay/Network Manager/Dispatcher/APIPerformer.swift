@@ -28,11 +28,11 @@ class APIPerformer: NetworkService {
     private var memorizedDispatchQueues: [QualityOfService: DispatchQueue] = [:]
     
     private func dispatchQueueForQoS(_ QoS: QualityOfService) -> DispatchQueue {
-        OSLogger.log(category: .network, message: "Locking \(#function)", access: .public, type: .debug)
+        OSLogger.networkLog(message: "Locking dispatch queue \(QoS.dispatchQualityOfService.qosClass)", access: .public, type: .debug)
         lock()
         
         defer{
-            OSLogger.log(category: .network, message: "Unlocking \(#function)", access: .public, type: .debug)
+            OSLogger.networkLog(message: "Unlocking dispatch queue \(QoS.dispatchQualityOfService.qosClass)", access: .public, type: .debug)
             unlock()
         }
         
@@ -40,7 +40,7 @@ class APIPerformer: NetworkService {
             return queue
         }
         
-        let newQueue = DispatchQueue(label: "APIPerformer.\(QoS).queue", qos: QoS.dispatchQualityOfService, attributes: .concurrent)
+        let newQueue = DispatchQueue(label: "APIPerformer.\(QoS.dispatchQualityOfService.qosClass).queue", qos: QoS.dispatchQualityOfService, attributes: .concurrent)
         
         self.memorizedDispatchQueues[QoS] = newQueue
         
@@ -59,36 +59,36 @@ class APIPerformer: NetworkService {
             
             let processedRequest = endpoint.processRequest(request)
             
-            OSLogger.log(category: .network, message: "Connecting to endpoint: \(String(describing: processedRequest.url))", access: .public, type: .debug)
+            OSLogger.networkLog(message: "Connecting to endpoint: \(String(describing: processedRequest.url))", access: .public, type: .debug)
             
             let _ = self.requestPerformerFactory.requestPerformerForQoS(QoS).performRequest(processedRequest) { (result: Result<APIResponse, NSError>) in
                 
                 switch result {
                 case .failure(let error):
-                    OSLogger.log(category: .network, message: "Error: \(error)", access: .public, type: .error)
+                    OSLogger.networkLog(message: "Error: \(error)", access: .public, type: .error)
                     completion(Result(failure: error))
                 case .success(let response):
                     guard let httpResponse = response.response as? HTTPURLResponse else {
-                        OSLogger.log(category: .network, message: "Unknown error in response", access: .public, type: .error)
+                        OSLogger.networkLog(message: "Unknown error in response", access: .public, type: .error)
                         completion(Result(failure: SPError(networkError: .unknownError)))
                         return
                     }
                     
                     if let validationError: NSError = endpoint.validateResponse(httpResponse) {
-                        OSLogger.log(category: .network, message: "Response validation error", access: .public, type: .error)
+                        OSLogger.networkLog(message: "Response validation error", access: .public, type: .error)
                         completion(Result(failure: validationError))
                         return
                     }
                     
                     guard let data: Data = response.data else {
-                        OSLogger.log(category: .network, message: "Missing data in response error", access: .public, type: .error)
+                        OSLogger.networkLog(message: "Missing data in response error", access: .public, type: .error)
                         completion(Result(failure: SPError(networkError: .missingData)))
                         return
                     }
                     
                     let statusCode = httpResponse.statusCode
                     
-                    OSLogger.log(category: .network, message: "Valid response received with status code \(statusCode)", access: .public, type: .debug)
+                    OSLogger.networkLog(message: "Valid response received with status code \(statusCode)", access: .public, type: .debug)
                     completion(Result(success: (data, statusCode)))
                     return
                 }
@@ -109,7 +109,7 @@ class APIPerformer: NetworkService {
             case .success(let tuple):
                 guard let obj: T = T.decode(tuple.0) as? T else {
                     completionQueue.async {
-                        OSLogger.log(category: .network, message: "Decoding error", access: .public, type: .error)
+                        OSLogger.networkLog(message: "Decoding error", access: .public, type: .error)
                         completion(Result(failure: SPError(networkError: .parserError)))
                     }
                     return
@@ -117,7 +117,7 @@ class APIPerformer: NetworkService {
                 
                 if let error = request.validateResponseObject(obj) {
                     completionQueue.async {
-                        OSLogger.log(category: .network, message: "Response object validation error", access: .public, type: .error)
+                        OSLogger.networkLog(message: "Response object validation error", access: .public, type: .error)
                         completion(Result(failure: error))
                     }
                     return

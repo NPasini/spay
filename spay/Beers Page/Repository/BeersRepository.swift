@@ -40,7 +40,7 @@ class BeerRepository {
                     subscription.dispose()
                 }
             } else {
-                OSLogger.log(category: .dependencyInjection, message: "Unable to retrieve implementation of Newtork Service", access: .public, type: .debug)
+                OSLogger.dependencyInjectionLog(message: "Unable to retrieve implementation of Newtork Service", access: .public, type: .debug)
                 observer.send(value: Result(failure: SPError(genericError: .networkServiceNotFound)))
                 observer.sendCompleted()
             }
