@@ -19,26 +19,18 @@ class BeersRequest: GetRequest<BeersResponse> {
         super.init(host: host, path: path, version: version, queryParameters: queryParameters)
     }
     
-    override func validateResponseObject(_ object: BeersResponse) -> NSError? {
-        guard object.beers.count > 0 else {
-            return SPError(networkError: .emptyResponse)
-        }
-        
-        return nil
-    }
-    
     override func validateResponse(_ response: URLResponse) -> NSError? {
         guard let httpResponse = response as? HTTPURLResponse else {
-            return SPError(statusError: .notFound, statusCode: 404)
+            OSLogger.networkLog(message: "Received invalid response", access: .public, type: .debug)
+            return SPError(networkError: .invalidResponse)
         }
         
         switch httpResponse.statusCode {
         case 200...399:
             return nil
-        case 404:
-            return SPError(statusError: .notFound, statusCode: httpResponse.statusCode)
         default:
-            return SPError(statusError: .badAnswer, statusCode: httpResponse.statusCode)
+            OSLogger.networkLog(message: "Received HTTP Response with Error code \(httpResponse.statusCode)", access: .public, type: .debug)
+            return SPError(networkError: .invalidResponse)
         }
     }
 }
