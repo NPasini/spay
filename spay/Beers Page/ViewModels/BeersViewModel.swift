@@ -10,13 +10,13 @@ import Foundation
 import ReactiveSwift
 
 class BeersViewModel {
-    var isFetching: Bool
+    private(set) var isFetching: Bool
+    private(set) var currentPage: Int
     let beersModelsList: MutableProperty<[Beer]>
     
-    private var currentPage: Int
     private let repository: BeerRepository
     private let beers: MutableProperty<[Beer]>
-    private var serialDisposable: SerialDisposable
+    private let serialDisposable: SerialDisposable
     private var addBeersModelsdisposable: Disposable?
 
     init() {
