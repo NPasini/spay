@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C9DDD06887B6155A33780F1 /* Pods_spayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC657C7E3227554F4D336498 /* Pods_spayTests.framework */; };
 		740A421523102CC9000AE63C /* BeersViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A421423102CC9000AE63C /* BeersViewModelTest.swift */; };
+		740A421723118E12000AE63C /* BeerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A421623118E12000AE63C /* BeerDetailsView.swift */; };
+		740A421923118E29000AE63C /* BeerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740A421823118E29000AE63C /* BeerDetailsView.xib */; };
 		743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A85230C952B00646300 /* NetworkAssembly.swift */; };
 		743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A87230C97A800646300 /* AssemblerWrapper.swift */; };
 		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
@@ -76,6 +78,8 @@
 		63F9252241EF7A24960509AB /* Pods-spay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay.debug.xcconfig"; path = "Target Support Files/Pods-spay/Pods-spay.debug.xcconfig"; sourceTree = "<group>"; };
 		643CD1F6FF549F27DA013C42 /* Pods_spayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		740A421423102CC9000AE63C /* BeersViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersViewModelTest.swift; sourceTree = "<group>"; };
+		740A421623118E12000AE63C /* BeerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsView.swift; sourceTree = "<group>"; };
+		740A421823118E29000AE63C /* BeerDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerDetailsView.xib; sourceTree = "<group>"; };
 		743C6A85230C952B00646300 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		743C6A87230C97A800646300 /* AssemblerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerWrapper.swift; sourceTree = "<group>"; };
 		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 		7461CEE0230DE5CC00168408 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				740A421623118E12000AE63C /* BeerDetailsView.swift */,
 				7461CEE2230DE5FC00168408 /* BeerTableViewCell.swift */,
 			);
 			path = Views;
@@ -320,6 +325,7 @@
 		7461CEE1230DE5DC00168408 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
+				740A421823118E29000AE63C /* BeerDetailsView.xib */,
 				7461CEE3230DE5FC00168408 /* BeerTableViewCell.xib */,
 			);
 			path = Xibs;
@@ -549,6 +555,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				740A421923118E29000AE63C /* BeerDetailsView.xib in Resources */,
 				745A728E2309E2330000C436 /* LaunchScreen.storyboard in Resources */,
 				745A728B2309E2330000C436 /* Assets.xcassets in Resources */,
 				745A72862309E2320000C436 /* Main.storyboard in Resources */,
@@ -729,6 +736,7 @@
 				74E98E752309F9BC00EB41E0 /* LogCategory.swift in Sources */,
 				74E98E652309F1C400EB41E0 /* APIRequest.swift in Sources */,
 				74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */,
+				740A421723118E12000AE63C /* BeerDetailsView.swift in Sources */,
 				7461CEEB230DF30200168408 /* BeersRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
