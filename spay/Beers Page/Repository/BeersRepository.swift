@@ -32,6 +32,7 @@ class BeerRepository {
                         observer.sendCompleted()
                     case .failure(let error):
                         observer.send(value: (Result(failure: error)))
+                        observer.sendCompleted()
                     }
                 }
                 
@@ -41,6 +42,7 @@ class BeerRepository {
             } else {
                 OSLogger.log(category: .dependencyInjection, message: "Unable to retrieve implementation of Newtork Service", access: .public, type: .debug)
                 observer.send(value: Result(failure: SPError(genericError: .networkServiceNotFound)))
+                observer.sendCompleted()
             }
         }
     }
