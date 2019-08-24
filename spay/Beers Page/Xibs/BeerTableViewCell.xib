@@ -27,26 +27,26 @@
                             <constraint firstAttribute="height" constant="150" id="k5r-nN-yru"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beer name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9G-U9-cXP">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Beer name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9G-U9-cXP">
                         <rect key="frame" x="80" y="15.5" width="87.5" height="20.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yo-kT-h54">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Tagline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yo-kT-h54">
                         <rect key="frame" x="80" y="38" width="51" height="20"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oeo-H2-AQs">
-                        <rect key="frame" x="80" y="93" width="82.5" height="19.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oeo-H2-AQs">
+                        <rect key="frame" x="80" y="120.5" width="82.5" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="MORE INFO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gft-AQ-TOw">
-                        <rect key="frame" x="80" y="144.5" width="91" height="21"/>
+                        <rect key="frame" x="80" y="145" width="91" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="BackGroundOrange"/>
                         <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                 </subviews>
                 <color key="backgroundColor" name="BackGroundDarkBlue"/>
                 <constraints>
-                    <constraint firstItem="Oeo-H2-AQs" firstAttribute="top" secondItem="5yo-kT-h54" secondAttribute="bottom" constant="35" id="1ZF-VE-u25"/>
+                    <constraint firstItem="Oeo-H2-AQs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5yo-kT-h54" secondAttribute="bottom" constant="25" id="1ZF-VE-u25"/>
                     <constraint firstItem="T5s-tO-NTN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="5wf-b3-7af"/>
                     <constraint firstItem="Gft-AQ-TOw" firstAttribute="leading" secondItem="Oeo-H2-AQs" secondAttribute="leading" id="F0r-vl-w4U"/>
                     <constraint firstItem="epM-dy-Xvr" firstAttribute="top" secondItem="T5s-tO-NTN" secondAttribute="bottom" constant="15" id="HPo-j7-Byr"/>
@@ -69,7 +69,7 @@
                     <constraint firstItem="h9G-U9-cXP" firstAttribute="leading" secondItem="T5s-tO-NTN" secondAttribute="trailing" constant="25" id="Msl-EP-fw6"/>
                     <constraint firstItem="5yo-kT-h54" firstAttribute="top" secondItem="h9G-U9-cXP" secondAttribute="bottom" constant="2" id="N9Q-dP-Exc"/>
                     <constraint firstItem="5yo-kT-h54" firstAttribute="leading" secondItem="h9G-U9-cXP" secondAttribute="leading" id="P9Y-np-cHN"/>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oeo-H2-AQs" secondAttribute="trailing" constant="25" id="RBf-e2-Bv3"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oeo-H2-AQs" secondAttribute="trailing" constant="30" id="RBf-e2-Bv3"/>
                     <constraint firstAttribute="trailing" secondItem="epM-dy-Xvr" secondAttribute="trailing" id="T15-0c-CTb"/>
                     <constraint firstItem="Gft-AQ-TOw" firstAttribute="bottom" secondItem="T5s-tO-NTN" secondAttribute="bottom" id="a4a-Rv-LbL"/>
                     <constraint firstItem="T5s-tO-NTN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="aDP-RQ-i1a"/>
@@ -78,7 +78,7 @@
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gft-AQ-TOw" secondAttribute="trailing" constant="25" id="mMo-rz-cqC"/>
                     <constraint firstItem="epM-dy-Xvr" firstAttribute="leading" secondItem="T5s-tO-NTN" secondAttribute="leading" id="rFD-lp-HX3"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="h9G-U9-cXP" secondAttribute="trailing" constant="25" id="suV-26-oWO"/>
-                    <constraint firstItem="Gft-AQ-TOw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Oeo-H2-AQs" secondAttribute="bottom" constant="2" id="tI3-wI-GxM"/>
+                    <constraint firstItem="Gft-AQ-TOw" firstAttribute="top" secondItem="Oeo-H2-AQs" secondAttribute="bottom" constant="5" id="tI3-wI-GxM"/>
                     <constraint firstAttribute="bottom" secondItem="T5s-tO-NTN" secondAttribute="bottom" constant="15" id="ziC-RS-NMz"/>
                 </constraints>
             </tableViewCellContentView>
