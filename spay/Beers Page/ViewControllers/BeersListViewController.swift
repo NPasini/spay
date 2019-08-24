@@ -21,19 +21,26 @@ class BeersListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        OSLogger.uiLog(message: "Loaded", access: .public, type: .debug)
         
         viewModel = BeersViewModel()
         
-        setTitle()
+        configureUI()
         configureSearchBar()
         configureTableView()
-        offersView.layer.cornerRadius = 10
+        
     }
     
     override func didReceiveMemoryWarning() {
         if let d = disposable, !d.isDisposed {
             d.dispose()
         }
+    }
+    
+    //MARK: Private Functions
+    private func configureUI() {
+        setTitle()
+        offersView.layer.cornerRadius = 10
     }
     
     private func setTitle() {
@@ -73,7 +80,9 @@ class BeersListViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
         
         if let vm = viewModel {
-            disposable = tableView.reactive.reloadData <~ vm.beersModelsList.signal.map({_ in return ()})
+            disposable = tableView.reactive.reloadData <~ vm.beersModelsList.signal.map({_ in
+                OSLogger.uiLog(message: "Reloading TableView", access: .public, type: .debug)
+                return })
         }
     }
     
@@ -110,6 +119,7 @@ extension BeersListViewController: UITableViewDelegate {
 extension BeersListViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         if (indexPaths.contains(where: isLoadingCell(at:))) {
+            OSLogger.uiLog(message: "Fetching new Data Models", access: .public, type: .debug)
             viewModel?.getBeers()
         }
     }

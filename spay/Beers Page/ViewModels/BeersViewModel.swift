@@ -30,6 +30,7 @@ class BeersViewModel {
         addBeersModelsdisposable = beers.signal.observeValues({ [weak self] (newBeers: [Beer]) in
             self?.currentPage += 1
             self?.isFetching = false
+            OSLogger.dataFlowLog(message: "Appending \(newBeers.count) new Beer Models to previous \(String(describing: self?.beersModelsList.value.count)) Beer Models", access: .public, type: .debug)
             self?.beersModelsList.value.append(contentsOf: newBeers)
         })
         
@@ -42,6 +43,9 @@ class BeersViewModel {
     
     //MARK: Public Functions
     func getBeers() {
+        let message = isFetching ? "Fetching already in progress for page \(currentPage)" : "Fetching new Beer Models from page \(currentPage)"
+        OSLogger.dataFlowLog(message: message, access: .public, type: .debug)
+        
         if (!isFetching) {
             isFetching = true
             
@@ -58,6 +62,8 @@ class BeersViewModel {
 
     //MARK: Private Functions
     private func dispose() {
+        OSLogger.dataFlowLog(message: "Disposing ViewModel", access: .public, type: .debug)
+        
         if let disposable = addBeersModelsdisposable, !disposable.isDisposed {
             disposable.dispose()
         }
