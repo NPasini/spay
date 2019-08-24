@@ -77,6 +77,10 @@ extension OSLogger {
         log(category: .network, message: message, access: access, type: type, fileName: fileName, functionName: functionName, lineNumber: lineNumber)
     }
     
+    static func dataFlowLog(message: String, access: LogAccessLevel = LogAccessLevel.private, type: LogType = .debug.self, fileName: String = #file, functionName: String = #function, lineNumber: Int = #line) {
+        log(category: .dataFlow, message: message, access: access, type: type, fileName: fileName, functionName: functionName, lineNumber: lineNumber)
+    }
+    
     static func dependencyInjectionLog(message: String, access: LogAccessLevel = LogAccessLevel.private, type: LogType = .debug.self, fileName: String = #file, functionName: String = #function, lineNumber: Int = #line) {
         log(category: .dependencyInjection, message: message, access: access, type: type, fileName: fileName, functionName: functionName, lineNumber: lineNumber)
     }
