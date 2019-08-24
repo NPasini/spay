@@ -13,9 +13,10 @@ class BeerDetailsView: UIView {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var tagline: UILabel!
+    @IBOutlet weak var bookmarkView: UIView!
     @IBOutlet weak var beerImage: UIImageView!
     @IBOutlet weak var beerDescription: UILabel!
-
+    
     func configure(with model: Beer) {
         name.text = model.name
         tagline.text = model.tagline

@@ -11,6 +11,8 @@
 		740A421523102CC9000AE63C /* BeersViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A421423102CC9000AE63C /* BeersViewModelTest.swift */; };
 		740A421723118E12000AE63C /* BeerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A421623118E12000AE63C /* BeerDetailsView.swift */; };
 		740A421923118E29000AE63C /* BeerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740A421823118E29000AE63C /* BeerDetailsView.xib */; };
+		740A421B23119818000AE63C /* BookmarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740A421A23119818000AE63C /* BookmarkView.xib */; };
+		740A421D23119829000AE63C /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A421C23119829000AE63C /* BookmarkView.swift */; };
 		743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A85230C952B00646300 /* NetworkAssembly.swift */; };
 		743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A87230C97A800646300 /* AssemblerWrapper.swift */; };
 		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
@@ -80,6 +82,8 @@
 		740A421423102CC9000AE63C /* BeersViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersViewModelTest.swift; sourceTree = "<group>"; };
 		740A421623118E12000AE63C /* BeerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsView.swift; sourceTree = "<group>"; };
 		740A421823118E29000AE63C /* BeerDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerDetailsView.xib; sourceTree = "<group>"; };
+		740A421A23119818000AE63C /* BookmarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarkView.xib; sourceTree = "<group>"; };
+		740A421C23119829000AE63C /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		743C6A85230C952B00646300 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		743C6A87230C97A800646300 /* AssemblerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerWrapper.swift; sourceTree = "<group>"; };
 		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 			children = (
 				740A421623118E12000AE63C /* BeerDetailsView.swift */,
 				7461CEE2230DE5FC00168408 /* BeerTableViewCell.swift */,
+				740A421C23119829000AE63C /* BookmarkView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 			children = (
 				740A421823118E29000AE63C /* BeerDetailsView.xib */,
 				7461CEE3230DE5FC00168408 /* BeerTableViewCell.xib */,
+				740A421A23119818000AE63C /* BookmarkView.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -559,6 +565,7 @@
 				745A728E2309E2330000C436 /* LaunchScreen.storyboard in Resources */,
 				745A728B2309E2330000C436 /* Assets.xcassets in Resources */,
 				745A72862309E2320000C436 /* Main.storyboard in Resources */,
+				740A421B23119818000AE63C /* BookmarkView.xib in Resources */,
 				7461CEE5230DE5FC00168408 /* BeerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -737,6 +744,7 @@
 				74E98E652309F1C400EB41E0 /* APIRequest.swift in Sources */,
 				74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */,
 				740A421723118E12000AE63C /* BeerDetailsView.swift in Sources */,
+				740A421D23119829000AE63C /* BookmarkView.swift in Sources */,
 				7461CEEB230DF30200168408 /* BeersRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

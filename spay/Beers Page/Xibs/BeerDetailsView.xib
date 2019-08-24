@@ -42,15 +42,15 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-Ko-81j">
-                                            <rect key="frame" x="0.0" y="26" width="493" height="23"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPb-d6-Age">
                                             <rect key="frame" x="0.0" y="64" width="87" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-Ko-81j">
+                                            <rect key="frame" x="0.0" y="26" width="493" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -79,6 +79,14 @@
                                 <constraint firstItem="USw-bf-nkM" firstAttribute="top" secondItem="V7r-eg-jeH" secondAttribute="top" id="oc8-vK-JWI"/>
                             </constraints>
                         </scrollView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WX-sQ-gwA" userLabel="Bookmark View">
+                            <rect key="frame" x="573" y="0.0" width="20" height="35"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="Cum-sE-Ja5"/>
+                                <constraint firstAttribute="height" constant="35" id="aXT-mD-mCk"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" name="BackgroundGrey"/>
                     <constraints>
@@ -87,8 +95,10 @@
                         <constraint firstItem="R0H-PP-FAB" firstAttribute="top" secondItem="VTT-Sc-Q4b" secondAttribute="top" constant="40" id="Qxc-fd-ZkZ"/>
                         <constraint firstItem="V7r-eg-jeH" firstAttribute="bottom" secondItem="R0H-PP-FAB" secondAttribute="bottom" id="Y6G-ki-5Jz"/>
                         <constraint firstItem="R0H-PP-FAB" firstAttribute="leading" secondItem="VTT-Sc-Q4b" secondAttribute="leading" constant="25" id="YWz-0G-73e"/>
+                        <constraint firstAttribute="trailing" secondItem="6WX-sQ-gwA" secondAttribute="trailing" constant="25" id="ZnN-gc-pSM"/>
                         <constraint firstItem="V7r-eg-jeH" firstAttribute="top" secondItem="R0H-PP-FAB" secondAttribute="top" id="a3t-we-arZ"/>
                         <constraint firstAttribute="trailing" secondItem="V7r-eg-jeH" secondAttribute="trailing" id="bTD-LG-fCB"/>
+                        <constraint firstItem="6WX-sQ-gwA" firstAttribute="top" secondItem="VTT-Sc-Q4b" secondAttribute="top" id="eDm-WU-Fro"/>
                         <constraint firstAttribute="height" constant="285" id="jze-uC-OH0"/>
                     </constraints>
                 </view>
@@ -109,10 +119,11 @@
             <connections>
                 <outlet property="beerDescription" destination="sPb-d6-Age" id="0co-Az-5rS"/>
                 <outlet property="beerImage" destination="R0H-PP-FAB" id="4lH-8S-zCo"/>
+                <outlet property="bookmarkView" destination="6WX-sQ-gwA" id="fZ6-Nm-YOF"/>
                 <outlet property="name" destination="Dyu-ma-Hib" id="tn1-KH-cMw"/>
                 <outlet property="tagline" destination="0d7-Ko-81j" id="uTB-wG-Emg"/>
             </connections>
-            <point key="canvasLocation" x="207.24637681159422" y="-265.51339285714283"/>
+            <point key="canvasLocation" x="207.24637681159422" y="-265.84821428571428"/>
         </view>
     </objects>
     <resources>
