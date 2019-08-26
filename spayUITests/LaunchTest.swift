@@ -8,7 +8,7 @@
 
 import XCTest
 
-class spayUITests: XCTestCase {
+class LaunchTest: XCTestCase {
     var app: XCUIApplication!
 
     override func setUp() {
@@ -16,10 +16,6 @@ class spayUITests: XCTestCase {
         app.launchArguments.append("--uitesting")
         
         app.launch()
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
     func testLaunch() {
