@@ -17,6 +17,9 @@ class BeerDetailsView: UIView {
     @IBOutlet weak var bookmarkView: UIView!
     @IBOutlet weak var beerImage: UIImageView!
     @IBOutlet weak var beerDescription: UILabel!
+    @IBOutlet weak var beerImageTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var beerImageBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var beerImageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var detailsViewHeightConstraint: NSLayoutConstraint!
     
     weak var delegate: BeerDetailsViewDelegate?
@@ -24,8 +27,9 @@ class BeerDetailsView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        collapseHeight()
+        
         detailsView.layer.cornerRadius = 10
-        detailsViewHeightConstraint.constant = 0
         detailsView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         let _ = UIView.Inflate(type: BookmarkView.self, owner: self, inside: bookmarkView)
@@ -49,16 +53,31 @@ class BeerDetailsView: UIView {
         show()
     }
     
+    private func collapseHeight() {
+        beerImageTopConstraint.constant = 0
+        beerImageBottomConstraint.constant = 0
+        beerImageHeightConstraint.constant = 0
+        detailsViewHeightConstraint.constant = 0
+    }
+    
+    private func expandHeight() {
+        beerImageTopConstraint.constant = 40
+        beerImageBottomConstraint.constant = 20
+        beerImageHeightConstraint.constant = 225
+        detailsViewHeightConstraint.constant = 285
+    }
+    
     private func show() {
         UIView.animate(withDuration: 0.3, animations: {
-            self.detailsViewHeightConstraint.constant = 285
+            self.expandHeight()
             self.layoutIfNeeded()
         })
     }
     
     @IBAction func close() {
         UIView.animate(withDuration: 0.3, delay: 0, animations: {
-            self.detailsViewHeightConstraint.constant = 0
+            self.collapseHeight()
+            self.layoutIfNeeded()
         }) { (completed: Bool) in
             if (completed) {
                 self.delegate?.closeDetailsView()

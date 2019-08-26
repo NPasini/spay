@@ -46,15 +46,15 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPb-d6-Age">
-                                            <rect key="frame" x="0.0" y="64" width="87" height="20.5"/>
-                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tagline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0d7-Ko-81j">
                                             <rect key="frame" x="0.0" y="26" width="493" height="23"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPb-d6-Age">
+                                            <rect key="frame" x="0.0" y="64" width="87" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -78,9 +78,9 @@
                             <constraints>
                                 <constraint firstItem="USw-bf-nkM" firstAttribute="width" secondItem="V7r-eg-jeH" secondAttribute="width" id="8Ua-pS-7hf"/>
                                 <constraint firstAttribute="trailing" secondItem="USw-bf-nkM" secondAttribute="trailing" id="O8T-p3-q0D"/>
+                                <constraint firstItem="USw-bf-nkM" firstAttribute="top" secondItem="V7r-eg-jeH" secondAttribute="top" id="UGC-7c-2Ju"/>
                                 <constraint firstAttribute="bottom" secondItem="USw-bf-nkM" secondAttribute="bottom" id="WaY-pW-8YH"/>
                                 <constraint firstItem="USw-bf-nkM" firstAttribute="leading" secondItem="V7r-eg-jeH" secondAttribute="leading" id="a22-n2-0Db"/>
-                                <constraint firstItem="USw-bf-nkM" firstAttribute="top" secondItem="V7r-eg-jeH" secondAttribute="top" id="oc8-vK-JWI"/>
                             </constraints>
                         </scrollView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WX-sQ-gwA" userLabel="Bookmark View">
@@ -123,6 +123,9 @@
             <connections>
                 <outlet property="beerDescription" destination="sPb-d6-Age" id="0co-Az-5rS"/>
                 <outlet property="beerImage" destination="R0H-PP-FAB" id="4lH-8S-zCo"/>
+                <outlet property="beerImageBottomConstraint" destination="KWk-sl-EG9" id="WXg-Q6-9o6"/>
+                <outlet property="beerImageHeightConstraint" destination="xgg-nW-9KL" id="wwR-Wt-cqr"/>
+                <outlet property="beerImageTopConstraint" destination="Qxc-fd-ZkZ" id="nP2-xR-9iy"/>
                 <outlet property="bookmarkView" destination="6WX-sQ-gwA" id="fZ6-Nm-YOF"/>
                 <outlet property="detailsView" destination="VTT-Sc-Q4b" id="5wf-27-j1J"/>
                 <outlet property="detailsViewHeightConstraint" destination="jze-uC-OH0" id="owe-72-DvD"/>

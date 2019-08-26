@@ -132,7 +132,6 @@ extension BeersListViewController: BeerCellDelegate {
 
 extension BeersListViewController: BeerDetailsViewDelegate {
     func closeDetailsView() {
-        beerDetailsView?.close()
         detailsView.isHidden = true
     }
 }
