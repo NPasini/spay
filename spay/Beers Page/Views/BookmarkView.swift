@@ -16,17 +16,12 @@ class BookmarkView: UIView {
     @IBInspectable var bookmarkColor: UIColor = UIColor(named: "BackgroundGrey") ?? UIColor.white
     
     override func draw(_ rect: CGRect) {
-        if let context = UIGraphicsGetCurrentContext() {
-//            context.setFillColor(bookmarkColor.cgColor)
-//            context.fill(rect)
-            
-//            let drawSize = CGSize(width: bookmarkWidth, height: bookmarkHeight)
-            let trianglePath = UIBezierPath()
-            trianglePath.move(to: CGPoint(x: 0, y: bookmarkHeight))
-            trianglePath.addLine(to: CGPoint(x: bookmarkWidth/2, y: bookmarkHeight - 10))
-            trianglePath.addLine(to: CGPoint(x: bookmarkWidth, y: bookmarkHeight))
-            bookmarkColor.setFill()
-            trianglePath.fill()
-        }
+        let trianglePath = UIBezierPath()
+        trianglePath.move(to: CGPoint(x: 0, y: bookmarkHeight))
+        trianglePath.addLine(to: CGPoint(x: bookmarkWidth/2, y: bookmarkHeight - 10))
+        trianglePath.addLine(to: CGPoint(x: bookmarkWidth, y: bookmarkHeight))
+        bookmarkColor.setFill()
+        trianglePath.fill()
+        
     }
 }
