@@ -35,6 +35,7 @@ class BeerDetailsView: UIView {
         let _ = UIView.Inflate(type: BookmarkView.self, owner: self, inside: bookmarkView)
     }
     
+    //MARK: Public Functions
     func showDetails(for model: Beer) {
         name.text = model.name
         tagline.text = model.tagline
@@ -53,6 +54,7 @@ class BeerDetailsView: UIView {
         show()
     }
     
+    //MARK: Private Functions
     private func collapseHeight() {
         beerImageTopConstraint.constant = 0
         beerImageBottomConstraint.constant = 0

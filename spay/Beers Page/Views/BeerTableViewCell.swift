@@ -37,7 +37,7 @@ class BeerTableViewCell: UITableViewCell, Identifiable {
         tagline.text = model.tagline
         beerDescription.text = model.description
         
-        if let imageURL = URL(string: model.image_url) {
+        if let imageURL = URL(string: model.imageUrl) {
             beerImage.sd_setImage(with: imageURL) { [weak self] (image: UIImage?, error: Error?, cacheType: SDImageCacheType, imageURL: URL?) in
                 guard error == nil else { return }
                 
