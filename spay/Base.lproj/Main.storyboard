@@ -19,8 +19,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="&quot;Search&quot;" translatesAutoresizingMaskIntoConstraints="NO" id="qKM-y2-T1z">
+                                <rect key="frame" x="8" y="5" width="398" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bmk-uo-uTq">
-                                <rect key="frame" x="16" y="15" width="382" height="72"/>
+                                <rect key="frame" x="16" y="76" width="382" height="72"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekend Offers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgd-O7-pC1">
                                         <rect key="frame" x="15" y="15" width="131.5" height="20.5"/>
@@ -56,13 +60,13 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzg-Sa-iGL">
-                                <rect key="frame" x="16" y="112" width="382" height="50"/>
+                                <rect key="frame" x="16" y="173" width="382" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5mP-HI-g1y"/>
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kro-lN-FPW">
-                                <rect key="frame" x="0.0" y="187" width="414" height="587"/>
+                                <rect key="frame" x="0.0" y="248" width="414" height="526"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
@@ -73,9 +77,12 @@
                         </subviews>
                         <color key="backgroundColor" name="BackGroundDarkBlue"/>
                         <constraints>
+                            <constraint firstItem="qKM-y2-T1z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="0eC-K4-F4Y"/>
                             <constraint firstItem="Gzg-Sa-iGL" firstAttribute="leading" secondItem="Bmk-uo-uTq" secondAttribute="leading" id="C3t-j3-Ueg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bmk-uo-uTq" secondAttribute="trailing" constant="16" id="HX4-Kt-zFd"/>
                             <constraint firstItem="kro-lN-FPW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LNj-OD-jHh"/>
+                            <constraint firstItem="Bmk-uo-uTq" firstAttribute="top" secondItem="qKM-y2-T1z" secondAttribute="bottom" constant="15" id="NFf-N0-uAS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qKM-y2-T1z" secondAttribute="trailing" constant="8" id="Rmh-rH-H3Z"/>
                             <constraint firstItem="Gzg-Sa-iGL" firstAttribute="top" secondItem="Bmk-uo-uTq" secondAttribute="bottom" constant="25" id="S68-2o-umD"/>
                             <constraint firstItem="3jY-X9-eCc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YeY-rF-fHr"/>
                             <constraint firstItem="Gzg-Sa-iGL" firstAttribute="trailing" secondItem="Bmk-uo-uTq" secondAttribute="trailing" id="ZyZ-GK-Gos"/>
@@ -83,8 +90,8 @@
                             <constraint firstItem="Bmk-uo-uTq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fZF-jh-ex2"/>
                             <constraint firstItem="3jY-X9-eCc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ggd-aA-bMj"/>
                             <constraint firstItem="kro-lN-FPW" firstAttribute="top" secondItem="Gzg-Sa-iGL" secondAttribute="bottom" constant="25" id="kHM-GI-Z9L"/>
-                            <constraint firstItem="Bmk-uo-uTq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="nwG-dG-ghA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kro-lN-FPW" secondAttribute="bottom" id="pLw-fC-QVS"/>
+                            <constraint firstItem="qKM-y2-T1z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="sNo-uz-6PI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3jY-X9-eCc" secondAttribute="bottom" id="uAy-Lr-blq"/>
                             <constraint firstItem="3jY-X9-eCc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wE2-nw-g8n"/>
                         </constraints>
@@ -113,6 +120,7 @@
                     <connections>
                         <outlet property="detailsView" destination="3jY-X9-eCc" id="Irb-Cy-NMp"/>
                         <outlet property="offersView" destination="Bmk-uo-uTq" id="49y-a8-yKm"/>
+                        <outlet property="searchBar" destination="qKM-y2-T1z" id="lPI-KK-cws"/>
                         <outlet property="tableView" destination="kro-lN-FPW" id="OQj-1g-24w"/>
                         <outlet property="titleLabel" destination="CnD-DM-hcD" id="Rhh-hS-YwT"/>
                     </connections>

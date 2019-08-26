@@ -16,6 +16,7 @@ class BeersListViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var disposable: Disposable?
     var viewModel: BeersViewModel?
@@ -58,16 +59,7 @@ class BeersListViewController: UIViewController {
     }
     
     private func configureSearchBar() {
-        let searchController = UISearchController(searchResultsController: nil)
-        
-        definesPresentationContext = true
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.barStyle = .black
-        searchController.searchBar.placeholder = "Search"
-        searchController.searchBar.searchBarStyle = .minimal
-        searchController.obscuresBackgroundDuringPresentation = false
-        
-        self.navigationItem.searchController = searchController
+        searchBar.delegate = self
     }
     
     private func configureTableView() {
@@ -115,7 +107,8 @@ extension BeersListViewController: UITableViewDataSource {
     }
 }
 
-extension BeersListViewController: UITableViewDelegate { }
+extension BeersListViewController: UITableViewDelegate {
+}
 
 extension BeersListViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
@@ -126,10 +119,8 @@ extension BeersListViewController: UITableViewDataSourcePrefetching {
     }
 }
 
-extension BeersListViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
+extension BeersListViewController: UISearchBarDelegate {
+    
 }
 
 extension BeersListViewController: BeerCellDelegate {
