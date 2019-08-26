@@ -31,12 +31,14 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekend Offers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgd-O7-pC1">
                                         <rect key="frame" x="15" y="15" width="131.5" height="20.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="OfferTitle"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free shipping on orders over 60€" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9v-As-pc2">
                                         <rect key="frame" x="15" y="37.5" width="241" height="19.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="OfferDescription"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -50,6 +52,7 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" name="BackGroundOrange"/>
+                                <accessibility key="accessibilityConfiguration" identifier="OffersView"/>
                                 <constraints>
                                     <constraint firstItem="IyT-CE-lbU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a9v-As-pc2" secondAttribute="trailing" constant="15" id="65E-Wl-AK0"/>
                                     <constraint firstItem="Wgd-O7-pC1" firstAttribute="leading" secondItem="Bmk-uo-uTq" secondAttribute="leading" constant="15" id="B5k-Bf-DVQ"/>
@@ -61,16 +64,33 @@
                                     <constraint firstItem="IyT-CE-lbU" firstAttribute="centerY" secondItem="Bmk-uo-uTq" secondAttribute="centerY" id="lCF-pP-fRs"/>
                                     <constraint firstItem="a9v-As-pc2" firstAttribute="top" secondItem="Wgd-O7-pC1" secondAttribute="bottom" constant="2" id="v8L-l3-gg7"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="OffersView"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzg-Sa-iGL">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-HB-uZ2">
                                 <rect key="frame" x="16" y="173" width="382" height="50"/>
+                                <color key="backgroundColor" name="BackGroundDarkBlue"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="5mP-HI-g1y"/>
+                                    <constraint firstAttribute="height" constant="50" id="K82-V0-u97"/>
                                 </constraints>
-                            </stackView>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0gG-nB-Fln">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="s1g-e7-kJ8">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="FiltersCollectionView"/>
+                                </userDefinedRuntimeAttributes>
+                            </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kro-lN-FPW">
                                 <rect key="frame" x="0.0" y="248" width="414" height="526"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,27 +102,25 @@
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jY-X9-eCc" userLabel="Details View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="BeerDetailsView"/>
-                                </userDefinedRuntimeAttributes>
+                                <accessibility key="accessibilityConfiguration" identifier="BeerDetailsView"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" name="BackGroundDarkBlue"/>
                         <accessibility key="accessibilityConfiguration" identifier="BeerListViewController"/>
                         <constraints>
                             <constraint firstItem="qKM-y2-T1z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="0eC-K4-F4Y"/>
-                            <constraint firstItem="Gzg-Sa-iGL" firstAttribute="leading" secondItem="Bmk-uo-uTq" secondAttribute="leading" id="C3t-j3-Ueg"/>
+                            <constraint firstItem="kro-lN-FPW" firstAttribute="top" secondItem="7wA-HB-uZ2" secondAttribute="bottom" constant="25" id="G8a-M4-QRh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bmk-uo-uTq" secondAttribute="trailing" constant="16" id="HX4-Kt-zFd"/>
                             <constraint firstItem="kro-lN-FPW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LNj-OD-jHh"/>
                             <constraint firstItem="Bmk-uo-uTq" firstAttribute="top" secondItem="qKM-y2-T1z" secondAttribute="bottom" constant="15" id="NFf-N0-uAS"/>
+                            <constraint firstItem="7wA-HB-uZ2" firstAttribute="leading" secondItem="Bmk-uo-uTq" secondAttribute="leading" id="OwC-wq-b8V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qKM-y2-T1z" secondAttribute="trailing" constant="8" id="Rmh-rH-H3Z"/>
-                            <constraint firstItem="Gzg-Sa-iGL" firstAttribute="top" secondItem="Bmk-uo-uTq" secondAttribute="bottom" constant="25" id="S68-2o-umD"/>
                             <constraint firstItem="3jY-X9-eCc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YeY-rF-fHr"/>
-                            <constraint firstItem="Gzg-Sa-iGL" firstAttribute="trailing" secondItem="Bmk-uo-uTq" secondAttribute="trailing" id="ZyZ-GK-Gos"/>
+                            <constraint firstItem="7wA-HB-uZ2" firstAttribute="trailing" secondItem="Bmk-uo-uTq" secondAttribute="trailing" id="cLk-4l-R7Z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kro-lN-FPW" secondAttribute="trailing" id="daJ-Hb-s8y"/>
                             <constraint firstItem="Bmk-uo-uTq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fZF-jh-ex2"/>
                             <constraint firstItem="3jY-X9-eCc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ggd-aA-bMj"/>
-                            <constraint firstItem="kro-lN-FPW" firstAttribute="top" secondItem="Gzg-Sa-iGL" secondAttribute="bottom" constant="25" id="kHM-GI-Z9L"/>
+                            <constraint firstItem="7wA-HB-uZ2" firstAttribute="top" secondItem="Bmk-uo-uTq" secondAttribute="bottom" constant="25" id="iPc-py-c8T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kro-lN-FPW" secondAttribute="bottom" id="pLw-fC-QVS"/>
                             <constraint firstItem="qKM-y2-T1z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="sNo-uz-6PI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3jY-X9-eCc" secondAttribute="bottom" id="uAy-Lr-blq"/>
@@ -132,6 +150,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailsView" destination="3jY-X9-eCc" id="Irb-Cy-NMp"/>
+                        <outlet property="filtersCollectionView" destination="7wA-HB-uZ2" id="yaY-Fi-4RF"/>
                         <outlet property="offersView" destination="Bmk-uo-uTq" id="49y-a8-yKm"/>
                         <outlet property="searchBar" destination="qKM-y2-T1z" id="lPI-KK-cws"/>
                         <outlet property="tableView" destination="kro-lN-FPW" id="OQj-1g-24w"/>

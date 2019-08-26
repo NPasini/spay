@@ -17,6 +17,7 @@ class BeersListViewController: UIViewController {
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var filtersCollectionView: UICollectionView!
     
     var disposable: Disposable?
     var viewModel: BeersViewModel?
@@ -31,7 +32,6 @@ class BeersListViewController: UIViewController {
         configureUI()
         configureSearchBar()
         configureTableView()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -120,7 +120,9 @@ extension BeersListViewController: UITableViewDataSourcePrefetching {
 }
 
 extension BeersListViewController: UISearchBarDelegate {
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel?.searchTextPipe.input.send(value: searchText.trimmingCharacters(in: .whitespacesAndNewlines))
+    }
 }
 
 extension BeersListViewController: BeerCellDelegate {
