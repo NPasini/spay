@@ -15,10 +15,11 @@ import Foundation
 class BeersViewModelTest: QuickSpec {
     override func spec() {
         context("Testing the BeersViewModel") {
-            let viewModel = BeersViewModel()
+            var viewModel: BeersViewModel!
             
             describe("A new instance of the ViewModel is created") {
                 it("The fisrt beer page should be retrieved") {
+                    viewModel = BeersViewModel()
                     expect(viewModel.currentPage).to(equal(1))
                     expect(viewModel.isFetching).to(equal(true))
                     expect(viewModel.beersModelsList.value.count).to(equal(0))
