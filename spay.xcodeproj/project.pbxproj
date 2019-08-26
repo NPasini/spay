@@ -40,6 +40,11 @@
 		7461CEEB230DF30200168408 /* BeersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461CEEA230DF30200168408 /* BeersRepository.swift */; };
 		7461CEED230DF89E00168408 /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461CEEC230DF89E00168408 /* GenericError.swift */; };
 		74C494D823147056006CD277 /* BeersTableViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494D723147056006CD277 /* BeersTableViewTest.swift */; };
+		74C494DC23147634006CD277 /* TestNetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494DB23147634006CD277 /* TestNetworkAssembly.swift */; };
+		74C494DF23147654006CD277 /* TestNetworkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494DE23147654006CD277 /* TestNetworkComponent.swift */; };
+		74C494E223147A8A006CD277 /* CustomDecodable+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494E123147A8A006CD277 /* CustomDecodable+Test.swift */; };
+		74C494E523147AE2006CD277 /* BeersResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494E423147AE2006CD277 /* BeersResponseMock.swift */; };
+		74C494E923148031006CD277 /* getBeersMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 74C494E823148031006CD277 /* getBeersMock.json */; };
 		74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4D2309F0D900EB41E0 /* APISubscription.swift */; };
 		74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */; };
 		74E98E572309F0D900EB41E0 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */; };
@@ -128,6 +133,11 @@
 		7461CEEA230DF30200168408 /* BeersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersRepository.swift; sourceTree = "<group>"; };
 		7461CEEC230DF89E00168408 /* GenericError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericError.swift; sourceTree = "<group>"; };
 		74C494D723147056006CD277 /* BeersTableViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersTableViewTest.swift; sourceTree = "<group>"; };
+		74C494DB23147634006CD277 /* TestNetworkAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkAssembly.swift; sourceTree = "<group>"; };
+		74C494DE23147654006CD277 /* TestNetworkComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkComponent.swift; sourceTree = "<group>"; };
+		74C494E123147A8A006CD277 /* CustomDecodable+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDecodable+Test.swift"; sourceTree = "<group>"; };
+		74C494E423147AE2006CD277 /* BeersResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersResponseMock.swift; sourceTree = "<group>"; };
+		74C494E823148031006CD277 /* getBeersMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getBeersMock.json; sourceTree = "<group>"; };
 		74E98E4D2309F0D900EB41E0 /* APISubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISubscription.swift; sourceTree = "<group>"; };
 		74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTypes.swift; sourceTree = "<group>"; };
 		74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
@@ -338,7 +348,10 @@
 			children = (
 				745A72A52309E2330000C436 /* Info.plist */,
 				745A72A32309E2330000C436 /* LaunchTest.swift */,
+				74C494E323147ACB006CD277 /* API Mocks */,
 				74C494D62314703A006CD277 /* Beers Page Test */,
+				74C494D9231475A7006CD277 /* Dependency Injection */,
+				74C494E023147A75006CD277 /* Extensions */,
 			);
 			path = spayUITests;
 			sourceTree = "<group>";
@@ -400,6 +413,64 @@
 				74C494D723147056006CD277 /* BeersTableViewTest.swift */,
 			);
 			path = "Beers Page Test";
+			sourceTree = "<group>";
+		};
+		74C494D9231475A7006CD277 /* Dependency Injection */ = {
+			isa = PBXGroup;
+			children = (
+				74C494DA23147614006CD277 /* Assemblies */,
+				74C494DD2314763E006CD277 /* Components */,
+			);
+			path = "Dependency Injection";
+			sourceTree = "<group>";
+		};
+		74C494DA23147614006CD277 /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+				74C494DB23147634006CD277 /* TestNetworkAssembly.swift */,
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		74C494DD2314763E006CD277 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				74C494DE23147654006CD277 /* TestNetworkComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		74C494E023147A75006CD277 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				74C494E123147A8A006CD277 /* CustomDecodable+Test.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		74C494E323147ACB006CD277 /* API Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				74C494E62314800F006CD277 /* Get Beers */,
+			);
+			path = "API Mocks";
+			sourceTree = "<group>";
+		};
+		74C494E62314800F006CD277 /* Get Beers */ = {
+			isa = PBXGroup;
+			children = (
+				74C494E423147AE2006CD277 /* BeersResponseMock.swift */,
+				74C494E72314801C006CD277 /* jsons */,
+			);
+			path = "Get Beers";
+			sourceTree = "<group>";
+		};
+		74C494E72314801C006CD277 /* jsons */ = {
+			isa = PBXGroup;
+			children = (
+				74C494E823148031006CD277 /* getBeersMock.json */,
+			);
+			path = jsons;
 			sourceTree = "<group>";
 		};
 		74E98E5C2309F16A00EB41E0 /* Request */ = {
@@ -637,6 +708,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74C494E923148031006CD277 /* getBeersMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -853,6 +925,10 @@
 			files = (
 				745A72A42309E2330000C436 /* LaunchTest.swift in Sources */,
 				74C494D823147056006CD277 /* BeersTableViewTest.swift in Sources */,
+				74C494DF23147654006CD277 /* TestNetworkComponent.swift in Sources */,
+				74C494E223147A8A006CD277 /* CustomDecodable+Test.swift in Sources */,
+				74C494E523147AE2006CD277 /* BeersResponseMock.swift in Sources */,
+				74C494DC23147634006CD277 /* TestNetworkAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1094,6 +1170,7 @@
 			baseConfigurationReference = 6F42FD0B0C9330A89BA6A1D6 /* Pods-spay-spayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/spay.app/spay";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93FSRYEFUM;
 				INFOPLIST_FILE = spayUITests/Info.plist;
@@ -1115,6 +1192,7 @@
 			baseConfigurationReference = 24EA41897F2B16370B034145 /* Pods-spay-spayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/spay.app/spay";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93FSRYEFUM;
 				INFOPLIST_FILE = spayUITests/Info.plist;

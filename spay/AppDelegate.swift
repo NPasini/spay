@@ -14,7 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        AssemblerWrapper.shared.register(assemblies: [NetworkAssembly()])
+        
+        if (!CommandLine.arguments.contains("--uitesting")) {
+            AssemblerWrapper.shared.register(assemblies: [NetworkAssembly()])
+        }
         
         return true
     }

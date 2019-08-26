@@ -17,6 +17,8 @@ class BeersTableViewTest: XCTestCase {
         app = XCUIApplication()
         app.launchArguments.append("--uitesting")
         
+        AssemblerWrapper.shared.register(assemblies: [TestNetworkAssembly()])
+        
         app.launch()
     }
     
@@ -25,7 +27,10 @@ class BeersTableViewTest: XCTestCase {
     }
     
     func tableViewSetDatasource() {
-        
+        let startVC = app.otherElements["BeerListViewController"]
+        let tableView = startVC.tables["BeersTableView"]
+        XCTAssertTrue(tableView.exists)
+//        XCTAssertTrue(tableView.cells.count == 25)
     }
 }
 
