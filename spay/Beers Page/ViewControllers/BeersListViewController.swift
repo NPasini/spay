@@ -121,7 +121,7 @@ extension BeersListViewController: UITableViewDataSourcePrefetching {
 
 extension BeersListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel?.searchTextPipe.input.send(value: searchText.trimmingCharacters(in: .whitespacesAndNewlines))
+        viewModel?.searchTextPipe.input.send(value: searchText.trimmingCharacters(in: .newlines))
     }
 }
 
