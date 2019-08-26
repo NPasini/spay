@@ -13,9 +13,18 @@ class BeerDetailsView: UIView {
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var tagline: UILabel!
+    @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var bookmarkView: UIView!
     @IBOutlet weak var beerImage: UIImageView!
     @IBOutlet weak var beerDescription: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        detailsView.layer.cornerRadius = 10
+        
+        let _ = UIView.Inflate(type: BookmarkView.self, owner: self, inside: bookmarkView)
+    }
     
     func configure(with model: Beer) {
         name.text = model.name

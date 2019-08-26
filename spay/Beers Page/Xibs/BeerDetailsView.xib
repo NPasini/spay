@@ -120,6 +120,7 @@
                 <outlet property="beerDescription" destination="sPb-d6-Age" id="0co-Az-5rS"/>
                 <outlet property="beerImage" destination="R0H-PP-FAB" id="4lH-8S-zCo"/>
                 <outlet property="bookmarkView" destination="6WX-sQ-gwA" id="fZ6-Nm-YOF"/>
+                <outlet property="detailsView" destination="VTT-Sc-Q4b" id="5wf-27-j1J"/>
                 <outlet property="name" destination="Dyu-ma-Hib" id="tn1-KH-cMw"/>
                 <outlet property="tagline" destination="0d7-Ko-81j" id="uTB-wG-Emg"/>
             </connections>
