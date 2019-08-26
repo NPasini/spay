@@ -9,12 +9,15 @@
 import Foundation
 
 class BeersRequest: GetRequest<BeersResponse> {
-    init(page: Int) {
+    init(page: Int, searchString: String?) {
         let host = "api.punkapi.com"
         let version = "/v2"
         let path = "/beers"
         
-        let queryParameters = ["page": page]
+        var queryParameters: [String : CustomStringConvertible] = ["page": page]
+        if let string = searchString {
+            queryParameters["beer_name"] = string
+        }
         
         super.init(host: host, path: path, version: version, queryParameters: queryParameters)
     }
