@@ -14,10 +14,12 @@ class BeersListViewController: UIViewController {
     
     @IBOutlet weak var offersView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var tableView: UITableView!
-
+    
     var disposable: Disposable?
     var viewModel: BeersViewModel?
+    var beerDetailsView: BeerDetailsView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,9 @@ class BeersListViewController: UIViewController {
     private func configureUI() {
         setTitle()
         offersView.layer.cornerRadius = 10
+        
+        beerDetailsView = UIView.Inflate(type: BeerDetailsView.self, owner: self, inside: detailsView)
+        beerDetailsView?.delegate = self
     }
     
     private func setTitle() {
@@ -76,8 +81,7 @@ class BeersListViewController: UIViewController {
         tableView.rowHeight = 180
         tableView.estimatedRowHeight = UITableView.automaticDimension
         
-        let nib = UINib(nibName: "BeerTableViewCell", bundle: Bundle.main)
-        tableView.register(nib, forCellReuseIdentifier: "BeerTableViewCell")
+        tableView.register(viewType: BeerTableViewCell.self)
         
         if let vm = viewModel {
             disposable = tableView.reactive.reloadData <~ vm.beersModelsList.signal.map({_ in
@@ -101,7 +105,8 @@ extension BeersListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cellModel = viewModel?.beersModelsList.value[indexPath.row], let cell = tableView.dequeueReusableCell(withIdentifier: "BeerTableViewCell", for: indexPath) as? BeerTableViewCell {
+        if let cellModel = viewModel?.beersModelsList.value[indexPath.row], let cell = tableView.dequeueReusableCell(withIdentifier: BeerTableViewCell.identifier, for: indexPath) as? BeerTableViewCell {
+            cell.delegate = self
             cell.configure(with: cellModel)
             return cell
         } else {
@@ -110,11 +115,7 @@ extension BeersListViewController: UITableViewDataSource {
     }
 }
 
-extension BeersListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-}
+extension BeersListViewController: UITableViewDelegate { }
 
 extension BeersListViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
@@ -131,3 +132,16 @@ extension BeersListViewController: UISearchResultsUpdating {
     }
 }
 
+extension BeersListViewController: BeerCellDelegate {
+    func showMoreDetails(for model: Beer) {
+        detailsView.isHidden = false
+        beerDetailsView?.showDetails(for: model)
+    }
+}
+
+extension BeersListViewController: BeerDetailsViewDelegate {
+    func closeDetailsView() {
+        beerDetailsView?.close()
+        detailsView.isHidden = true
+    }
+}

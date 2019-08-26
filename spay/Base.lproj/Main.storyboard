@@ -66,6 +66,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jY-X9-eCc" userLabel="Details View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="BackGroundDarkBlue"/>
                         <constraints>
@@ -73,12 +77,16 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bmk-uo-uTq" secondAttribute="trailing" constant="16" id="HX4-Kt-zFd"/>
                             <constraint firstItem="kro-lN-FPW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LNj-OD-jHh"/>
                             <constraint firstItem="Gzg-Sa-iGL" firstAttribute="top" secondItem="Bmk-uo-uTq" secondAttribute="bottom" constant="25" id="S68-2o-umD"/>
+                            <constraint firstItem="3jY-X9-eCc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YeY-rF-fHr"/>
                             <constraint firstItem="Gzg-Sa-iGL" firstAttribute="trailing" secondItem="Bmk-uo-uTq" secondAttribute="trailing" id="ZyZ-GK-Gos"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kro-lN-FPW" secondAttribute="trailing" id="daJ-Hb-s8y"/>
                             <constraint firstItem="Bmk-uo-uTq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fZF-jh-ex2"/>
+                            <constraint firstItem="3jY-X9-eCc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ggd-aA-bMj"/>
                             <constraint firstItem="kro-lN-FPW" firstAttribute="top" secondItem="Gzg-Sa-iGL" secondAttribute="bottom" constant="25" id="kHM-GI-Z9L"/>
                             <constraint firstItem="Bmk-uo-uTq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="nwG-dG-ghA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kro-lN-FPW" secondAttribute="bottom" id="pLw-fC-QVS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3jY-X9-eCc" secondAttribute="bottom" id="uAy-Lr-blq"/>
+                            <constraint firstItem="3jY-X9-eCc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wE2-nw-g8n"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -103,6 +111,7 @@
                         </view>
                     </navigationItem>
                     <connections>
+                        <outlet property="detailsView" destination="3jY-X9-eCc" id="Irb-Cy-NMp"/>
                         <outlet property="offersView" destination="Bmk-uo-uTq" id="49y-a8-yKm"/>
                         <outlet property="tableView" destination="kro-lN-FPW" id="OQj-1g-24w"/>
                         <outlet property="titleLabel" destination="CnD-DM-hcD" id="Rhh-hS-YwT"/>
