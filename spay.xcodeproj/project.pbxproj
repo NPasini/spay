@@ -18,6 +18,7 @@
 		740A42242313B8CC000AE63C /* UITableView+Registrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42232313B8CC000AE63C /* UITableView+Registrable.swift */; };
 		740A42262313B8FC000AE63C /* UICollectionView+Registrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42252313B8FC000AE63C /* UICollectionView+Registrable.swift */; };
 		740A42292313DF05000AE63C /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42282313DF05000AE63C /* ViewProtocols.swift */; };
+		740A422B23145172000AE63C /* Malt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A422A23145172000AE63C /* Malt.swift */; };
 		743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A85230C952B00646300 /* NetworkAssembly.swift */; };
 		743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A87230C97A800646300 /* AssemblerWrapper.swift */; };
 		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
@@ -94,6 +95,7 @@
 		740A42232313B8CC000AE63C /* UITableView+Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Registrable.swift"; sourceTree = "<group>"; };
 		740A42252313B8FC000AE63C /* UICollectionView+Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Registrable.swift"; sourceTree = "<group>"; };
 		740A42282313DF05000AE63C /* ViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
+		740A422A23145172000AE63C /* Malt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Malt.swift; sourceTree = "<group>"; };
 		743C6A85230C952B00646300 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		743C6A87230C97A800646300 /* AssemblerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerWrapper.swift; sourceTree = "<group>"; };
 		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				743C6A8B230C992B00646300 /* Beer.swift */,
+				740A422A23145172000AE63C /* Malt.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -778,6 +781,7 @@
 				74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */,
 				740A42242313B8CC000AE63C /* UITableView+Registrable.swift in Sources */,
 				740A42202311AE34000AE63C /* UIView+Nib.swift in Sources */,
+				740A422B23145172000AE63C /* Malt.swift in Sources */,
 				740A421723118E12000AE63C /* BeerDetailsView.swift in Sources */,
 				740A421D23119829000AE63C /* BookmarkView.swift in Sources */,
 				740A42222313B492000AE63C /* Bundle+View.swift in Sources */,
