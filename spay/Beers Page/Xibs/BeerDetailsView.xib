@@ -17,8 +17,12 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFY-3b-2YB" userLabel="Top Overlay">
-                    <rect key="frame" x="0.0" y="0.0" width="618" height="215"/>
+                    <rect key="frame" x="0.0" y="0.0" width="618" height="500"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="UFT-0l-2zh" appends="YES" id="uyD-2a-4jX"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTT-Sc-Q4b" userLabel="Details View">
                     <rect key="frame" x="0.0" y="215" width="618" height="285"/>
@@ -30,7 +34,7 @@
                                 <constraint firstAttribute="height" constant="225" id="xgg-nW-9KL"/>
                             </constraints>
                         </imageView>
-                        <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7r-eg-jeH">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7r-eg-jeH">
                             <rect key="frame" x="110" y="40" width="508" height="225"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USw-bf-nkM" userLabel="Content View">
@@ -107,8 +111,8 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="jFY-3b-2YB" secondAttribute="trailing" id="7eL-RD-qnf"/>
                 <constraint firstAttribute="bottom" secondItem="VTT-Sc-Q4b" secondAttribute="bottom" id="8Pj-i2-zcj"/>
-                <constraint firstItem="VTT-Sc-Q4b" firstAttribute="top" secondItem="jFY-3b-2YB" secondAttribute="bottom" id="APS-fo-1Eh"/>
                 <constraint firstAttribute="trailing" secondItem="VTT-Sc-Q4b" secondAttribute="trailing" id="Llm-Bk-mSX"/>
+                <constraint firstAttribute="bottom" secondItem="jFY-3b-2YB" secondAttribute="bottom" id="N2m-AI-m2H"/>
                 <constraint firstItem="jFY-3b-2YB" firstAttribute="leading" secondItem="JAa-Zy-A93" secondAttribute="leading" id="VO8-vk-HiI"/>
                 <constraint firstItem="VTT-Sc-Q4b" firstAttribute="leading" secondItem="JAa-Zy-A93" secondAttribute="leading" id="Zer-6z-oaM"/>
                 <constraint firstItem="jFY-3b-2YB" firstAttribute="top" secondItem="JAa-Zy-A93" secondAttribute="top" id="ajB-v9-g1B"/>
@@ -121,11 +125,17 @@
                 <outlet property="beerImage" destination="R0H-PP-FAB" id="4lH-8S-zCo"/>
                 <outlet property="bookmarkView" destination="6WX-sQ-gwA" id="fZ6-Nm-YOF"/>
                 <outlet property="detailsView" destination="VTT-Sc-Q4b" id="5wf-27-j1J"/>
+                <outlet property="detailsViewHeightConstraint" destination="jze-uC-OH0" id="owe-72-DvD"/>
                 <outlet property="name" destination="Dyu-ma-Hib" id="tn1-KH-cMw"/>
                 <outlet property="tagline" destination="0d7-Ko-81j" id="uTB-wG-Emg"/>
             </connections>
             <point key="canvasLocation" x="207.24637681159422" y="-265.84821428571428"/>
         </view>
+        <tapGestureRecognizer id="UFT-0l-2zh">
+            <connections>
+                <action selector="close" destination="JAa-Zy-A93" id="dT9-pX-cC0"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <namedColor name="BackgroundGrey">
