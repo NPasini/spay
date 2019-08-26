@@ -28,24 +28,28 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Beer name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9G-U9-cXP">
                         <rect key="frame" x="80" y="15.5" width="87.5" height="20.5"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Name"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Tagline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yo-kT-h54">
                         <rect key="frame" x="80" y="38" width="51" height="20"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Tagline"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oeo-H2-AQs">
                         <rect key="frame" x="80" y="108" width="82.5" height="19.5"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Description"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vt-qf-SSh">
                         <rect key="frame" x="80" y="132.5" width="91" height="33"/>
+                        <accessibility key="accessibilityConfiguration" identifier="MoreInfoButton"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" title="MORE INFO">
                             <color key="titleColor" name="BackGroundOrange"/>
@@ -85,7 +89,11 @@
                     <constraint firstItem="8Vt-qf-SSh" firstAttribute="bottom" secondItem="T5s-tO-NTN" secondAttribute="bottom" id="umX-QO-skY"/>
                     <constraint firstAttribute="bottom" secondItem="T5s-tO-NTN" secondAttribute="bottom" constant="15" id="ziC-RS-NMz"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="ContentView"/>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="BeerTableViewCell"/>
             <connections>
                 <outlet property="beerDescription" destination="Oeo-H2-AQs" id="KhF-mh-Cca"/>
                 <outlet property="beerImage" destination="T5s-tO-NTN" id="fmi-oY-upK"/>

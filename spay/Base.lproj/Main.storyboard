@@ -22,6 +22,9 @@
                             <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="&quot;Search&quot;" translatesAutoresizingMaskIntoConstraints="NO" id="qKM-y2-T1z">
                                 <rect key="frame" x="8" y="5" width="398" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="SearchBar"/>
+                                </userDefinedRuntimeAttributes>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bmk-uo-uTq">
                                 <rect key="frame" x="16" y="76" width="382" height="72"/>
@@ -58,6 +61,9 @@
                                     <constraint firstItem="IyT-CE-lbU" firstAttribute="centerY" secondItem="Bmk-uo-uTq" secondAttribute="centerY" id="lCF-pP-fRs"/>
                                     <constraint firstItem="a9v-As-pc2" firstAttribute="top" secondItem="Wgd-O7-pC1" secondAttribute="bottom" constant="2" id="v8L-l3-gg7"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="OffersView"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzg-Sa-iGL">
                                 <rect key="frame" x="16" y="173" width="382" height="50"/>
@@ -69,13 +75,20 @@
                                 <rect key="frame" x="0.0" y="248" width="414" height="526"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="BeersTableView"/>
+                                </userDefinedRuntimeAttributes>
                             </tableView>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jY-X9-eCc" userLabel="Details View">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="BeerDetailsView"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" name="BackGroundDarkBlue"/>
+                        <accessibility key="accessibilityConfiguration" identifier="BeerListViewController"/>
                         <constraints>
                             <constraint firstItem="qKM-y2-T1z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="0eC-K4-F4Y"/>
                             <constraint firstItem="Gzg-Sa-iGL" firstAttribute="leading" secondItem="Bmk-uo-uTq" secondAttribute="leading" id="C3t-j3-Ueg"/>
