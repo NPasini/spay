@@ -9,5 +9,6 @@
 import Foundation
 
 protocol CustomDecodable: Decodable {
+    static func valueForTest() -> CustomDecodable
     static func decode(_ data: Data) -> CustomDecodable?
 }

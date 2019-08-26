@@ -6,8 +6,6 @@
 //  Copyright © 2019 Pasini, Nicolò. All rights reserved.
 //
 
-@testable import spay
-
 import Swinject
 import Foundation
 

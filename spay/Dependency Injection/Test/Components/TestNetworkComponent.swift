@@ -6,8 +6,6 @@
 //  Copyright © 2019 Pasini, Nicolò. All rights reserved.
 //
 
-@testable import spay
-
 import Foundation
 
 class TestNetworkComponent: NetworkService {
@@ -20,7 +18,7 @@ class TestNetworkComponent: NetworkService {
             completion(Result(success: T.valueForTest() as! T))
         }
         
-        DispatchQueue.main.sync(execute: item)
+        DispatchQueue.main.async(execute: item)
         
         return DispatchWorkItemSubscription(item: item)
     }

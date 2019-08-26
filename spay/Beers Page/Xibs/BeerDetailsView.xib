@@ -117,7 +117,7 @@
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <accessibility key="accessibilityConfiguration" identifier="BeersDetailsView"/>
+            <accessibility key="accessibilityConfiguration" identifier="BeerDetailsView"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="jFY-3b-2YB" secondAttribute="trailing" id="7eL-RD-qnf"/>
                 <constraint firstAttribute="bottom" secondItem="VTT-Sc-Q4b" secondAttribute="bottom" id="8Pj-i2-zcj"/>

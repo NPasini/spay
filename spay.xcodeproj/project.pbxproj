@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C9DDD06887B6155A33780F1 /* Pods_spayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC657C7E3227554F4D336498 /* Pods_spayTests.framework */; };
+		732134AB1DBA7E825C699505 /* Pods_spay_spayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E4C67985E8D8E0894DED98 /* Pods_spay_spayUITests.framework */; };
 		740A421523102CC9000AE63C /* BeersViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A421423102CC9000AE63C /* BeersViewModelTest.swift */; };
 		740A421723118E12000AE63C /* BeerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A421623118E12000AE63C /* BeerDetailsView.swift */; };
 		740A421923118E29000AE63C /* BeerDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740A421823118E29000AE63C /* BeerDetailsView.xib */; };
@@ -40,11 +41,9 @@
 		7461CEEB230DF30200168408 /* BeersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461CEEA230DF30200168408 /* BeersRepository.swift */; };
 		7461CEED230DF89E00168408 /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461CEEC230DF89E00168408 /* GenericError.swift */; };
 		74C494D823147056006CD277 /* BeersTableViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494D723147056006CD277 /* BeersTableViewTest.swift */; };
-		74C494DC23147634006CD277 /* TestNetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494DB23147634006CD277 /* TestNetworkAssembly.swift */; };
-		74C494DF23147654006CD277 /* TestNetworkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494DE23147654006CD277 /* TestNetworkComponent.swift */; };
-		74C494E223147A8A006CD277 /* CustomDecodable+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494E123147A8A006CD277 /* CustomDecodable+Test.swift */; };
-		74C494E523147AE2006CD277 /* BeersResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494E423147AE2006CD277 /* BeersResponseMock.swift */; };
-		74C494E923148031006CD277 /* getBeersMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 74C494E823148031006CD277 /* getBeersMock.json */; };
+		74C494F02314878A006CD277 /* Pods_spay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C494EF2314878A006CD277 /* Pods_spay.framework */; };
+		74C494F223148B26006CD277 /* TestNetworkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494DE23147654006CD277 /* TestNetworkComponent.swift */; };
+		74C494F623148B81006CD277 /* TestNetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494DB23147634006CD277 /* TestNetworkAssembly.swift */; };
 		74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4D2309F0D900EB41E0 /* APISubscription.swift */; };
 		74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */; };
 		74E98E572309F0D900EB41E0 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */; };
@@ -64,9 +63,7 @@
 		74E98E772309FA2A00EB41E0 /* OSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E762309FA2A00EB41E0 /* OSLogger.swift */; };
 		74E98E7B230B01D700EB41E0 /* SPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E7A230B01D700EB41E0 /* SPError.swift */; };
 		74E98E82230BB89000EB41E0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E81230BB89000EB41E0 /* NetworkService.swift */; };
-		A840BB6465BB2DA1CD25385E /* Pods_spayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 643CD1F6FF549F27DA013C42 /* Pods_spayUITests.framework */; };
-		CBEE61E01A2A3EA6E97C8FB9 /* Pods_spay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D19A598D940E01299A7EDF9C /* Pods_spay.framework */; };
-		E89C062AD4B543B573A4F3FD /* Pods_spay_spayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4890A1CA1399146FE2AF7078 /* Pods_spay_spayUITests.framework */; };
+		CB6B5DC8187ECC0F9A929060 /* Pods_spayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F309A1DF5A7CFAEEF3C594 /* Pods_spayUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,14 +84,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03E1659D3A206BB68C546B2B /* Pods-spayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spayUITests.debug.xcconfig"; path = "Target Support Files/Pods-spayUITests/Pods-spayUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		10148B4E36E5C92286CA5A1E /* Pods-spayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spayUITests.release.xcconfig"; path = "Target Support Files/Pods-spayUITests/Pods-spayUITests.release.xcconfig"; sourceTree = "<group>"; };
-		24EA41897F2B16370B034145 /* Pods-spay-spayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay-spayUITests.release.xcconfig"; path = "Target Support Files/Pods-spay-spayUITests/Pods-spay-spayUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3FDC54364B2599A830323D42 /* Pods-spayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spayTests.release.xcconfig"; path = "Target Support Files/Pods-spayTests/Pods-spayTests.release.xcconfig"; sourceTree = "<group>"; };
-		4890A1CA1399146FE2AF7078 /* Pods_spay_spayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spay_spayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61E4C67985E8D8E0894DED98 /* Pods_spay_spayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spay_spayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63F9252241EF7A24960509AB /* Pods-spay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay.debug.xcconfig"; path = "Target Support Files/Pods-spay/Pods-spay.debug.xcconfig"; sourceTree = "<group>"; };
-		643CD1F6FF549F27DA013C42 /* Pods_spayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F42FD0B0C9330A89BA6A1D6 /* Pods-spay-spayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay-spayUITests.debug.xcconfig"; path = "Target Support Files/Pods-spay-spayUITests/Pods-spay-spayUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		740A421423102CC9000AE63C /* BeersViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersViewModelTest.swift; sourceTree = "<group>"; };
 		740A421623118E12000AE63C /* BeerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailsView.swift; sourceTree = "<group>"; };
 		740A421823118E29000AE63C /* BeerDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerDetailsView.xib; sourceTree = "<group>"; };
@@ -135,9 +127,7 @@
 		74C494D723147056006CD277 /* BeersTableViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersTableViewTest.swift; sourceTree = "<group>"; };
 		74C494DB23147634006CD277 /* TestNetworkAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkAssembly.swift; sourceTree = "<group>"; };
 		74C494DE23147654006CD277 /* TestNetworkComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkComponent.swift; sourceTree = "<group>"; };
-		74C494E123147A8A006CD277 /* CustomDecodable+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomDecodable+Test.swift"; sourceTree = "<group>"; };
-		74C494E423147AE2006CD277 /* BeersResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersResponseMock.swift; sourceTree = "<group>"; };
-		74C494E823148031006CD277 /* getBeersMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = getBeersMock.json; sourceTree = "<group>"; };
+		74C494EF2314878A006CD277 /* Pods_spay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_spay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E98E4D2309F0D900EB41E0 /* APISubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISubscription.swift; sourceTree = "<group>"; };
 		74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTypes.swift; sourceTree = "<group>"; };
 		74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
@@ -157,10 +147,15 @@
 		74E98E762309FA2A00EB41E0 /* OSLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSLogger.swift; sourceTree = "<group>"; };
 		74E98E7A230B01D700EB41E0 /* SPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPError.swift; sourceTree = "<group>"; };
 		74E98E81230BB89000EB41E0 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		78919F484513A71B5D65FA60 /* Pods-spay-spayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay-spayUITests.release.xcconfig"; path = "Target Support Files/Pods-spay-spayUITests/Pods-spay-spayUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A4E937A5CCCE76AA5468DB1D /* Pods-spayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spayTests.debug.xcconfig"; path = "Target Support Files/Pods-spayTests/Pods-spayTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B253ACC4A13B560AEEA02F02 /* Pods-spay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay.release.xcconfig"; path = "Target Support Files/Pods-spay/Pods-spay.release.xcconfig"; sourceTree = "<group>"; };
 		D19A598D940E01299A7EDF9C /* Pods_spay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC657C7E3227554F4D336498 /* Pods_spayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9F309A1DF5A7CFAEEF3C594 /* Pods_spayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F687C7A907B562465307F551 /* Pods-spayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spayUITests.release.xcconfig"; path = "Target Support Files/Pods-spayUITests/Pods-spayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F976F715D76E6F8B752110E4 /* Pods-spay-spayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay-spayUITests.debug.xcconfig"; path = "Target Support Files/Pods-spay-spayUITests/Pods-spay-spayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FB686C20AE3FF1283DD2A1F4 /* Pods-spayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spayUITests.debug.xcconfig"; path = "Target Support Files/Pods-spayUITests/Pods-spayUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBEE61E01A2A3EA6E97C8FB9 /* Pods_spay.framework in Frameworks */,
+				74C494F02314878A006CD277 /* Pods_spay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,8 +179,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A840BB6465BB2DA1CD25385E /* Pods_spayUITests.framework in Frameworks */,
-				E89C062AD4B543B573A4F3FD /* Pods_spay_spayUITests.framework in Frameworks */,
+				732134AB1DBA7E825C699505 /* Pods_spay_spayUITests.framework in Frameworks */,
+				CB6B5DC8187ECC0F9A929060 /* Pods_spayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,10 +343,7 @@
 			children = (
 				745A72A52309E2330000C436 /* Info.plist */,
 				745A72A32309E2330000C436 /* LaunchTest.swift */,
-				74C494E323147ACB006CD277 /* API Mocks */,
 				74C494D62314703A006CD277 /* Beers Page Test */,
-				74C494D9231475A7006CD277 /* Dependency Injection */,
-				74C494E023147A75006CD277 /* Extensions */,
 			);
 			path = spayUITests;
 			sourceTree = "<group>";
@@ -415,16 +407,16 @@
 			path = "Beers Page Test";
 			sourceTree = "<group>";
 		};
-		74C494D9231475A7006CD277 /* Dependency Injection */ = {
+		74C494F323148B2E006CD277 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				74C494DA23147614006CD277 /* Assemblies */,
-				74C494DD2314763E006CD277 /* Components */,
+				74C494F523148B51006CD277 /* Components */,
+				74C494F423148B4B006CD277 /* Assemblies */,
 			);
-			path = "Dependency Injection";
+			path = Test;
 			sourceTree = "<group>";
 		};
-		74C494DA23147614006CD277 /* Assemblies */ = {
+		74C494F423148B4B006CD277 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
 				74C494DB23147634006CD277 /* TestNetworkAssembly.swift */,
@@ -432,45 +424,12 @@
 			path = Assemblies;
 			sourceTree = "<group>";
 		};
-		74C494DD2314763E006CD277 /* Components */ = {
+		74C494F523148B51006CD277 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				74C494DE23147654006CD277 /* TestNetworkComponent.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		74C494E023147A75006CD277 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				74C494E123147A8A006CD277 /* CustomDecodable+Test.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		74C494E323147ACB006CD277 /* API Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				74C494E62314800F006CD277 /* Get Beers */,
-			);
-			path = "API Mocks";
-			sourceTree = "<group>";
-		};
-		74C494E62314800F006CD277 /* Get Beers */ = {
-			isa = PBXGroup;
-			children = (
-				74C494E423147AE2006CD277 /* BeersResponseMock.swift */,
-				74C494E72314801C006CD277 /* jsons */,
-			);
-			path = "Get Beers";
-			sourceTree = "<group>";
-		};
-		74C494E72314801C006CD277 /* jsons */ = {
-			isa = PBXGroup;
-			children = (
-				74C494E823148031006CD277 /* getBeersMock.json */,
-			);
-			path = jsons;
 			sourceTree = "<group>";
 		};
 		74E98E5C2309F16A00EB41E0 /* Request */ = {
@@ -538,6 +497,7 @@
 				743C6A87230C97A800646300 /* AssemblerWrapper.swift */,
 				743C6A84230C94D800646300 /* Assemblies */,
 				74E98E7E230BB3C000EB41E0 /* Services */,
+				74C494F323148B2E006CD277 /* Test */,
 			);
 			path = "Dependency Injection";
 			sourceTree = "<group>";
@@ -557,10 +517,10 @@
 				B253ACC4A13B560AEEA02F02 /* Pods-spay.release.xcconfig */,
 				A4E937A5CCCE76AA5468DB1D /* Pods-spayTests.debug.xcconfig */,
 				3FDC54364B2599A830323D42 /* Pods-spayTests.release.xcconfig */,
-				03E1659D3A206BB68C546B2B /* Pods-spayUITests.debug.xcconfig */,
-				10148B4E36E5C92286CA5A1E /* Pods-spayUITests.release.xcconfig */,
-				6F42FD0B0C9330A89BA6A1D6 /* Pods-spay-spayUITests.debug.xcconfig */,
-				24EA41897F2B16370B034145 /* Pods-spay-spayUITests.release.xcconfig */,
+				F976F715D76E6F8B752110E4 /* Pods-spay-spayUITests.debug.xcconfig */,
+				78919F484513A71B5D65FA60 /* Pods-spay-spayUITests.release.xcconfig */,
+				FB686C20AE3FF1283DD2A1F4 /* Pods-spayUITests.debug.xcconfig */,
+				F687C7A907B562465307F551 /* Pods-spayUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -568,10 +528,11 @@
 		E21651271FCE88450353E5E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				74C494EF2314878A006CD277 /* Pods_spay.framework */,
 				D19A598D940E01299A7EDF9C /* Pods_spay.framework */,
 				DC657C7E3227554F4D336498 /* Pods_spayTests.framework */,
-				643CD1F6FF549F27DA013C42 /* Pods_spayUITests.framework */,
-				4890A1CA1399146FE2AF7078 /* Pods_spay_spayUITests.framework */,
+				61E4C67985E8D8E0894DED98 /* Pods_spay_spayUITests.framework */,
+				E9F309A1DF5A7CFAEEF3C594 /* Pods_spayUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -708,7 +669,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74C494E923148031006CD277 /* getBeersMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -904,7 +864,9 @@
 				740A422B23145172000AE63C /* Malt.swift in Sources */,
 				740A421723118E12000AE63C /* BeerDetailsView.swift in Sources */,
 				740A421D23119829000AE63C /* BookmarkView.swift in Sources */,
+				74C494F223148B26006CD277 /* TestNetworkComponent.swift in Sources */,
 				740A42222313B492000AE63C /* Bundle+View.swift in Sources */,
+				74C494F623148B81006CD277 /* TestNetworkAssembly.swift in Sources */,
 				7461CEEB230DF30200168408 /* BeersRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -925,10 +887,6 @@
 			files = (
 				745A72A42309E2330000C436 /* LaunchTest.swift in Sources */,
 				74C494D823147056006CD277 /* BeersTableViewTest.swift in Sources */,
-				74C494DF23147654006CD277 /* TestNetworkComponent.swift in Sources */,
-				74C494E223147A8A006CD277 /* CustomDecodable+Test.swift in Sources */,
-				74C494E523147AE2006CD277 /* BeersResponseMock.swift in Sources */,
-				74C494DC23147634006CD277 /* TestNetworkAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1167,7 +1125,7 @@
 		};
 		745A72AF2309E2330000C436 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F42FD0B0C9330A89BA6A1D6 /* Pods-spay-spayUITests.debug.xcconfig */;
+			baseConfigurationReference = F976F715D76E6F8B752110E4 /* Pods-spay-spayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/spay.app/spay";
@@ -1189,7 +1147,7 @@
 		};
 		745A72B02309E2330000C436 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24EA41897F2B16370B034145 /* Pods-spay-spayUITests.release.xcconfig */;
+			baseConfigurationReference = 78919F484513A71B5D65FA60 /* Pods-spay-spayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/spay.app/spay";
