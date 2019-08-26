@@ -9,18 +9,21 @@
 import UIKit
 import SDWebImage
 
-class BeerTableViewCell: UITableViewCell {
-
+class BeerTableViewCell: UITableViewCell, Identifiable {
+    
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var tagline: UILabel!
     @IBOutlet weak var beerImage: UIImageView!
     @IBOutlet weak var beerDescription: UILabel!
     
+    weak var delegate: BeerCellDelegate?
+    
+    private var beerModel: Beer?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
     override func prepareForReuse() {
         name.text = ""
         tagline.text = ""
@@ -29,6 +32,7 @@ class BeerTableViewCell: UITableViewCell {
     }
     
     func configure(with model: Beer) {
+        beerModel = model
         name.text = model.name
         tagline.text = model.tagline
         beerDescription.text = model.description
@@ -41,6 +45,12 @@ class BeerTableViewCell: UITableViewCell {
             }
         } else {
             beerImage.image = UIImage()
+        }
+    }
+    
+    @IBAction func showMore() {
+        if let model = beerModel {
+            delegate?.showMoreDetails(for: model)
         }
     }
 }
