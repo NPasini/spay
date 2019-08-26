@@ -17,6 +17,7 @@
 		740A42222313B492000AE63C /* Bundle+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42212313B492000AE63C /* Bundle+View.swift */; };
 		740A42242313B8CC000AE63C /* UITableView+Registrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42232313B8CC000AE63C /* UITableView+Registrable.swift */; };
 		740A42262313B8FC000AE63C /* UICollectionView+Registrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42252313B8FC000AE63C /* UICollectionView+Registrable.swift */; };
+		740A42292313DF05000AE63C /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42282313DF05000AE63C /* ViewProtocols.swift */; };
 		743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A85230C952B00646300 /* NetworkAssembly.swift */; };
 		743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A87230C97A800646300 /* AssemblerWrapper.swift */; };
 		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
@@ -92,6 +93,7 @@
 		740A42212313B492000AE63C /* Bundle+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+View.swift"; sourceTree = "<group>"; };
 		740A42232313B8CC000AE63C /* UITableView+Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Registrable.swift"; sourceTree = "<group>"; };
 		740A42252313B8FC000AE63C /* UICollectionView+Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Registrable.swift"; sourceTree = "<group>"; };
+		740A42282313DF05000AE63C /* ViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
 		743C6A85230C952B00646300 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		743C6A87230C97A800646300 /* AssemblerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerWrapper.swift; sourceTree = "<group>"; };
 		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
@@ -190,6 +192,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		740A42272313DECC000AE63C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				740A42282313DF05000AE63C /* ViewProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		743C6A84230C94D800646300 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +213,7 @@
 			children = (
 				743C6A8D230C995900646300 /* API */,
 				743C6A8A230C990F00646300 /* Models */,
+				740A42272313DECC000AE63C /* Protocols */,
 				7461CEE9230DF2F400168408 /* Repository */,
 				743C6AA0230D34C900646300 /* ViewControllers */,
 				7461CEE6230DF2CB00168408 /* ViewModels */,
@@ -755,6 +766,7 @@
 				74E98E82230BB89000EB41E0 /* NetworkService.swift in Sources */,
 				74E98E6E2309F29100EB41E0 /* APIPerformer.swift in Sources */,
 				74E98E632309F1C400EB41E0 /* APIRequestPerformerFactory.swift in Sources */,
+				740A42292313DF05000AE63C /* ViewProtocols.swift in Sources */,
 				743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */,
 				74E98E6B2309F21200EB41E0 /* ResponseProtocols.swift in Sources */,
 				743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */,
