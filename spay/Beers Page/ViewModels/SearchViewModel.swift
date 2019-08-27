@@ -12,7 +12,7 @@ import ReactiveSwift
 typealias TextSignal = Signal<String, Never>
 
 class SearchViewModel {
-    private(set) var searchString: String
+    var searchString: String
     weak var delegate: SearchUpdateDelegate?
     let searchTextPipe: (output: TextSignal, input: TextSignal.Observer)
     
