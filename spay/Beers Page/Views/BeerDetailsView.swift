@@ -41,7 +41,7 @@ class BeerDetailsView: UIView {
         tagline.text = model.tagline
         beerDescription.text = model.description
         
-        if let imageURL = URL(string: model.imageUrl) {
+        if let urlString = model.imageUrl, let imageURL = URL(string: urlString) {
             beerImage.sd_setImage(with: imageURL) { [weak self] (image: UIImage?, error: Error?, cacheType: SDImageCacheType, imageURL: URL?) in
                 guard error == nil else { return }
                 

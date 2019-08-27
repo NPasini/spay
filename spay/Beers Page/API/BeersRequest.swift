@@ -15,8 +15,8 @@ class BeersRequest: GetRequest<BeersResponse> {
         let path = "/beers"
         
         var queryParameters: [String : CustomStringConvertible] = ["page": page]
-        if let string = searchString {
-            queryParameters["beer_name"] = string
+        if let string = searchString, string.count > 0 {
+            queryParameters["beer_name"] = string.replacingOccurrences(of: " ", with: "_")
         }
         
         super.init(host: host, path: path, version: version, queryParameters: queryParameters)

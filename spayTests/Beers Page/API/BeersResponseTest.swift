@@ -65,7 +65,7 @@ class BeersResponseTest: QuickSpec {
             }
         }
         
-        context("The ApiPerfomer with HotelsRequest"){
+        context("The ApiPerfomer with BeersRequest"){
             var apiSubscriptionProtocol: APISubscriptionProtocol? = nil
             
             AssemblerWrapper.shared.register(assemblies: [NetworkAssembly()])
@@ -77,7 +77,7 @@ class BeersResponseTest: QuickSpec {
             
             describe("should retrieve value"){
                 it("if response json is an array"){
-                    let request = BeersRequest(page: 1)
+                    let request = BeersRequest(page: 1, searchString: nil)
                     let networkDispatcher: NetworkService? = AssemblerWrapper.shared.resolve(NetworkService.self)
                     
                     waitUntil(timeout: 5) { done in
@@ -87,6 +87,26 @@ class BeersResponseTest: QuickSpec {
                             case .success(let value):
                                 expect(value).toNot(beNil())
                                 expect(value.beers.count).to(equal(25))
+                            case .failure(_):
+                                fail("Error when performing Beers API")
+                            }
+                            
+                            done()
+                        })
+                    }
+                }
+                
+                it("if response json is an array and the search string is not empty"){
+                    let request = BeersRequest(page: 1, searchString: "test")
+                    let networkDispatcher: NetworkService? = AssemblerWrapper.shared.resolve(NetworkService.self)
+                    
+                    waitUntil(timeout: 5) { done in
+                        apiSubscriptionProtocol = networkDispatcher?.performApi(request, QoS: .background, completion: { (result) in
+                            
+                            switch result {
+                            case .success(let value):
+                                expect(value).toNot(beNil())
+                                expect(value.beers.count).to(beGreaterThanOrEqualTo(0))
                             case .failure(_):
                                 fail("Error when performing Beers API")
                             }

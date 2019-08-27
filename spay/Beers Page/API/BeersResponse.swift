@@ -30,11 +30,11 @@ extension BeersResponse: CustomDecodable {
     }
     
     static func valueForTest() -> CustomDecodable {
-        let beer1 = Beer(id: 1, name: "Fake Beer 1", malts: [Malt(name: "M1")], tagline: "Fake tagline 1", imageUrl: "", description: "Fake description 1")
+        let beer1 = Beer(id: 1, name: "Fake Beer 1", malts: [Malt(name: "M1")], tagline: "Fake tagline 1", imageUrl: nil, description: "Fake description 1")
         
-        let beer2 = Beer(id: 2, name: "Fake Beer 2", malts: [Malt(name: "M1"), Malt(name: "M2")], tagline: "Fake tagline 2", imageUrl: "", description: "Fake description 2")
+        let beer2 = Beer(id: 2, name: "Fake Beer 2", malts: [Malt(name: "M1"), Malt(name: "M2")], tagline: "Fake tagline 2", imageUrl: nil, description: "Fake description 2")
         
-        let beer3 = Beer(id: 3, name: "Fake Beer 3", malts: [Malt(name: "M2"), Malt(name: "M3")], tagline: "Fake tagline 3", imageUrl: "", description: "Fake description 3")
+        let beer3 = Beer(id: 3, name: "Fake Beer 3", malts: [Malt(name: "M2"), Malt(name: "M3")], tagline: "Fake tagline 3", imageUrl: nil, description: "Fake description 3")
         
         return BeersResponse(beers: [beer1, beer2, beer3])
     }

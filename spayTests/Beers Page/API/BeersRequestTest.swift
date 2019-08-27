@@ -17,7 +17,7 @@ class BeersRequestTest: QuickSpec {
         context("Testing the Get Beers API request"){
             describe("An istance of the request should contain correct endpoint and parameters"){
                 it("when is created specifying the page"){
-                    let request = BeersRequest(page: 1)
+                    let request = BeersRequest(page: 1, searchString: nil)
                     
                     expect(request.host).to(equal("api.punkapi.com"))
                     expect(request.version).to(equal("/v2"))
@@ -26,6 +26,27 @@ class BeersRequestTest: QuickSpec {
                     
                     if let pageParameter = request.queryParameters?["page"] as? Int {
                         expect(pageParameter).to(equal(1))
+                    } else {
+                        fail("Page parameter not present")
+                    }
+                }
+                
+                it("when is created specifying the page and the search string"){
+                    let request = BeersRequest(page: 1, searchString: "test search")
+                    
+                    expect(request.host).to(equal("api.punkapi.com"))
+                    expect(request.version).to(equal("/v2"))
+                    expect(request.path).to(equal("/beers"))
+                    expect(request.queryParameters).notTo(beNil())
+                    
+                    if let pageParameter = request.queryParameters?["page"] as? Int {
+                        expect(pageParameter).to(equal(1))
+                    } else {
+                        fail("Page parameter not present")
+                    }
+                    
+                    if let pageParameter = request.queryParameters?["beer_name"] as? String {
+                        expect(pageParameter).to(equal("test_search"))
                     } else {
                         fail("Page parameter not present")
                     }
