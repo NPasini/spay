@@ -46,6 +46,8 @@
 		74C494F623148B81006CD277 /* TestNetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494DB23147634006CD277 /* TestNetworkAssembly.swift */; };
 		74DA39992315237400EB6764 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA39982315237400EB6764 /* SearchViewModel.swift */; };
 		74DA399B2315273100EB6764 /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA399A2315273100EB6764 /* ViewModelProtocols.swift */; };
+		74DA399E231550E100EB6764 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA399C231550E100EB6764 /* FilterCollectionViewCell.swift */; };
+		74DA399F231550E100EB6764 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DA399D231550E100EB6764 /* FilterCollectionViewCell.xib */; };
 		74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4D2309F0D900EB41E0 /* APISubscription.swift */; };
 		74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */; };
 		74E98E572309F0D900EB41E0 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */; };
@@ -132,6 +134,8 @@
 		74C494EF2314878A006CD277 /* Pods_spay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_spay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DA39982315237400EB6764 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		74DA399A2315273100EB6764 /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
+		74DA399C231550E100EB6764 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		74DA399D231550E100EB6764 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		74E98E4D2309F0D900EB41E0 /* APISubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISubscription.swift; sourceTree = "<group>"; };
 		74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTypes.swift; sourceTree = "<group>"; };
 		74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
@@ -374,6 +378,7 @@
 				740A421623118E12000AE63C /* BeerDetailsView.swift */,
 				7461CEE2230DE5FC00168408 /* BeerTableViewCell.swift */,
 				740A421C23119829000AE63C /* BookmarkView.swift */,
+				74DA399C231550E100EB6764 /* FilterCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				740A421823118E29000AE63C /* BeerDetailsView.xib */,
 				7461CEE3230DE5FC00168408 /* BeerTableViewCell.xib */,
 				740A421A23119818000AE63C /* BookmarkView.xib */,
+				74DA399D231550E100EB6764 /* FilterCollectionViewCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -656,6 +662,7 @@
 				740A421923118E29000AE63C /* BeerDetailsView.xib in Resources */,
 				745A728E2309E2330000C436 /* LaunchScreen.storyboard in Resources */,
 				745A728B2309E2330000C436 /* Assets.xcassets in Resources */,
+				74DA399F231550E100EB6764 /* FilterCollectionViewCell.xib in Resources */,
 				745A72862309E2320000C436 /* Main.storyboard in Resources */,
 				740A421B23119818000AE63C /* BookmarkView.xib in Resources */,
 				7461CEE5230DE5FC00168408 /* BeerTableViewCell.xib in Resources */,
@@ -852,6 +859,7 @@
 				74E98E6A2309F21200EB41E0 /* APIResponse.swift in Sources */,
 				74E98E5B2309F0D900EB41E0 /* DispatchWorkItemSubscription.swift in Sources */,
 				7461CEE4230DE5FC00168408 /* BeerTableViewCell.swift in Sources */,
+				74DA399E231550E100EB6764 /* FilterCollectionViewCell.swift in Sources */,
 				743C6A91230C99D700646300 /* BeersResponse.swift in Sources */,
 				74E98E82230BB89000EB41E0 /* NetworkService.swift in Sources */,
 				74E98E6E2309F29100EB41E0 /* APIPerformer.swift in Sources */,
