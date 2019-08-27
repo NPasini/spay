@@ -14,31 +14,54 @@ class BeersViewModel {
     private(set) var isFetching: Bool = false
     private(set) var isNewSearch: Bool = false
     private(set) var stopFetching: Bool = false
-    let beersModelsList: MutableProperty<[Beer]>
+    private(set) var appliedFilters: Set<Filter> = Set<Filter>()
+    
+    let beersDataSource: MutableProperty<[Beer]>
+    let beersCompleteList: MutableProperty<[Beer]>
     
     private let beers: MutableProperty<[Beer]>
     private let searchViewModel: SearchViewModel
+    private let filterViewModel: FilterViewModel
     private let serialDisposable: SerialDisposable
     private var addBeersModelsDisposable: Disposable?
+    private var beersDataSourceDisposable: Disposable?
     
     private let repository: BeerRepository = BeerRepository()
-
+    
     init() {
         beers = MutableProperty([])
-        searchViewModel = SearchViewModel()
-        beersModelsList = MutableProperty([])
+        beersDataSource = MutableProperty([])
+        beersCompleteList = MutableProperty([])
         serialDisposable = SerialDisposable(nil)
         
+        filterViewModel = FilterViewModel()
+        searchViewModel = SearchViewModel()
         searchViewModel.delegate = self
         
         addBeersModelsDisposable = beers.signal.observeValues({ (newBeers: [Beer]) in
             if (self.isNewSearch) {
                 self.isNewSearch = false
-                self.beersModelsList.value = newBeers
+                self.beersCompleteList.value = newBeers
                 OSLogger.dataFlowLog(message: "Setting \(newBeers.count) new Beer Models as result of a text search", access: .public, type: .debug)
             } else {
-                self.beersModelsList.value.append(contentsOf: newBeers)
-                OSLogger.dataFlowLog(message: "Appending \(newBeers.count) new Beer Models to previous \(String(describing: self.beersModelsList.value.count)) Beer Models", access: .public, type: .debug)
+                self.beersCompleteList.value.append(contentsOf: newBeers)
+                OSLogger.dataFlowLog(message: "Appending \(newBeers.count) new Beer Models to previous \(String(describing: self.beersCompleteList.value.count)) Beer Models", access: .public, type: .debug)
+            }
+        })
+        
+        let completeBeersListSignalProducer = beersCompleteList.producer.map({ (beers: [Beer]) -> [Beer] in
+            if (self.appliedFilters.count > 0) {
+                return self.filterViewModel.filterBeersList(beers: beers, filters: self.appliedFilters)
+            } else {
+                return beers
+            }
+        })
+        
+        beersDataSourceDisposable = beersDataSource <~ SignalProducer.merge([completeBeersListSignalProducer, filterViewModel.filterSignalProducer]).on(value: { (beers: [Beer]) in
+            if (beers.count < 10) {
+                self.currentPage += 1
+                self.isFetching = false
+                self.getBeers()
             }
         })
         
@@ -50,8 +73,18 @@ class BeersViewModel {
     }
     
     //MARK: Public Functions
-    func getBeersBy(name: String) {
-        searchViewModel.searchTextPipe.input.send(value: name)
+    func addFilter(_ filter: Filter) {
+        appliedFilters.insert(filter)
+        filterViewModel.filterPipe.input.send(value: (appliedFilters, beersCompleteList.value))
+    }
+    
+    func removeFilter(_ filter: Filter) {
+        appliedFilters.remove(filter)
+        filterViewModel.filterPipe.input.send(value: (appliedFilters, beersCompleteList.value))
+    }
+    
+    func getBeersBy(beerName: String) {
+        searchViewModel.searchTextPipe.input.send(value: beerName)
     }
     
     func getBeers() {
@@ -77,7 +110,7 @@ class BeersViewModel {
             OSLogger.dataFlowLog(message: "Fetching stopped because reached end of paged results", access: .public, type: .debug)
         }
     }
-
+    
     //MARK: Private Functions
     private func dispose() {
         OSLogger.dataFlowLog(message: "Disposing BeersViewModel", access: .public, type: .debug)
