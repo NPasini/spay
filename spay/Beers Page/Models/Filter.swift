@@ -23,7 +23,7 @@ enum MaltFilterValue: Int {
         case .threeMalts:
             return "3 Malts"
         case .fourOrMoreMalts:
-            return "4 Malts"
+            return "4 Malts or more"
         }
     }
 }
