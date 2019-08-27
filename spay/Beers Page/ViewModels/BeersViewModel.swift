@@ -115,8 +115,12 @@ class BeersViewModel {
     private func dispose() {
         OSLogger.dataFlowLog(message: "Disposing BeersViewModel", access: .public, type: .debug)
         
-        if let disposable = addBeersModelsDisposable, !disposable.isDisposed {
-            disposable.dispose()
+        if let disposable1 = addBeersModelsDisposable, !disposable1.isDisposed {
+            disposable1.dispose()
+        }
+        
+        if let disposable2 = beersDataSourceDisposable, !disposable2.isDisposed {
+            disposable2.dispose()
         }
         
         if (!serialDisposable.isDisposed) {
