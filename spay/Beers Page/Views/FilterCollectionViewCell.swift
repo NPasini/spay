@@ -20,6 +20,7 @@ class FilterCollectionViewCell: UICollectionViewCell, Identifiable {
     }
     
     override func prepareForReuse() {
+        filterLabel.textColor = UIColor.white
         content.backgroundColor = UIColor(named: "BackgroundGrey")
     }
     
@@ -27,7 +28,7 @@ class FilterCollectionViewCell: UICollectionViewCell, Identifiable {
     func configure(with filter: Filter) {
         self.filter = filter
         content.layer.cornerRadius = 20
-        filterLabel.text = filter.filterValue.filterText
+        filterLabel.text = filter.filterValue
         
         setUI(for: filter.selected)
     }

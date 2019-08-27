@@ -8,31 +8,11 @@
 
 import Foundation
 
-enum MaltFilterValue: Int {
-    case oneMalt = 1
-    case twoMalts = 2
-    case threeMalts = 3
-    case fourOrMoreMalts = 4
-    
-    var filterText: String {
-        switch self {
-        case .oneMalt:
-            return "1 Malt"
-        case .twoMalts:
-            return "2 Malts"
-        case .threeMalts:
-            return "3 Malts"
-        case .fourOrMoreMalts:
-            return "4 Malts or more"
-        }
-    }
-}
-
 class Filter {
+    let filterValue: String
     private(set) var selected: Bool
-    let filterValue: MaltFilterValue
     
-    init(value: MaltFilterValue) {
+    init(value: String) {
         selected = false
         filterValue = value
     }
