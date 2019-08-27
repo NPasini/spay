@@ -177,14 +177,21 @@ extension BeersListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? FilterCollectionViewCell {
             cell.tapOnFilter()
-            viewModel?.getBeersWith(filter: filters[indexPath.row])
+            
+            if let filter = cell.filter {
+                if (filter.selected) {
+                    viewModel?.addFilter(filter)
+                } else {
+                    viewModel?.removeFilter(filter)
+                }
+            }
         }
     }
 }
 
 extension BeersListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel?.getBeersBy(name: searchText.trimmingCharacters(in: .newlines))
+        viewModel?.getBeersBy(beerName: searchText.trimmingCharacters(in: .newlines))
     }
 }
 
