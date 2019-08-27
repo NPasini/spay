@@ -48,6 +48,7 @@
 		74DA399B2315273100EB6764 /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA399A2315273100EB6764 /* ViewModelProtocols.swift */; };
 		74DA399E231550E100EB6764 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA399C231550E100EB6764 /* FilterCollectionViewCell.swift */; };
 		74DA399F231550E100EB6764 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DA399D231550E100EB6764 /* FilterCollectionViewCell.xib */; };
+		74DA39A12315562700EB6764 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA39A02315562700EB6764 /* Filter.swift */; };
 		74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4D2309F0D900EB41E0 /* APISubscription.swift */; };
 		74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */; };
 		74E98E572309F0D900EB41E0 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */; };
@@ -136,6 +137,7 @@
 		74DA399A2315273100EB6764 /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
 		74DA399C231550E100EB6764 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		74DA399D231550E100EB6764 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
+		74DA39A02315562700EB6764 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		74E98E4D2309F0D900EB41E0 /* APISubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISubscription.swift; sourceTree = "<group>"; };
 		74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTypes.swift; sourceTree = "<group>"; };
 		74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				743C6A8B230C992B00646300 /* Beer.swift */,
+				74DA39A02315562700EB6764 /* Filter.swift */,
 				740A422A23145172000AE63C /* Malt.swift */,
 			);
 			path = Models;
@@ -854,6 +857,7 @@
 				74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */,
 				74DA39992315237400EB6764 /* SearchViewModel.swift in Sources */,
 				74E98E772309FA2A00EB41E0 /* OSLogger.swift in Sources */,
+				74DA39A12315562700EB6764 /* Filter.swift in Sources */,
 				74E98E732309F9BC00EB41E0 /* LogAccessLevel.swift in Sources */,
 				74E98E742309F9BC00EB41E0 /* LogType.swift in Sources */,
 				74E98E6A2309F21200EB41E0 /* APIResponse.swift in Sources */,
