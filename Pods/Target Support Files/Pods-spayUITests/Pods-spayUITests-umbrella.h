@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_spay_spayUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_spay_spayUITestsVersionString[];
+FOUNDATION_EXPORT double Pods_spayUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_spayUITestsVersionString[];
 

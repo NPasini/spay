@@ -44,6 +44,8 @@
 		74C494F02314878A006CD277 /* Pods_spay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C494EF2314878A006CD277 /* Pods_spay.framework */; };
 		74C494F223148B26006CD277 /* TestNetworkComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494DE23147654006CD277 /* TestNetworkComponent.swift */; };
 		74C494F623148B81006CD277 /* TestNetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C494DB23147634006CD277 /* TestNetworkAssembly.swift */; };
+		74DA39992315237400EB6764 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA39982315237400EB6764 /* SearchViewModel.swift */; };
+		74DA399B2315273100EB6764 /* ViewModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA399A2315273100EB6764 /* ViewModelProtocols.swift */; };
 		74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4D2309F0D900EB41E0 /* APISubscription.swift */; };
 		74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */; };
 		74E98E572309F0D900EB41E0 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */; };
@@ -128,6 +130,8 @@
 		74C494DB23147634006CD277 /* TestNetworkAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkAssembly.swift; sourceTree = "<group>"; };
 		74C494DE23147654006CD277 /* TestNetworkComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNetworkComponent.swift; sourceTree = "<group>"; };
 		74C494EF2314878A006CD277 /* Pods_spay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_spay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74DA39982315237400EB6764 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		74DA399A2315273100EB6764 /* ViewModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocols.swift; sourceTree = "<group>"; };
 		74E98E4D2309F0D900EB41E0 /* APISubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISubscription.swift; sourceTree = "<group>"; };
 		74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTypes.swift; sourceTree = "<group>"; };
 		74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				740A42282313DF05000AE63C /* ViewProtocols.swift */,
+				74DA399A2315273100EB6764 /* ViewModelProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				7461CEE7230DF2E600168408 /* BeersViewModel.swift */,
+				74DA39982315237400EB6764 /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -683,7 +689,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-spay-spayUITests/Pods-spay-spayUITests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-spayUITests/Pods-spayUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -700,7 +706,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-spay-spayUITests/Pods-spay-spayUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-spayUITests/Pods-spayUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		4891545F5931BDC722981F6D /* [CP] Check Pods Manifest.lock */ = {
@@ -814,7 +820,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-spay-spayUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-spayUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -839,6 +845,7 @@
 				7461CEED230DF89E00168408 /* GenericError.swift in Sources */,
 				745A72832309E2320000C436 /* BeersListViewController.swift in Sources */,
 				74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */,
+				74DA39992315237400EB6764 /* SearchViewModel.swift in Sources */,
 				74E98E772309FA2A00EB41E0 /* OSLogger.swift in Sources */,
 				74E98E732309F9BC00EB41E0 /* LogAccessLevel.swift in Sources */,
 				74E98E742309F9BC00EB41E0 /* LogType.swift in Sources */,
@@ -863,6 +870,7 @@
 				740A42202311AE34000AE63C /* UIView+Nib.swift in Sources */,
 				740A422B23145172000AE63C /* Malt.swift in Sources */,
 				740A421723118E12000AE63C /* BeerDetailsView.swift in Sources */,
+				74DA399B2315273100EB6764 /* ViewModelProtocols.swift in Sources */,
 				740A421D23119829000AE63C /* BookmarkView.swift in Sources */,
 				74C494F223148B26006CD277 /* TestNetworkComponent.swift in Sources */,
 				740A42222313B492000AE63C /* Bundle+View.swift in Sources */,
@@ -1125,7 +1133,7 @@
 		};
 		745A72AF2309E2330000C436 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F976F715D76E6F8B752110E4 /* Pods-spay-spayUITests.debug.xcconfig */;
+			baseConfigurationReference = FB686C20AE3FF1283DD2A1F4 /* Pods-spayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/spay.app/spay";
@@ -1147,7 +1155,7 @@
 		};
 		745A72B02309E2330000C436 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 78919F484513A71B5D65FA60 /* Pods-spay-spayUITests.release.xcconfig */;
+			baseConfigurationReference = F687C7A907B562465307F551 /* Pods-spayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/spay.app/spay";
