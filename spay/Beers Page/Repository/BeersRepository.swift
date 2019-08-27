@@ -13,8 +13,8 @@ class BeerRepository {
     let networkManager: NetworkService? = AssemblerWrapper.shared.resolve(NetworkService.self)
     
     //MARK: Public Functions
-    func getBeers(page: Int = 1, searchString: String?) -> SignalProducer<Result<[Beer], NSError>, Never> {
-        let request = BeersRequest(page: page, searchString: searchString)
+    func getBeers(page: Int = 1, searchString: String?, maltFilter: String?) -> SignalProducer<Result<[Beer], NSError>, Never> {
+        let request = BeersRequest(page: page, searchString: searchString, maltFilter: maltFilter)
         return observableForGetBeers(request)
     }
     

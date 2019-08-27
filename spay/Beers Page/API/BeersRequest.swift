@@ -9,7 +9,7 @@
 import Foundation
 
 class BeersRequest: GetRequest<BeersResponse> {
-    init(page: Int, searchString: String?) {
+    init(page: Int, searchString: String?, maltFilter: String?) {
         let host = "api.punkapi.com"
         let version = "/v2"
         let path = "/beers"
@@ -17,6 +17,9 @@ class BeersRequest: GetRequest<BeersResponse> {
         var queryParameters: [String : CustomStringConvertible] = ["page": page]
         if let string = searchString, string.count > 0 {
             queryParameters["beer_name"] = string.replacingOccurrences(of: " ", with: "_")
+        }
+        if let filter = maltFilter, filter.count > 0 {
+            queryParameters["malt"] = filter.replacingOccurrences(of: " ", with: "_")
         }
         
         super.init(host: host, path: path, version: version, queryParameters: queryParameters)
