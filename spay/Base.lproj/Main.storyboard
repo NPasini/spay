@@ -65,17 +65,18 @@
                                     <constraint firstItem="a9v-As-pc2" firstAttribute="top" secondItem="Wgd-O7-pC1" secondAttribute="bottom" constant="2" id="v8L-l3-gg7"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-HB-uZ2">
-                                <rect key="frame" x="16" y="173" width="382" height="50"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7wA-HB-uZ2">
+                                <rect key="frame" x="16" y="163" width="382" height="50"/>
                                 <color key="backgroundColor" name="BackGroundDarkBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="K82-V0-u97"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0gG-nB-Fln">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-5"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0gG-nB-Fln">
+                                    <size key="itemSize" width="50" height="45"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <userDefinedRuntimeAttributes>
@@ -83,7 +84,7 @@
                                 </userDefinedRuntimeAttributes>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kro-lN-FPW">
-                                <rect key="frame" x="0.0" y="248" width="414" height="526"/>
+                                <rect key="frame" x="0.0" y="228" width="414" height="546"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                                 <userDefinedRuntimeAttributes>
@@ -100,7 +101,7 @@
                         <accessibility key="accessibilityConfiguration" identifier="BeerListViewController"/>
                         <constraints>
                             <constraint firstItem="qKM-y2-T1z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="0eC-K4-F4Y"/>
-                            <constraint firstItem="kro-lN-FPW" firstAttribute="top" secondItem="7wA-HB-uZ2" secondAttribute="bottom" constant="25" id="G8a-M4-QRh"/>
+                            <constraint firstItem="kro-lN-FPW" firstAttribute="top" secondItem="7wA-HB-uZ2" secondAttribute="bottom" constant="15" id="G8a-M4-QRh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bmk-uo-uTq" secondAttribute="trailing" constant="16" id="HX4-Kt-zFd"/>
                             <constraint firstItem="kro-lN-FPW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LNj-OD-jHh"/>
                             <constraint firstItem="Bmk-uo-uTq" firstAttribute="top" secondItem="qKM-y2-T1z" secondAttribute="bottom" constant="15" id="NFf-N0-uAS"/>
@@ -111,7 +112,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kro-lN-FPW" secondAttribute="trailing" id="daJ-Hb-s8y"/>
                             <constraint firstItem="Bmk-uo-uTq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="fZF-jh-ex2"/>
                             <constraint firstItem="3jY-X9-eCc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ggd-aA-bMj"/>
-                            <constraint firstItem="7wA-HB-uZ2" firstAttribute="top" secondItem="Bmk-uo-uTq" secondAttribute="bottom" constant="25" id="iPc-py-c8T"/>
+                            <constraint firstItem="7wA-HB-uZ2" firstAttribute="top" secondItem="Bmk-uo-uTq" secondAttribute="bottom" constant="15" id="iPc-py-c8T"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kro-lN-FPW" secondAttribute="bottom" id="pLw-fC-QVS"/>
                             <constraint firstItem="qKM-y2-T1z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="sNo-uz-6PI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3jY-X9-eCc" secondAttribute="bottom" id="uAy-Lr-blq"/>
