@@ -19,10 +19,11 @@ class BeersListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var filtersCollectionView: UICollectionView!
     
-    var filters: [Filter] = []
-    var disposable: Disposable?
-    var viewModel: BeersViewModel?
-    var beerDetailsView: BeerDetailsView?
+    private var filters: [Filter] = []
+    private var viewModel: BeersViewModel?
+    private var reloadDisposable: Disposable?
+    private var scrollDisposable: Disposable?
+    private var beerDetailsView: BeerDetailsView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,19 +39,27 @@ class BeersListViewController: UIViewController {
     }
     
     override func didReceiveMemoryWarning() {
-        if let d = disposable, !d.isDisposed {
-            d.dispose()
+        if let disposable1 = reloadDisposable, !disposable1.isDisposed {
+            disposable1.dispose()
+        }
+        
+        if let disposable2 = scrollDisposable, !disposable2.isDisposed {
+            disposable2.dispose()
         }
     }
     
     //MARK: Private Functions
     private func setFilters() {
-        let f1 = Filter(value: .oneMalt)
-        let f2 = Filter(value: .twoMalts)
-        let f3 = Filter(value: .threeMalts)
-        let f4 = Filter(value: .fourOrMoreMalts)
+        let f1 = Filter(value: "Munich")
+        let f2 = Filter(value: "Fuggles")
+        let f3 = Filter(value: "Cascade")
+        let f4 = Filter(value: "Caramalt")
+        let f5 = Filter(value: "Wheat Malt")
+        let f6 = Filter(value: "First Gold")
+        let f7 = Filter(value: "Dark Crystal")
+        let f8 = Filter(value: "Maris Otter Extra Pale")
         
-        filters = [f1, f2, f3 ,f4]
+        filters = [f1, f2, f3 ,f4, f5, f6, f7, f8]
     }
     
     private func configureUI() {
@@ -88,9 +97,15 @@ class BeersListViewController: UIViewController {
         tableView.register(viewType: BeerTableViewCell.self)
         
         if let vm = viewModel {
-            disposable = tableView.reactive.reloadData <~ vm.beersDataSource.signal.map({_ in
+            reloadDisposable = tableView.reactive.reloadData <~ vm.beersDataSource.signal.map({_ in
                 OSLogger.uiLog(message: "Reloading TableView", access: .public, type: .debug)
                 return })
+            
+//            scrollDisposable = vm.scrollToTopPipe.output.signal.observe(on: UIScheduler()).observeValues { () in
+//                DispatchQueue.main.async {
+//                    self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+//                }
+//            }
         }
     }
     
@@ -112,6 +127,18 @@ class BeersListViewController: UIViewController {
             return indexPath.row >= (currentCount - 1)
         } else {
             return false
+        }
+    }
+    
+    private func deselectFilters() {
+        for filter: Filter in filters {
+            if (filter.selected) {
+                if let index = filters.firstIndex(of: filter), let selectedCell = filtersCollectionView.cellForItem(at: IndexPath(row: index, section: 0)) as? FilterCollectionViewCell {
+                    selectedCell.tapOnFilter()
+                } else {
+                    filter.changeSelection()
+                }
+            }
         }
     }
 }
@@ -176,14 +203,13 @@ extension BeersListViewController: UICollectionViewDelegateFlowLayout {
 extension BeersListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? FilterCollectionViewCell {
+            deselectFilters()
+            searchBar.text = ""
+            
             cell.tapOnFilter()
             
             if let filter = cell.filter {
-                if (filter.selected) {
-                    viewModel?.addFilter(filter)
-                } else {
-                    viewModel?.removeFilter(filter)
-                }
+                viewModel?.addFilter(filter)
             }
         }
     }
@@ -191,6 +217,7 @@ extension BeersListViewController: UICollectionViewDelegate {
 
 extension BeersListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        deselectFilters()
         viewModel?.getBeersBy(beerName: searchText.trimmingCharacters(in: .newlines))
     }
 }
