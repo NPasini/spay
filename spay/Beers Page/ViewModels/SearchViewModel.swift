@@ -22,10 +22,14 @@ class SearchViewModel {
         searchString = ""
         searchTextPipe = TextSignal.pipe()
         
-        searchDisposable = searchTextPipe.output.signal.throttle(0.5, on: QueueScheduler.init(qos: .background, name: "BeersViewModel.background.queue")).observeValues({ (s: String) in
-            self.searchString = s.replacingOccurrences(of: " ", with: "_")
-            OSLogger.dataFlowLog(message: "Searching beers with string: \(self.searchString)", access: .public, type: .debug)
-            self.delegate?.startNewSearch()
+        searchDisposable = searchTextPipe.output.signal.throttle(0.5, on: QueueScheduler.init(qos: .background, name: "BeersViewModel.background.queue")).observeValues({ [weak self] (s: String) in
+            self?.searchString = s.replacingOccurrences(of: " ", with: "_")
+            
+            if let string = self?.searchString{
+                OSLogger.dataFlowLog(message: "Searching beers with string: " + string, access: .public, type: .debug)
+            }
+            
+            self?.delegate?.startNewSearch()
         })
     }
     
