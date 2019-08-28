@@ -28,11 +28,9 @@ class APIPerformer: NetworkService {
     private var memorizedDispatchQueues: [QualityOfService: DispatchQueue] = [:]
     
     private func dispatchQueueForQoS(_ QoS: QualityOfService) -> DispatchQueue {
-        OSLogger.networkLog(message: "Locking dispatch queue \(QoS.dispatchQualityOfService.qosClass)", access: .public, type: .debug)
         lock()
         
         defer{
-            OSLogger.networkLog(message: "Unlocking dispatch queue \(QoS.dispatchQualityOfService.qosClass)", access: .public, type: .debug)
             unlock()
         }
         
@@ -59,7 +57,9 @@ class APIPerformer: NetworkService {
             
             let processedRequest = endpoint.processRequest(request)
             
-            OSLogger.networkLog(message: "Connecting to endpoint: \(String(describing: processedRequest.url))", access: .public, type: .debug)
+            if let requestEndpoint = processedRequest.url {
+                OSLogger.networkLog(message: "Connecting to endpoint: \(String(describing: requestEndpoint))", access: .public, type: .debug)
+            }
             
             let _ = self.requestPerformerFactory.requestPerformerForQoS(QoS).performRequest(processedRequest) { (result: Result<APIResponse, NSError>) in
                 
