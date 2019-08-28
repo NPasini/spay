@@ -15,7 +15,7 @@ class TestNetworkComponent: NetworkService {
                                         completion: @escaping (Result<T, NSError>) -> Void) -> APISubscriptionProtocol {
         
         let item = DispatchWorkItem {
-            completion(Result(success: T.valueForTest() as! T))
+            completion(Result(success: T.mockedValue() as! T))
         }
         
         DispatchQueue.main.async(execute: item)

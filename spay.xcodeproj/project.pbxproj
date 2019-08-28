@@ -383,7 +383,6 @@
 			children = (
 				74E98E4D2309F0D900EB41E0 /* APISubscription.swift */,
 				74E98E532309F0D900EB41E0 /* DispatchWorkItemSubscription.swift */,
-				74E98E522309F0D900EB41E0 /* NetworkError.swift */,
 				74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */,
 				74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */,
 				74E98E6C2309F25700EB41E0 /* Dispatcher */,
@@ -443,8 +442,8 @@
 		74C494F323148B2E006CD277 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				74C494F523148B51006CD277 /* Components */,
 				74C494F423148B4B006CD277 /* Assemblies */,
+				74C494F523148B51006CD277 /* Components */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -519,6 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				7461CEEC230DF89E00168408 /* GenericError.swift */,
+				74E98E522309F0D900EB41E0 /* NetworkError.swift */,
 				74E98E7A230B01D700EB41E0 /* SPError.swift */,
 			);
 			path = Errors;
