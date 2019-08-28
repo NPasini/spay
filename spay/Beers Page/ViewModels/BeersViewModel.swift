@@ -53,8 +53,6 @@ class BeersViewModel {
                 self?.beersDataSource.value.append(contentsOf: newBeers)
             }
         })
-        
-        getBeers()
     }
     
     deinit {
@@ -62,7 +60,7 @@ class BeersViewModel {
     }
     
     //MARK: Public Functions
-    func addFilter(_ filter: Filter) {
+    func applyFilter(_ filter: Filter) {
         if (filter != appliedFilter) {
             currentPage = 1
             isNewFilter = true
@@ -77,6 +75,11 @@ class BeersViewModel {
     func getBeersBy(beerName: String) {
         appliedFilter = nil
         searchViewModel.searchTextPipe.input.send(value: beerName)
+    }
+    
+    func getBeersForPage(_ page: Int) {
+        currentPage = page
+        getBeers()
     }
     
     func getBeers() {

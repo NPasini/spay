@@ -25,7 +25,7 @@ class SearchViewModel {
         searchDisposable = searchTextPipe.output.signal.throttle(0.5, on: QueueScheduler.init(qos: .background, name: "BeersViewModel.background.queue")).observeValues({ [weak self] (s: String) in
             self?.searchString = s.replacingOccurrences(of: " ", with: "_")
             
-            if let string = self?.searchString{
+            if let string = self?.searchString {
                 OSLogger.dataFlowLog(message: "Searching beers with string: " + string, access: .public, type: .debug)
             }
             

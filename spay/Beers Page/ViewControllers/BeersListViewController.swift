@@ -36,6 +36,8 @@ class BeersListViewController: UIViewController {
         configureSearchBar()
         configureTableView()
         configureCollectionView()
+        
+        viewModel?.getBeers()
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,15 +53,12 @@ class BeersListViewController: UIViewController {
     //MARK: Private Functions
     private func setFilters() {
         let f1 = Filter(value: "Munich")
-        let f2 = Filter(value: "Fuggles")
-        let f3 = Filter(value: "Cascade")
-        let f4 = Filter(value: "Caramalt")
-        let f5 = Filter(value: "Wheat Malt")
-        let f6 = Filter(value: "First Gold")
-        let f7 = Filter(value: "Dark Crystal")
-        let f8 = Filter(value: "Maris Otter Extra Pale")
+        let f2 = Filter(value: "Dark Crystal")
+        let f3 = Filter(value: "Caramalt")
+        let f4 = Filter(value: "Wheat Malt")
+        let f5 = Filter(value: "Maris Otter Extra Pale")
         
-        filters = [f1, f2, f3 ,f4, f5, f6, f7, f8]
+        filters = [f1, f2, f3 ,f4, f5]
     }
     
     private func configureUI() {
@@ -203,7 +202,7 @@ extension BeersListViewController: UICollectionViewDelegate {
             cell.tapOnFilter()
             
             if let filter = cell.filter {
-                viewModel?.addFilter(filter)
+                viewModel?.applyFilter(filter)
             }
         }
     }
