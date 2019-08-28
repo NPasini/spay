@@ -9,8 +9,6 @@
 import Foundation
 import ReactiveSwift
 
-typealias VoidSignal = Signal<Void, Never>
-
 class BeersViewModel {
     private(set) var currentPage: Int = 1
     private(set) var isFetching: Bool = false
@@ -20,7 +18,6 @@ class BeersViewModel {
     private(set) var appliedFilter: Filter? = nil
     
     let beersDataSource: MutableProperty<[Beer]>
-//    let scrollToTopPipe: (input: VoidSignal.Observer, output: VoidSignal)
     
     private let beers: MutableProperty<[Beer]>
     private let searchViewModel: SearchViewModel
@@ -31,27 +28,29 @@ class BeersViewModel {
     
     init() {
         beers = MutableProperty([])
-//        scrollToTopPipe = VoidSignal.pipe()
         beersDataSource = MutableProperty([])
         serialDisposable = SerialDisposable(nil)
         
         searchViewModel = SearchViewModel()
         searchViewModel.delegate = self
         
-        beersDataSourceDisposable = beers.signal.observeValues({ (newBeers: [Beer]) in
-            if (self.isNewSearch) {
-                self.isNewSearch = false
-                self.beersDataSource.value = newBeers
-//                self.scrollToTopPipe.input.send(value: ())
+        beersDataSourceDisposable = beers.signal.observeValues({ [weak self] (newBeers: [Beer]) in
+            if let isNewSearch = self?.isNewSearch, isNewSearch {
+                self?.isNewSearch = false
+                self?.beersDataSource.value = newBeers
+                
                 OSLogger.dataFlowLog(message: "Setting \(newBeers.count) new Beer Models as result of a text search", access: .public, type: .debug)
-            } else if (self.isNewFilter) {
-                self.isNewFilter = false
-                self.beersDataSource.value = newBeers
-//                self.scrollToTopPipe.input.send(value: ())
+            } else if let isNewFilter = self?.isNewFilter, isNewFilter {
+                self?.isNewFilter = false
+                self?.beersDataSource.value = newBeers
+                
                 OSLogger.dataFlowLog(message: "Setting \(newBeers.count) new Beer Models as result of applying a filter", access: .public, type: .debug)
             } else {
-                self.beersDataSource.value.append(contentsOf: newBeers)
-                OSLogger.dataFlowLog(message: "Appending \(newBeers.count) new Beer Models to previous \(String(describing: self.beersDataSource.value.count)) Beer Models", access: .public, type: .debug)
+                if let dataSource = self?.beersDataSource {
+                    OSLogger.dataFlowLog(message: "Appending \(newBeers.count) new Beer Models to previous \(String(describing: dataSource.value.count)) Beer Models", access: .public, type: .debug)
+                }
+                
+                self?.beersDataSource.value.append(contentsOf: newBeers)
             }
         })
         
@@ -85,17 +84,17 @@ class BeersViewModel {
             OSLogger.dataFlowLog(message: "Fetching new Beer Models from page \(currentPage)", access: .public, type: .debug)
             isFetching = true
             
-            serialDisposable.inner = beers <~ repository.getBeers(page: currentPage, searchString: searchViewModel.searchString, maltFilter: appliedFilter?.filterValue).map({ (result: Result<[Beer], NSError>) -> [Beer] in
+            serialDisposable.inner = beers <~ repository.getBeers(page: currentPage, searchString: searchViewModel.searchString, maltFilter: appliedFilter?.filterValue).map({ [weak self] (result: Result<[Beer], NSError>) -> [Beer] in
                 switch result {
                 case .success(let newBeers):
-                    self.stopFetching = newBeers.count == 0 ? true : false
+                    self?.stopFetching = newBeers.count == 0 ? true : false
                     return newBeers
                 case .failure:
                     return []
                 }
-            }).on(completed: {
-                self.currentPage += 1
-                self.isFetching = false
+            }).on(completed: { [weak self] in 
+                self?.currentPage += 1
+                self?.isFetching = false
             })
         } else if (isFetching) {
             OSLogger.dataFlowLog(message: "Fetching already in progress for page \(currentPage)", access: .public, type: .debug)
@@ -123,6 +122,7 @@ extension BeersViewModel: SearchUpdateDelegate {
         currentPage = 1
         isNewSearch = true
         stopFetching = false
+        
         getBeers()
     }
 }

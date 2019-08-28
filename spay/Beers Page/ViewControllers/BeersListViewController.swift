@@ -100,12 +100,6 @@ class BeersListViewController: UIViewController {
             reloadDisposable = tableView.reactive.reloadData <~ vm.beersDataSource.signal.map({_ in
                 OSLogger.uiLog(message: "Reloading TableView", access: .public, type: .debug)
                 return })
-            
-//            scrollDisposable = vm.scrollToTopPipe.output.signal.observe(on: UIScheduler()).observeValues { () in
-//                DispatchQueue.main.async {
-//                    self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-//                }
-//            }
         }
     }
     
