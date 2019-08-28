@@ -39,7 +39,7 @@
                             <rect key="frame" x="110" y="40" width="508" height="225"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="USw-bf-nkM" userLabel="Content View">
-                                    <rect key="frame" x="0.0" y="0.0" width="508" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="508" height="206"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyu-ma-Hib">
                                             <rect key="frame" x="0.0" y="0.0" width="41.5" height="24"/>
@@ -62,20 +62,47 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Malts" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zD6-Us-B2V">
+                                            <rect key="frame" x="0.0" y="99.5" width="41.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hops" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WET-B8-aOU">
+                                            <rect key="frame" x="0.0" y="135" width="40.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yeast" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1N-eD-2hB">
+                                            <rect key="frame" x="0.0" y="170.5" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <accessibility key="accessibilityConfiguration" identifier="ContentView"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WET-B8-aOU" secondAttribute="trailing" constant="15" id="4Ua-pF-bTe"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dyu-ma-Hib" secondAttribute="trailing" constant="15" id="9BT-2y-JJW"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="N1N-eD-2hB" secondAttribute="trailing" constant="15" id="BO1-ld-5Mo"/>
                                         <constraint firstAttribute="trailing" secondItem="0d7-Ko-81j" secondAttribute="trailing" constant="15" id="GHk-ag-CUU"/>
-                                        <constraint firstAttribute="bottom" secondItem="sPb-d6-Age" secondAttribute="bottom" constant="15" id="MMb-ab-y6g"/>
+                                        <constraint firstItem="zD6-Us-B2V" firstAttribute="leading" secondItem="USw-bf-nkM" secondAttribute="leading" id="JGm-aE-1ud"/>
+                                        <constraint firstItem="N1N-eD-2hB" firstAttribute="leading" secondItem="USw-bf-nkM" secondAttribute="leading" id="MB2-z3-bTb"/>
+                                        <constraint firstItem="N1N-eD-2hB" firstAttribute="top" secondItem="WET-B8-aOU" secondAttribute="bottom" constant="15" id="NfJ-RT-e6b"/>
                                         <constraint firstItem="sPb-d6-Age" firstAttribute="leading" secondItem="USw-bf-nkM" secondAttribute="leading" id="OPF-pT-nc4"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sPb-d6-Age" secondAttribute="trailing" constant="15" id="PB5-Cg-nPJ"/>
                                         <constraint firstItem="0d7-Ko-81j" firstAttribute="top" secondItem="Dyu-ma-Hib" secondAttribute="bottom" constant="2" id="TPT-KG-WWs"/>
                                         <constraint firstItem="sPb-d6-Age" firstAttribute="top" secondItem="0d7-Ko-81j" secondAttribute="bottom" constant="15" id="W2G-1c-cJ3"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zD6-Us-B2V" secondAttribute="trailing" constant="15" id="Y8x-C3-PHb"/>
+                                        <constraint firstItem="WET-B8-aOU" firstAttribute="leading" secondItem="USw-bf-nkM" secondAttribute="leading" id="YIV-N1-8he"/>
                                         <constraint firstItem="Dyu-ma-Hib" firstAttribute="top" secondItem="USw-bf-nkM" secondAttribute="top" id="huj-Q2-g0J"/>
+                                        <constraint firstItem="zD6-Us-B2V" firstAttribute="top" secondItem="sPb-d6-Age" secondAttribute="bottom" constant="15" id="igL-ZH-t7W"/>
                                         <constraint firstItem="0d7-Ko-81j" firstAttribute="leading" secondItem="USw-bf-nkM" secondAttribute="leading" id="lWV-ye-Aeu"/>
+                                        <constraint firstItem="WET-B8-aOU" firstAttribute="top" secondItem="zD6-Us-B2V" secondAttribute="bottom" constant="15" id="poG-S5-zY5"/>
                                         <constraint firstItem="Dyu-ma-Hib" firstAttribute="leading" secondItem="USw-bf-nkM" secondAttribute="leading" id="w9g-ej-woD"/>
+                                        <constraint firstAttribute="bottom" secondItem="N1N-eD-2hB" secondAttribute="bottom" constant="15" id="wSY-E8-Upt"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -139,8 +166,15 @@
                 <outlet property="bookmarkView" destination="6WX-sQ-gwA" id="fZ6-Nm-YOF"/>
                 <outlet property="detailsView" destination="VTT-Sc-Q4b" id="5wf-27-j1J"/>
                 <outlet property="detailsViewHeightConstraint" destination="jze-uC-OH0" id="owe-72-DvD"/>
+                <outlet property="hopsLabel" destination="WET-B8-aOU" id="mUO-8Z-Bna"/>
+                <outlet property="hopsTopConstraint" destination="poG-S5-zY5" id="PII-ok-fth"/>
+                <outlet property="maltsLabel" destination="zD6-Us-B2V" id="fSR-Mr-LuJ"/>
+                <outlet property="maltsTopConstraint" destination="igL-ZH-t7W" id="F4B-dO-3SO"/>
                 <outlet property="name" destination="Dyu-ma-Hib" id="tn1-KH-cMw"/>
+                <outlet property="scrollView" destination="V7r-eg-jeH" id="WQp-0S-Zid"/>
                 <outlet property="tagline" destination="0d7-Ko-81j" id="uTB-wG-Emg"/>
+                <outlet property="yeastLabel" destination="N1N-eD-2hB" id="tbE-uw-2am"/>
+                <outlet property="yeatsTopConstraint" destination="NfJ-RT-e6b" id="C4Z-YS-ydZ"/>
             </connections>
             <point key="canvasLocation" x="207.24637681159422" y="-265.84821428571428"/>
         </view>
