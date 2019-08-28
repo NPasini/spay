@@ -48,12 +48,13 @@ class BeersTableViewTest: XCTestCase {
         XCTAssertTrue(moreButton.exists)
     }
     
-    func testTapOnCell() {
+    func testTapOnShowMore() {
         let startVC = app.otherElements["BeerListViewController"]
         let tableView = startVC.tables["BeersTableView"]
         let firstCell = tableView.cells.firstMatch
+        let showMoreButton = firstCell.buttons["MoreInfoButton"]
         
-        firstCell.tap()
+        showMoreButton.tap()
         
         let beerDetailsView = startVC.otherElements["BeerDetailsView"]
         XCTAssertTrue(beerDetailsView.exists)
@@ -70,14 +71,42 @@ class BeersTableViewTest: XCTestCase {
         let contentView = scrollView.otherElements["ContentView"]
         XCTAssertTrue(contentView.exists)
         
-        let beerName = contentView.staticTexts["Name"]
+        let beerName = contentView.staticTexts["BeerName"]
         XCTAssertEqual(beerName.label, "Fake Beer 1")
         
-        let beerTagline = contentView.staticTexts["Tagline"]
+        let beerTagline = contentView.staticTexts["BeerTagline"]
         XCTAssertEqual(beerTagline.label, "Fake tagline 1")
         
-        let beerDescription = contentView.staticTexts["Description"]
+        let beerDescription = contentView.staticTexts["BeerDescription"]
         XCTAssertEqual(beerDescription.label, "Fake description 1")
+        
+        let beerMalts = contentView.staticTexts["BeerMalts"]
+        XCTAssertEqual(beerMalts.label, "Malts\nM1 10.0 kg")
+        
+        let beerHops = contentView.staticTexts["BeerHops"]
+        XCTAssertEqual(beerHops.label, "Hops\nH1 20.0 grams")
+        
+        let beerYeat = contentView.staticTexts["BeerYeast"]
+        XCTAssertEqual(beerYeat.label, "Yeast\nY1")
+    }
+    
+    func testCloseBeerDetails() {
+        let startVC = app.otherElements["BeerListViewController"]
+        let tableView = startVC.tables["BeersTableView"]
+        let firstCell = tableView.cells.firstMatch
+        let showMoreButton = firstCell.buttons["MoreInfoButton"]
+        
+        showMoreButton.tap()
+        
+        let beerDetailsView = startVC.otherElements["BeerDetailsView"]
+        XCTAssertTrue(beerDetailsView.exists)
+        
+        let overlay = beerDetailsView.otherElements["TopOverlay"]
+        XCTAssertTrue(overlay.exists)
+        
+        overlay.tap()
+        
+        XCTAssertFalse(beerDetailsView.exists)
     }
 }
 
