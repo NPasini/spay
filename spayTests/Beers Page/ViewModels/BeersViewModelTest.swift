@@ -17,34 +17,90 @@ class BeersViewModelTest: QuickSpec {
         context("Testing the BeersViewModel") {
             var viewModel: BeersViewModel!
             
+            beforeEach {
+                viewModel = BeersViewModel()
+            }
+            
             describe("A new instance of the ViewModel is created") {
-                it("The fisrt beer page should be retrieved") {
-                    viewModel = BeersViewModel()
+                it("With the correct values of the properties") {
                     expect(viewModel.currentPage).to(equal(1))
-                    expect(viewModel.isFetching).to(equal(true))
-                    expect(viewModel.beersModelsList.value.count).to(equal(0))
-                }
-                
-                it("When the API endpoint returns a response the Beers Models List should be updated with the values") {
-                    expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
-                    expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
-                    expect(viewModel.beersModelsList.value.count).toEventually(equal(25), timeout: 15)
+                    expect(viewModel.appliedFilter).to(beNil())
+                    expect(viewModel.isFetching).to(equal(false))
+                    expect(viewModel.isNewFilter).to(equal(false))
+                    expect(viewModel.isNewSearch).to(equal(false))
+                    expect(viewModel.stopFetching).to(equal(false))
+                    expect(viewModel.beersDataSource.value.count).to(equal(0))
                 }
             }
             
             describe("The ViewModel Instance is required to retrieve the next page of Beers from the API") {
-                it("The ViewModel should start to fetch the new data") {
+                it("The ViewModel should start to load the first page") {
                     viewModel.getBeers()
                     
-                    expect(viewModel.currentPage).to(equal(2))
+                    expect(viewModel.appliedFilter).to(beNil())
                     expect(viewModel.isFetching).to(equal(true))
-                    expect(viewModel.beersModelsList.value.count).to(equal(25))
-                }
-                
-                it("When the API endpoint returns a response, the new Beer Models should be added to the property beersModelsList") {
+                    expect(viewModel.isNewFilter).to(equal(false))
+                    expect(viewModel.isNewSearch).to(equal(false))
+                    expect(viewModel.stopFetching).to(equal(false))
+                    
                     expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
                     expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
-                    expect(viewModel.beersModelsList.value.count).toEventually(equal(50), timeout: 15)
+                    expect(viewModel.beersDataSource.value.count).toEventually(equal(25), timeout: 15)
+                }
+                
+                it("The ViewModel fetches further data") {
+                    //Load first page
+                    viewModel.getBeers()
+                    expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
+                    
+                    //Load second page
+                    viewModel.getBeers()
+                    expect(viewModel.appliedFilter).to(beNil())
+                    expect(viewModel.isFetching).to(equal(true))
+                    expect(viewModel.isNewFilter).to(equal(false))
+                    expect(viewModel.isNewSearch).to(equal(false))
+                    expect(viewModel.stopFetching).to(equal(false))
+                    
+                    expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
+                    expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
+                    expect(viewModel.beersDataSource.value.count).toEventually(equal(50), timeout: 15)
+                }
+                
+                it("When the API returns zero results in the page, the ViewModel should stop to fetch new data") {
+                    viewModel.getBeersForPage(1000)
+                    
+                    expect(viewModel.currentPage).toEventually(equal(1001), timeout: 15)
+                    expect(viewModel.stopFetching).toEventually(equal(true), timeout: 15)
+                }
+            }
+            
+            describe("The ViewModel Instance is required to retrieve the Beers matching a string") {
+                it("The ViewModel should start a new search") {
+                    viewModel.getBeersBy(beerName: "test")
+
+                    expect(viewModel.currentPage).to(equal(1))
+                    expect(viewModel.appliedFilter).to(beNil())
+                    expect(viewModel.isNewFilter).to(equal(false))
+                    expect(viewModel.stopFetching).to(equal(false))
+                    
+                    expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
+                    expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
+                }
+            }
+            
+            describe("The ViewModel Instance is required to retrieve the Beers matching a Malt filter") {
+                it("The ViewModel should start a new search") {
+                    let filter = Filter(value: "filter")
+                    viewModel.applyFilter(filter)
+                    
+                    expect(viewModel.currentPage).to(equal(1))
+                    expect(viewModel.isNewFilter).to(equal(true))
+                    expect(viewModel.isNewSearch).to(equal(false))
+                    expect(viewModel.stopFetching).to(equal(false))
+                    expect(viewModel.appliedFilter).to(equal(filter))
+                    
+                    expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
+                    expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
                 }
             }
         }

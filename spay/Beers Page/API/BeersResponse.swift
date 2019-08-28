@@ -30,11 +30,19 @@ extension BeersResponse: CustomDecodable {
     }
     
     static func valueForTest() -> CustomDecodable {
-        let beer1 = Beer(id: 1, name: "Fake Beer 1", malts: [Malt(name: "M1")], tagline: "Fake tagline 1", imageUrl: nil, description: "Fake description 1")
+        let m1 = Malt(name: "M1", amount: Amount(unit: "kg", value: 10))
+        let m2 = Malt(name: "M2", amount: Amount(unit: "kg", value: 20))
+        let m3 = Malt(name: "M3", amount: Amount(unit: "kg", value: 30))
         
-        let beer2 = Beer(id: 2, name: "Fake Beer 2", malts: [Malt(name: "M1"), Malt(name: "M2")], tagline: "Fake tagline 2", imageUrl: nil, description: "Fake description 2")
+        let h1 = Hop(add: "start", name: "H1", amount: Amount(unit: "grams", value: 10), attribute: "flavour")
+        let h2 = Hop(add: "end", name: "H2", amount: Amount(unit: "grams", value: 20), attribute: "flavour")
+        let h3 = Hop(add: "start", name: "H3", amount: Amount(unit: "grams", value: 30), attribute: "bitter")
         
-        let beer3 = Beer(id: 3, name: "Fake Beer 3", malts: [Malt(name: "M2"), Malt(name: "M3")], tagline: "Fake tagline 3", imageUrl: nil, description: "Fake description 3")
+        let beer1 = Beer(id: 1, hops: [h1], name: "Fake Beer 1", yeast: "Y1", malts: [m1], tagline: "Fake tagline 1", imageUrl: nil, description: "Fake description 1")
+        
+        let beer2 = Beer(id: 2, hops: [h1, h3], name: "Fake Beer 2", yeast: "Y2", malts: [m1, m2], tagline: "Fake tagline 2", imageUrl: nil, description: "Fake description 2")
+        
+        let beer3 = Beer(id: 3, hops: [h2], name: "Fake Beer 3", yeast: "Y3", malts: [m2, m3], tagline: "Fake tagline 3", imageUrl: nil, description: "Fake description 3")
         
         return BeersResponse(beers: [beer1, beer2, beer3])
     }
