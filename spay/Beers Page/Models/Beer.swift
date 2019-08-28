@@ -20,23 +20,31 @@ struct Beer: Decodable {
     
     enum AdditionalCodingKeys: CodingKey {
         case malt
+        case hops
+        case yeast
     }
     
     let id: Int
+    let hops: [Hop]
     let name: String
     let malts: [Malt]
+    let yeast: String?
     let tagline: String
     let imageUrl: String?
     let description: String
     
     init(id: Int,
+         hops: [Hop],
          name: String,
+         yeast: String,
          malts: [Malt],
          tagline: String,
          imageUrl: String?,
          description: String) {
         self.id = id
+        self.hops = hops
         self.name = name
+        self.yeast = yeast
         self.malts = malts
         self.tagline = tagline
         self.imageUrl = imageUrl
@@ -52,6 +60,8 @@ struct Beer: Decodable {
         imageUrl = try container.decodeIfPresent(String.self, forKey: .image_url)
         
         let additionalContainer = try container.nestedContainer(keyedBy: AdditionalCodingKeys.self, forKey: .ingredients)
+        hops = try additionalContainer.decode([Hop].self, forKey: .hops)
         malts = try additionalContainer.decode([Malt].self, forKey: .malt)
+        yeast = try additionalContainer.decodeIfPresent(String.self, forKey: .yeast)
     }
 }
