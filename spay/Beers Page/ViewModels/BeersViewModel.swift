@@ -60,7 +60,7 @@ class BeersViewModel {
     }
     
     //MARK: Public Functions
-    func applyFilter(_ filter: Filter) {
+    func applyFilter(_ filter: Filter?) {
         if (filter != appliedFilter) {
             currentPage = 1
             isNewFilter = true

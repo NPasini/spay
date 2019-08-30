@@ -123,9 +123,9 @@ class BeersListViewController: UIViewController {
         }
     }
     
-    private func deselectFilters() {
+    private func deselectOtherFilters(than selectedFilter: Filter?) {
         for filter: Filter in filters {
-            if (filter.selected) {
+            if (filter != selectedFilter && filter.selected) {
                 if let index = filters.firstIndex(of: filter), let selectedCell = filtersCollectionView.cellForItem(at: IndexPath(row: index, section: 0)) as? FilterCollectionViewCell {
                     selectedCell.tapOnFilter()
                 } else {
@@ -196,13 +196,17 @@ extension BeersListViewController: UICollectionViewDelegateFlowLayout {
 extension BeersListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? FilterCollectionViewCell {
-            deselectFilters()
-            searchBar.text = ""
-            
-            cell.tapOnFilter()
-            
             if let filter = cell.filter {
-                viewModel?.applyFilter(filter)
+                searchBar.text = ""
+                
+                deselectOtherFilters(than: filter)
+                cell.tapOnFilter()
+                
+                if (filter.selected) {
+                    viewModel?.applyFilter(filter)
+                } else {
+                    viewModel?.applyFilter(nil)
+                }
             }
         }
     }
@@ -210,7 +214,7 @@ extension BeersListViewController: UICollectionViewDelegate {
 
 extension BeersListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        deselectFilters()
+        deselectOtherFilters(than: nil)
         viewModel?.getBeersBy(beerName: searchText.trimmingCharacters(in: .newlines))
     }
 }
