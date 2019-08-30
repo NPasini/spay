@@ -22,7 +22,7 @@ class SearchViewModel {
         searchString = ""
         searchTextPipe = TextSignal.pipe()
         
-        searchDisposable = searchTextPipe.output.signal.throttle(0.5, on: QueueScheduler.init(qos: .background, name: "BeersViewModel.background.queue")).observeValues({ [weak self] (s: String) in
+        searchDisposable = searchTextPipe.output.signal.throttle(0.2, on: QueueScheduler.init(qos: .background, name: "BeersViewModel.background.queue")).observeValues({ [weak self] (s: String) in
             self?.searchString = s.replacingOccurrences(of: " ", with: "_")
             
             if let string = self?.searchString {
