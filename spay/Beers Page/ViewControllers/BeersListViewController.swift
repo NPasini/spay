@@ -196,9 +196,7 @@ extension BeersListViewController: UICollectionViewDelegateFlowLayout {
 extension BeersListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? FilterCollectionViewCell {
-            if let filter = cell.filter {
-                searchBar.text = ""
-                
+            if let filter = cell.filter {                
                 deselectOtherFilters(than: filter)
                 cell.tapOnFilter()
                 
@@ -214,7 +212,6 @@ extension BeersListViewController: UICollectionViewDelegate {
 
 extension BeersListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        deselectOtherFilters(than: nil)
         viewModel?.getBeersBy(beerName: searchText.trimmingCharacters(in: .newlines))
     }
 }

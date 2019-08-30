@@ -66,14 +66,12 @@ class BeersViewModel {
             isNewFilter = true
             stopFetching = false
             appliedFilter = filter
-            searchViewModel.searchString = ""
         }
         
         getBeers()
     }
     
     func getBeersBy(beerName: String) {
-        appliedFilter = nil
         searchViewModel.searchTextPipe.input.send(value: beerName)
     }
     
