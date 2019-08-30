@@ -24,12 +24,14 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQX-Cy-OPQ">
                                 <rect key="frame" x="15" y="12" width="90" height="21"/>
+                                <accessibility key="accessibilityConfiguration" identifier="FilterName"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" name="BackgroundGrey"/>
+                        <accessibility key="accessibilityConfiguration" identifier="FilterCellContent"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="sQX-Cy-OPQ" secondAttribute="trailing" constant="15" id="UXa-to-AAR"/>
                             <constraint firstAttribute="bottom" secondItem="sQX-Cy-OPQ" secondAttribute="bottom" constant="12" id="erA-dH-f2N"/>
@@ -47,6 +49,9 @@
                 <constraint firstItem="3Vw-fv-N95" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Xsc-J6-j50"/>
             </constraints>
             <size key="customSize" width="146" height="50"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="FilterCollectionViewCell"/>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="content" destination="3Vw-fv-N95" id="BAD-GI-0dY"/>
                 <outlet property="filterLabel" destination="sQX-Cy-OPQ" id="abt-1m-zTg"/>

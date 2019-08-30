@@ -22,16 +22,15 @@ class LaunchTest: XCTestCase {
         let startVC = app.otherElements["BeerListViewController"]
         XCTAssertTrue(startVC.exists)
         
-        //TableView
-        XCTAssertEqual(startVC.tables.count, 1)
+        //TableView visible
         let tableView = startVC.tables["BeersTableView"]
         XCTAssertTrue(tableView.exists)
         
-        //SearchBar
+        //SearchBar visible
         let searchView = startVC.otherElements["SearchBar"]
         XCTAssertTrue(searchView.exists)
         
-        //OffersView
+        //OffersView visible
         let offersView = startVC.otherElements["OffersView"]
         XCTAssertTrue(offersView.exists)
         let offerName = offersView.staticTexts.element(matching:.any, identifier: "OfferTitle")
@@ -41,8 +40,7 @@ class LaunchTest: XCTestCase {
         XCTAssertTrue(offerDescription.exists)
         XCTAssertEqual(offerDescription.label, "Free shipping on orders over 60€")
         
-        //FilterView
-        XCTAssertEqual(startVC.collectionViews.count, 1)
+        //FilterView visible
         let collectionView = startVC.collectionViews["FiltersCollectionView"]
         XCTAssertTrue(collectionView.exists)
     }
