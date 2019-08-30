@@ -22,11 +22,25 @@ class FilterTest: XCTestCase {
         let startVC = app.otherElements["BeerListViewController"]
         let collectionView = startVC.collectionViews["FiltersCollectionView"]
         XCTAssertTrue(collectionView.exists)
-        XCTAssertEqual(collectionView.cells.count, 5)
         
-        let firstCellContent = collectionView.cells.matching(identifier: "FilterCollectionViewCell").otherElements.matching(identifier: "FilterCellContent")
-        let firstCellText = firstCellContent.staticTexts["Munich"]
-//        XCTAssertTrue(firstCell.exists)
-//        firstCell.tap()
+        let cell = collectionView.cells.matching(identifier: "FilterCollectionViewCell")
+        
+        let cellContent = cell.otherElements.matching(identifier: "FilterCellContent")
+        var cellText = cellContent.staticTexts["Munich"]
+        XCTAssertTrue(cellText.exists)
+        
+        cellText = cellContent.staticTexts["Dark Crystal"]
+        XCTAssertTrue(cellText.exists)
+        
+        cellText = cellContent.staticTexts["Caramalt"]
+        XCTAssertTrue(cellText.exists)
+        
+        collectionView.swipeLeft()
+        
+        cellText = cellContent.staticTexts["Wheat Malt"]
+        XCTAssertTrue(cellText.exists)
+        
+        cellText = cellContent.staticTexts["Maris Otter Extra Pale"]
+        XCTAssertTrue(cellText.exists)
     }
 }
