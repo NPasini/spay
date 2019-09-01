@@ -24,7 +24,7 @@ class BeerRepository {
             (observer, lifetime) in
             
             if let networkManager = self.networkManager {
-                let subscription = networkManager.performApi(request, QoS: .background, completionQueue: .main) { (result: Result<BeersResponse, NSError>) in
+                let subscription = networkManager.performApi(request, QoS: .default, completionQueue: .global(qos: .userInteractive)) { (result: Result<BeersResponse, NSError>) in
                     
                     switch result {
                     case .success(let response):
