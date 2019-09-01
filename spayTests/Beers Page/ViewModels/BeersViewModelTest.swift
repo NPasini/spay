@@ -103,6 +103,26 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
                 }
             }
+            
+            describe("The ViewModel Instance is required to retrieve the Beers matching a Malt filter and a string") {
+                it("The ViewModel should start a new search") {
+                    let filter = Filter(value: "filter")
+                    viewModel.applyFilter(filter)
+                    
+                    expect(viewModel.currentPage).to(equal(1))
+                    expect(viewModel.isNewFilter).to(equal(true))
+                    expect(viewModel.isNewSearch).to(equal(false))
+                    expect(viewModel.stopFetching).to(equal(false))
+                    expect(viewModel.appliedFilter).to(equal(filter))
+                    
+                    expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
+                    expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
+                    
+                    viewModel.getBeersBy(beerName: "test")
+                    expect(viewModel.isNewFilter).to(equal(false))
+                    expect(viewModel.appliedFilter).to(equal(filter))
+                }
+            }
         }
     }
 }
