@@ -40,7 +40,7 @@ class BeersListViewController: UIViewController {
         viewModel?.getBeers()
     }
     
-    override func didReceiveMemoryWarning() {
+    deinit {
         if let disposable1 = reloadDisposable, !disposable1.isDisposed {
             disposable1.dispose()
         }
@@ -52,13 +52,17 @@ class BeersListViewController: UIViewController {
     
     //MARK: Private Functions
     private func setFilters() {
-        let f1 = Filter(value: "Munich")
-        let f2 = Filter(value: "Dark Crystal")
-        let f3 = Filter(value: "Caramalt")
-        let f4 = Filter(value: "Wheat Malt")
-        let f5 = Filter(value: "Maris Otter Extra Pale")
-        
-        filters = [f1, f2, f3 ,f4, f5]
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate, appDelegate.isUITesting {
+            filters = Filter.mockedValues()
+        } else {
+            let f1 = Filter(value: "Munich")
+            let f2 = Filter(value: "Dark Crystal")
+            let f3 = Filter(value: "Caramalt")
+            let f4 = Filter(value: "Wheat Malt")
+            let f5 = Filter(value: "Maris Otter Extra Pale")
+            
+            filters = [f1, f2, f3 ,f4, f5]
+        }
     }
     
     private func configureUI() {

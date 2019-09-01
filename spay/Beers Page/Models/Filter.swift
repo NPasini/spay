@@ -33,3 +33,13 @@ extension Filter: Hashable {
         hasher.combine(filterValue)
     }
 }
+
+extension Filter {
+    static func mockedValues() -> [Filter] {
+        let f1 = Filter(value: "M1")
+        let f2 = Filter(value: "M2")
+        let f3 = Filter(value: "M3")
+        
+        return [f1, f2, f3]
+    }
+}
