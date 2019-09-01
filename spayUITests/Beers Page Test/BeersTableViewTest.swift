@@ -18,10 +18,6 @@ class BeersTableViewTest: XCTestCase {
         app.launch()
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-    
     func testTableViewSetDatasource() {
         let startVC = app.otherElements["BeerListViewController"]
         let tableView = startVC.tables["BeersTableView"]
@@ -33,9 +29,11 @@ class BeersTableViewTest: XCTestCase {
     func testTableViewCell() {
         let startVC = app.otherElements["BeerListViewController"]
         let tableView = startVC.tables["BeersTableView"]
-        let firstCell = tableView.cells.firstMatch
+        
+        XCTAssertEqual(tableView.cells.count, 3)
         
         //Check first mocked Beer
+        let firstCell = tableView.cells.firstMatch
         let beerName = firstCell.staticTexts.element(matching:.any, identifier: "Name")
         XCTAssertEqual(beerName.label, "Fake Beer 1")
         
@@ -52,17 +50,18 @@ class BeersTableViewTest: XCTestCase {
         tableView.swipeUp()
         
         //Check last mocked Beer
-        let lastCell = tableView.cells.matching(identifier: "BeerTableViewCell").otherElements.matching(identifier: "ContentView")
+        let lastCell = tableView.cells.containing(.staticText, identifier: "Fake Beer 3")
+        
         let lastCellName = lastCell.staticTexts.element(matching:.any, identifier: "Name")
-        XCTAssertEqual(lastCellName.label, "Fake Beer 4")
+        XCTAssertEqual(lastCellName.label, "Fake Beer 3")
         
-        let lastCellTagline = firstCell.staticTexts.element(matching:.any, identifier: "Tagline")
-        XCTAssertEqual(lastCellTagline.label, "Fake tagline 4")
+        let lastCellTagline = lastCell.staticTexts.element(matching:.any, identifier: "Tagline")
+        XCTAssertEqual(lastCellTagline.label, "Fake tagline 3")
         
-        let lastCellDescription = firstCell.staticTexts.element(matching:.any, identifier: "Description")
-        XCTAssertEqual(lastCellDescription.label, "Fake description 4")
+        let lastCellDescription = lastCell.staticTexts.element(matching:.any, identifier: "Description")
+        XCTAssertEqual(lastCellDescription.label, "Fake description 3")
         
-        let lastCellMoreButton = firstCell.buttons["MoreInfoButton"]
+        let lastCellMoreButton = lastCell.buttons["MoreInfoButton"]
         XCTAssertTrue(lastCellMoreButton.exists)
     }
     
