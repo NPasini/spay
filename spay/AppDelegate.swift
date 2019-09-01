@@ -12,10 +12,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var isUITesting: Bool = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         if (CommandLine.arguments.contains("--uitesting")) {
+            isUITesting = true
             AssemblerWrapper.shared.register(assemblies: [TestNetworkAssembly()])
         } else {
             AssemblerWrapper.shared.register(assemblies: [NetworkAssembly()])
