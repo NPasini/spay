@@ -20,6 +20,7 @@
 		740A42262313B8FC000AE63C /* UICollectionView+Registrable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42252313B8FC000AE63C /* UICollectionView+Registrable.swift */; };
 		740A42292313DF05000AE63C /* ViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42282313DF05000AE63C /* ViewProtocols.swift */; };
 		740A422B23145172000AE63C /* Malt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A422A23145172000AE63C /* Malt.swift */; };
+		74174D50231C48D200A8D2CA /* BeersResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74174D4F231C48D200A8D2CA /* BeersResponseMock.swift */; };
 		743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A85230C952B00646300 /* NetworkAssembly.swift */; };
 		743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A87230C97A800646300 /* AssemblerWrapper.swift */; };
 		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
@@ -111,6 +112,7 @@
 		740A42252313B8FC000AE63C /* UICollectionView+Registrable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Registrable.swift"; sourceTree = "<group>"; };
 		740A42282313DF05000AE63C /* ViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocols.swift; sourceTree = "<group>"; };
 		740A422A23145172000AE63C /* Malt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Malt.swift; sourceTree = "<group>"; };
+		74174D4F231C48D200A8D2CA /* BeersResponseMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersResponseMock.swift; sourceTree = "<group>"; };
 		743C6A85230C952B00646300 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		743C6A87230C97A800646300 /* AssemblerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerWrapper.swift; sourceTree = "<group>"; };
 		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
@@ -242,6 +244,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		74174D4E231C48BF00A8D2CA /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				74174D4F231C48D200A8D2CA /* BeersResponseMock.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		743C6A84230C94D800646300 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,8 +290,9 @@
 		743C6A8D230C995900646300 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				743C6A90230C99D700646300 /* BeersResponse.swift */,
 				743C6A8E230C997100646300 /* BeersRequest.swift */,
+				743C6A90230C99D700646300 /* BeersResponse.swift */,
+				74174D4E231C48BF00A8D2CA /* Test */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -901,6 +912,7 @@
 				74E98E6B2309F21200EB41E0 /* ResponseProtocols.swift in Sources */,
 				743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */,
 				743C6A8C230C992B00646300 /* Beer.swift in Sources */,
+				74174D50231C48D200A8D2CA /* BeersResponseMock.swift in Sources */,
 				740A42262313B8FC000AE63C /* UICollectionView+Registrable.swift in Sources */,
 				745A72812309E2320000C436 /* AppDelegate.swift in Sources */,
 				74E98E752309F9BC00EB41E0 /* LogCategory.swift in Sources */,
