@@ -83,7 +83,7 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="FiltersCollectionView"/>
                                 </userDefinedRuntimeAttributes>
                             </collectionView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kro-lN-FPW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kro-lN-FPW">
                                 <rect key="frame" x="0.0" y="228" width="414" height="546"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
@@ -122,23 +122,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="zhi-LC-ox2">
                         <nil key="title"/>
-                        <view key="titleView" contentMode="scaleToFill" id="6XA-e4-XhO">
-                            <rect key="frame" x="207" y="22" width="0.0" height="0.0"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beer Box" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnD-DM-hcD">
-                                    <rect key="frame" x="-48.5" y="-15" width="97" height="30"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="CnD-DM-hcD" firstAttribute="centerY" secondItem="6XA-e4-XhO" secondAttribute="centerY" id="oev-9O-QKm"/>
-                                <constraint firstItem="CnD-DM-hcD" firstAttribute="centerX" secondItem="6XA-e4-XhO" secondAttribute="centerX" id="umN-RP-1P3"/>
-                            </constraints>
-                        </view>
                     </navigationItem>
                     <connections>
                         <outlet property="detailsView" destination="3jY-X9-eCc" id="Irb-Cy-NMp"/>
@@ -146,7 +129,6 @@
                         <outlet property="offersView" destination="Bmk-uo-uTq" id="49y-a8-yKm"/>
                         <outlet property="searchBar" destination="qKM-y2-T1z" id="lPI-KK-cws"/>
                         <outlet property="tableView" destination="kro-lN-FPW" id="OQj-1g-24w"/>
-                        <outlet property="titleLabel" destination="CnD-DM-hcD" id="Rhh-hS-YwT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

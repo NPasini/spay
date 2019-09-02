@@ -13,7 +13,6 @@ import ReactiveSwift
 class BeersListViewController: UIViewController {
     
     @IBOutlet weak var offersView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailsView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -74,12 +73,14 @@ class BeersListViewController: UIViewController {
     }
     
     private func setTitle() {
+        let titleLabel = UILabel()
         let fullTitle = NSMutableAttributedString(string: "")
         let title = NSAttributedString(string: "Beer", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .light), NSAttributedString.Key.foregroundColor: UIColor.white])
         let boldTitle = NSAttributedString(string: " Box", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white])
         fullTitle.append(title)
         fullTitle.append(boldTitle)
         titleLabel.attributedText = fullTitle
+        self.navigationItem.titleView = titleLabel
     }
     
     private func configureSearchBar() {
