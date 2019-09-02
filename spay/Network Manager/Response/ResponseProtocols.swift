@@ -9,6 +9,5 @@
 import Foundation
 
 protocol CustomDecodable: Decodable {
-    static func mockedValue() -> CustomDecodable
     static func decode(_ data: Data) -> CustomDecodable?
 }
