@@ -76,20 +76,6 @@ class BeersViewModelTest: QuickSpec {
                 }
             }
             
-            describe("when the ViewModel Instance is required to retrieve the Beers matching a string") {
-                it("the ViewModel should send a new API request") {
-                    viewModel.getBeersBy(beerName: "test")
-
-                    expect(viewModel.currentPage).to(equal(1))
-                    expect(viewModel.appliedFilter).to(beNil())
-                    expect(viewModel.isFetching).to(equal(false))
-                    expect(viewModel.isNewFilter).to(equal(false))
-                    expect(viewModel.isNewSearch).to(equal(false))
-                    expect(viewModel.stopFetching.value).to(equal(false))
-                    expect(viewModel.beersDataSource.value.count).to(equal(3))
-                }
-            }
-            
             describe("when the ViewModel Instance is required to retrieve the Beers matching a Malt filter") {
                 it("the ViewModel should send a new API request") {
                     let filter = Filter(value: "filter")

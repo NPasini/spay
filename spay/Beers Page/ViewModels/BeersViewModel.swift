@@ -17,12 +17,12 @@ class BeersViewModel {
     private(set) var isNewSearch: Bool = false
     private(set) var isNewFilter: Bool = false
     private(set) var appliedFilter: Filter? = nil
+    private(set) var searchViewModel: SearchViewModel
     
     let stopFetching: Property<Bool>
     let beersDataSource: MutableProperty<[Beer]>
     
     private let beers: MutableProperty<[Beer]>
-    private let searchViewModel: SearchViewModel
     private let serialDisposable: SerialDisposable
     private var beersDataSourceDisposable: Disposable?
     private let stopFetchingPipe: (input: BoolSignal.Observer, output: BoolSignal)
