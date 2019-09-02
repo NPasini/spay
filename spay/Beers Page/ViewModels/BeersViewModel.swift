@@ -27,7 +27,7 @@ class BeersViewModel {
     private var beersDataSourceDisposable: Disposable?
     private let stopFetchingPipe: (input: BoolSignal.Observer, output: BoolSignal)
     
-    private let repository: BeerRepository = BeerRepository()
+    private let repository: BeersRepositoryService? = AssemblerWrapper.shared.resolve(BeersRepositoryService.self)
     
     init() {
         beers = MutableProperty([])
@@ -64,12 +64,9 @@ class BeersViewModel {
     //MARK: Public Functions
     func applyFilter(_ filter: Filter?) {
         if (filter != appliedFilter) {
-            currentPage = 1
             isNewFilter = true
-            isFetching = false
             appliedFilter = filter
-            beersDataSource.value = []
-            stopFetchingPipe.input.send(value: false)
+            resetForNewResult()
         }
         
         getBeers()
@@ -81,7 +78,7 @@ class BeersViewModel {
     
     func getBeersForPage(_ page: Int) {
         currentPage = page
-        beersDataSource.value = []
+        isFetching = false
         stopFetchingPipe.input.send(value: false)
         
         getBeers()
@@ -92,19 +89,21 @@ class BeersViewModel {
             OSLogger.dataFlowLog(message: "Fetching new Beer Models from page \(currentPage)", access: .public, type: .debug)
             isFetching = true
             
-            serialDisposable.inner = beers <~ repository.getBeers(page: currentPage, searchString: searchViewModel.searchString, maltFilter: appliedFilter?.filterValue).map({ [weak self] (result: Result<[Beer], NSError>) -> [Beer] in
-                switch result {
-                case .success(let newBeers):
-                    let fetchingValue = newBeers.count == 0 ? true : false
-                    self?.stopFetchingPipe.input.send(value: fetchingValue)
-                    return newBeers
-                case .failure:
-                    return []
-                }
-            }).on(completed: { [weak self] in 
-                self?.currentPage += 1
-                self?.isFetching = false
-            })
+            if let beersRepository = repository {
+                serialDisposable.inner = beers <~ beersRepository.getBeers(page: currentPage, searchString: searchViewModel.searchString, maltFilter: appliedFilter?.filterValue).map({ [weak self] (result: Result<[Beer], NSError>) -> [Beer] in
+                    switch result {
+                    case .success(let newBeers):
+                        let fetchingValue = newBeers.count == 0 ? true : false
+                        self?.stopFetchingPipe.input.send(value: fetchingValue)
+                        return newBeers
+                    case .failure:
+                        return []
+                    }
+                }).on(completed: { [weak self] in
+                    self?.currentPage += 1
+                    self?.isFetching = false
+                })
+            }
         } else if (isFetching) {
             OSLogger.dataFlowLog(message: "Fetching already in progress for page \(currentPage)", access: .public, type: .debug)
         } else if (stopFetching.value) {
@@ -113,6 +112,13 @@ class BeersViewModel {
     }
     
     //MARK: Private Functions
+    private func resetForNewResult() {
+        currentPage = 1
+        isFetching = false
+        beersDataSource.value = []
+        stopFetchingPipe.input.send(value: false)
+    }
+    
     private func dispose() {
         OSLogger.dataFlowLog(message: "Disposing BeersViewModel", access: .public, type: .debug)
         
@@ -128,12 +134,8 @@ class BeersViewModel {
 
 extension BeersViewModel: SearchUpdateDelegate {
     func startNewSearch() {
-        currentPage = 1
         isNewSearch = true
-        isFetching = false
-        beersDataSource.value = []
-        stopFetchingPipe.input.send(value: false)
-        
+        resetForNewResult()
         getBeers()
     }
 }
