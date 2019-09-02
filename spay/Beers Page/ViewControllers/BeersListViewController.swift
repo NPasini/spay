@@ -20,9 +20,8 @@ class BeersListViewController: UIViewController {
     
     private var filters: [Filter] = []
     private var viewModel: BeersViewModel?
-    private var reloadDisposable: Disposable?
-    private var scrollDisposable: Disposable?
     private var beerDetailsView: BeerDetailsView?
+    private var compositeDisposable = CompositeDisposable()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +39,8 @@ class BeersListViewController: UIViewController {
     }
     
     deinit {
-        if let disposable1 = reloadDisposable, !disposable1.isDisposed {
-            disposable1.dispose()
-        }
-        
-        if let disposable2 = scrollDisposable, !disposable2.isDisposed {
-            disposable2.dispose()
+        if (!compositeDisposable.isDisposed) {
+            compositeDisposable.dispose()
         }
     }
     
@@ -92,7 +87,18 @@ class BeersListViewController: UIViewController {
         tableView.dataSource = self
         tableView.prefetchDataSource = self
         
-        tableView.tableFooterView = UIView(frame: .zero)
+        let spinnerView: UIActivityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
+        let footerView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60))
+        spinnerView.translatesAutoresizingMaskIntoConstraints = false
+        spinnerView.startAnimating()
+        footerView.addSubview(spinnerView)
+        NSLayoutConstraint.activate([
+            spinnerView.centerXAnchor.constraint(equalTo: footerView.centerXAnchor),
+            spinnerView.centerYAnchor.constraint(equalTo: footerView.centerYAnchor)
+            ])
+        
+        tableView.tableFooterView = footerView
+        
         tableView.backgroundColor = UIColor(named: "BackGroundDarkBlue")
         
         tableView.rowHeight = 180
@@ -101,9 +107,21 @@ class BeersListViewController: UIViewController {
         tableView.register(viewType: BeerTableViewCell.self)
         
         if let vm = viewModel {
-            reloadDisposable = tableView.reactive.reloadData <~ vm.beersDataSource.signal.map({_ in
+            compositeDisposable += tableView.reactive.reloadData <~ vm.beersDataSource.signal.map({_ in
                 OSLogger.uiLog(message: "Reloading TableView", access: .public, type: .debug)
                 return })
+            
+            compositeDisposable += spinnerView.reactive.isAnimating <~ vm.stopFetching.producer.map({ [weak self] (stopFetching: Bool) -> Bool in
+                DispatchQueue.main.async {
+                    if (stopFetching) {
+                        self?.tableView.tableFooterView = UIView(frame: .zero)
+                    } else {
+                        self?.tableView.tableFooterView = footerView
+                    }
+                }
+                
+                return !stopFetching
+            })
         }
     }
     
