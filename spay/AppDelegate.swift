@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if (CommandLine.arguments.contains("--uitesting")) {
             isUITesting = true
-            AssemblerWrapper.shared.register(assemblies: [TestNetworkAssembly()])
+            AssemblerWrapper.shared.register(assemblies: [TestRepositoryAssembly()])
         } else {
-            AssemblerWrapper.shared.register(assemblies: [NetworkAssembly()])
+            AssemblerWrapper.shared.register(assemblies: [NetworkAssembly(), RepositoriesAssembly()])
         }
         
         return true
