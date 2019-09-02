@@ -9,11 +9,11 @@
 import Foundation
 import ReactiveSwift
 
-class BeerRepository {
+class BeerRepository: BeersRepositoryService {
     let networkManager: NetworkService? = AssemblerWrapper.shared.resolve(NetworkService.self)
     
     //MARK: Public Functions
-    func getBeers(page: Int = 1, searchString: String?, maltFilter: String?) -> SignalProducer<Result<[Beer], NSError>, Never> {
+    func getBeers(page: Int = 1, searchString: String? = nil, maltFilter: String? = nil) -> SignalProducer<Result<[Beer], NSError>, Never> {
         let request = BeersRequest(page: page, searchString: searchString, maltFilter: maltFilter)
         return observableForGetBeers(request)
     }
