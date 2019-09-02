@@ -28,7 +28,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.isFetching).to(equal(false))
                     expect(viewModel.isNewFilter).to(equal(false))
                     expect(viewModel.isNewSearch).to(equal(false))
-                    expect(viewModel.stopFetching).to(equal(false))
+                    expect(viewModel.stopFetching.value).to(equal(false))
                     expect(viewModel.beersDataSource.value.count).to(equal(0))
                 }
             }
@@ -41,7 +41,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.isFetching).to(equal(true))
                     expect(viewModel.isNewFilter).to(equal(false))
                     expect(viewModel.isNewSearch).to(equal(false))
-                    expect(viewModel.stopFetching).to(equal(false))
+                    expect(viewModel.stopFetching.value).to(equal(false))
                     
                     expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
                     expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
@@ -59,7 +59,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.isFetching).to(equal(true))
                     expect(viewModel.isNewFilter).to(equal(false))
                     expect(viewModel.isNewSearch).to(equal(false))
-                    expect(viewModel.stopFetching).to(equal(false))
+                    expect(viewModel.stopFetching.value).to(equal(false))
                     
                     expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
                     expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
@@ -70,7 +70,7 @@ class BeersViewModelTest: QuickSpec {
                     viewModel.getBeersForPage(1000)
                     
                     expect(viewModel.currentPage).toEventually(equal(1001), timeout: 15)
-                    expect(viewModel.stopFetching).toEventually(equal(true), timeout: 15)
+                    expect(viewModel.stopFetching.value).toEventually(equal(true), timeout: 15)
                 }
             }
             
@@ -81,7 +81,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.currentPage).to(equal(1))
                     expect(viewModel.appliedFilter).to(beNil())
                     expect(viewModel.isNewFilter).to(equal(false))
-                    expect(viewModel.stopFetching).to(equal(false))
+                    expect(viewModel.stopFetching.value).to(equal(false))
                     
                     expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
                     expect(viewModel.isFetching).toEventually(equal(false), timeout: 15)
@@ -96,7 +96,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.currentPage).to(equal(1))
                     expect(viewModel.isNewFilter).to(equal(true))
                     expect(viewModel.isNewSearch).to(equal(false))
-                    expect(viewModel.stopFetching).to(equal(false))
+                    expect(viewModel.stopFetching.value).to(equal(false))
                     expect(viewModel.appliedFilter).to(equal(filter))
                     
                     expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
@@ -112,7 +112,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.currentPage).to(equal(1))
                     expect(viewModel.isNewFilter).to(equal(true))
                     expect(viewModel.isNewSearch).to(equal(false))
-                    expect(viewModel.stopFetching).to(equal(false))
+                    expect(viewModel.stopFetching.value).to(equal(false))
                     expect(viewModel.appliedFilter).to(equal(filter))
                     
                     expect(viewModel.currentPage).toEventually(equal(2), timeout: 15)
