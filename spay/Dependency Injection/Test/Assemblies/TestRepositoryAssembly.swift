@@ -12,5 +12,6 @@ import Foundation
 class TestRepositoryAssembly: Assembly {
     func assemble(container: Container) {
         container.register(BeersRepositoryService.self) { _ in return TestBeersRepositorycontent() }
+        container.register(FiltersRepositoryService.self) { _ in return TestFilterRepositoryComponent() }
     }
 }

@@ -27,7 +27,8 @@ class BeersViewModel {
     private var beersDataSourceDisposable: Disposable?
     private let stopFetchingPipe: (input: BoolSignal.Observer, output: BoolSignal)
     
-    private let repository: BeersRepositoryService? = AssemblerWrapper.shared.resolve(BeersRepositoryService.self)
+    private let beersRepository: BeersRepositoryService? = AssemblerWrapper.shared.resolve(BeersRepositoryService.self)
+    private let filtersRepository: FiltersRepositoryService? = AssemblerWrapper.shared.resolve(FiltersRepositoryService.self)
     
     init() {
         beers = MutableProperty([])
@@ -62,6 +63,10 @@ class BeersViewModel {
     }
     
     //MARK: Public Functions
+    func getFilters() -> [Filter]? {
+        return filtersRepository?.getFilters()
+    }
+    
     func applyFilter(_ filter: Filter?) {
         if (filter != appliedFilter) {
             isNewFilter = true
@@ -89,7 +94,7 @@ class BeersViewModel {
             OSLogger.dataFlowLog(message: "Fetching new Beer Models from page \(currentPage)", access: .public, type: .debug)
             isFetching = true
             
-            if let beersRepository = repository {
+            if let beersRepository = beersRepository {
                 serialDisposable.inner = beers <~ beersRepository.getBeers(page: currentPage, searchString: searchViewModel.searchString, maltFilter: appliedFilter?.filterValue).map({ [weak self] (result: Result<[Beer], NSError>) -> [Beer] in
                     switch result {
                     case .success(let newBeers):

@@ -26,6 +26,9 @@
 		74174D5D231DA2EC00A8D2CA /* BeersRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74174D5C231DA2EC00A8D2CA /* BeersRepositoryService.swift */; };
 		74174D5F231DA7B100A8D2CA /* TestRepositoryAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74174D5E231DA7B100A8D2CA /* TestRepositoryAssembly.swift */; };
 		74174D61231DA7C500A8D2CA /* TestBeersRepositoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74174D60231DA7C500A8D2CA /* TestBeersRepositoryComponent.swift */; };
+		74174D63231DB96A00A8D2CA /* FiltersRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74174D62231DB96A00A8D2CA /* FiltersRepositoryService.swift */; };
+		74174D65231DB9A800A8D2CA /* FilterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74174D64231DB9A800A8D2CA /* FilterRepository.swift */; };
+		74174D67231DBA4200A8D2CA /* TestFilterRepositoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74174D66231DBA4200A8D2CA /* TestFilterRepositoryComponent.swift */; };
 		743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A85230C952B00646300 /* NetworkAssembly.swift */; };
 		743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A87230C97A800646300 /* AssemblerWrapper.swift */; };
 		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
@@ -120,6 +123,9 @@
 		74174D5C231DA2EC00A8D2CA /* BeersRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeersRepositoryService.swift; sourceTree = "<group>"; };
 		74174D5E231DA7B100A8D2CA /* TestRepositoryAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRepositoryAssembly.swift; sourceTree = "<group>"; };
 		74174D60231DA7C500A8D2CA /* TestBeersRepositoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBeersRepositoryComponent.swift; sourceTree = "<group>"; };
+		74174D62231DB96A00A8D2CA /* FiltersRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRepositoryService.swift; sourceTree = "<group>"; };
+		74174D64231DB9A800A8D2CA /* FilterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRepository.swift; sourceTree = "<group>"; };
+		74174D66231DBA4200A8D2CA /* TestFilterRepositoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFilterRepositoryComponent.swift; sourceTree = "<group>"; };
 		743C6A85230C952B00646300 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		743C6A87230C97A800646300 /* AssemblerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerWrapper.swift; sourceTree = "<group>"; };
 		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
@@ -448,6 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				7461CEEA230DF30200168408 /* BeersRepository.swift */,
+				74174D64231DB9A800A8D2CA /* FilterRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -482,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				74174D60231DA7C500A8D2CA /* TestBeersRepositoryComponent.swift */,
+				74174D66231DBA4200A8D2CA /* TestFilterRepositoryComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -561,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				74174D5C231DA2EC00A8D2CA /* BeersRepositoryService.swift */,
+				74174D62231DB96A00A8D2CA /* FiltersRepositoryService.swift */,
 				74E98E81230BB89000EB41E0 /* NetworkService.swift */,
 			);
 			path = Services;
@@ -910,6 +919,7 @@
 				74E98E6A2309F21200EB41E0 /* APIResponse.swift in Sources */,
 				74E98E5B2309F0D900EB41E0 /* DispatchWorkItemSubscription.swift in Sources */,
 				7461CEE4230DE5FC00168408 /* BeerTableViewCell.swift in Sources */,
+				74174D63231DB96A00A8D2CA /* FiltersRepositoryService.swift in Sources */,
 				74DA399E231550E100EB6764 /* FilterCollectionViewCell.swift in Sources */,
 				743C6A91230C99D700646300 /* BeersResponse.swift in Sources */,
 				74174D52231CE86300A8D2CA /* ReactiveExtensions.swift in Sources */,
@@ -918,6 +928,7 @@
 				74174D5F231DA7B100A8D2CA /* TestRepositoryAssembly.swift in Sources */,
 				74E98E632309F1C400EB41E0 /* APIRequestPerformerFactory.swift in Sources */,
 				740A42292313DF05000AE63C /* ViewProtocols.swift in Sources */,
+				74174D65231DB9A800A8D2CA /* FilterRepository.swift in Sources */,
 				743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */,
 				74E98E6B2309F21200EB41E0 /* ResponseProtocols.swift in Sources */,
 				743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */,
@@ -935,6 +946,7 @@
 				740A422B23145172000AE63C /* Malt.swift in Sources */,
 				740A421723118E12000AE63C /* BeerDetailsView.swift in Sources */,
 				74DA399B2315273100EB6764 /* ViewModelProtocols.swift in Sources */,
+				74174D67231DBA4200A8D2CA /* TestFilterRepositoryComponent.swift in Sources */,
 				740A421D23119829000AE63C /* BookmarkView.swift in Sources */,
 				740A42222313B492000AE63C /* Bundle+View.swift in Sources */,
 				7461CEEB230DF30200168408 /* BeersRepository.swift in Sources */,
