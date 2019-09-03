@@ -77,9 +77,9 @@ class BeersViewModelTest: QuickSpec {
             }
             
             describe("when the ViewModel Instance is required to retrieve the Beers matching a Malt filter") {
-                it("the ViewModel should send a new API request") {
+                it("the ViewModel should send a new API request amnd reset the datasource") {
                     let filter = Filter(value: "filter")
-                    viewModel.applyFilter(filter)
+                    viewModel.getBeersWithFilter(filter)
                     
                     expect(viewModel.currentPage).to(equal(2))
                     expect(viewModel.isFetching).to(equal(false))
@@ -94,7 +94,7 @@ class BeersViewModelTest: QuickSpec {
             describe("when the ViewModel Instance is required to retrieve the Beers matching a Malt filter and a string") {
                 it("the ViewModel should send a new API request") {
                     let filter = Filter(value: "filter")
-                    viewModel.applyFilter(filter)
+                    viewModel.getBeersWithFilter(filter)
                     
                     expect(viewModel.currentPage).to(equal(2))
                     expect(viewModel.isFetching).to(equal(false))
@@ -104,13 +104,14 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.stopFetching.value).to(equal(false))
                     expect(viewModel.beersDataSource.value.count).to(equal(3))
                     
-                    viewModel.getBeersBy(beerName: "test")
+                    viewModel.getBeersByNameSearch("test")
                     expect(viewModel.currentPage).to(equal(2))
                     expect(viewModel.isFetching).to(equal(false))
                     expect(viewModel.isNewFilter).to(equal(false))
                     expect(viewModel.isNewSearch).to(equal(false))
                     expect(viewModel.appliedFilter).to(equal(filter))
                     expect(viewModel.stopFetching.value).to(equal(false))
+                    expect(viewModel.beersDataSource.value.count).to(equal(3))
                 }
             }
         }

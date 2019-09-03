@@ -20,36 +20,27 @@ class SearchViewModelTest: QuickSpec {
             
             AssemblerWrapper.shared.register(assemblies: [TestRepositoryAssembly()])
             
-            describe("When SearchViewModel is instantiated") {
+            describe("when SearchViewModel is instantiated") {
                 beforeEach {
                     searchViewModel = SearchViewModel()
                 }
                 
-                it("The values of the properites are set to the default values") {
+                it("the values of the properites are set to the default values") {
                     expect(searchViewModel.searchString).to(equal(""))
                 }
             }
             
-            describe("When a search is triggered") {
+            describe("when a search is triggered") {
                 beforeEach {
                     beersViewModel = BeersViewModel()
                 }
                 
-                it("The search string is created and passed to the delegate") {
-                    beersViewModel.searchViewModel.searchTextPipe.input.send(value: "test string")
+                it("the search string is created and passed to the delegate") {
+                    beersViewModel.getBeersByNameSearch("test string")
                     
-                    expect(beersViewModel.isNewSearch).toEventually(equal(true), timeout: 5)
-                    expect(beersViewModel.searchViewModel.searchString).toEventually(equal("test_string"), timeout: 1)
-                }
-            }
-            
-            describe("when the SearchViewModel Instance is required to retrieve the Beers matching a string") {
-                it("the BeersViewModel should send a new API request") {
-                    beersViewModel.getBeersBy(beerName: "test")
-                    
-                    expect(beersViewModel.isNewSearch).toEventually(equal(true), timeout: 1)
-                    expect(beersViewModel.beersDataSource.value.count).toEventually(equal(3), timeout: 1)
-                    expect(beersViewModel.searchViewModel.searchString).toEventually(equal("test"), timeout: 1)
+                    expect(beersViewModel.isNewSearch).to(equal(false))
+                    expect(beersViewModel.beersDataSource.value.count).to(equal(3))
+                    expect(beersViewModel.searchViewModel.searchString).to(equal("test_string"))
                 }
             }
         }
