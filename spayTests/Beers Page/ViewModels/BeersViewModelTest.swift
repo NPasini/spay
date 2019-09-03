@@ -44,7 +44,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.isNewFilter).to(equal(false))
                     expect(viewModel.isNewSearch).to(equal(false))
                     expect(viewModel.stopFetching.value).to(equal(false))
-                    expect(viewModel.beersDataSource.value.count).to(equal(3))
+                    expect(viewModel.beersDataSource.value.count).to(equal(25))
                 }
                 
                 it("the ViewModel fetches further data the next times") {
@@ -59,7 +59,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.isNewFilter).to(equal(false))
                     expect(viewModel.isNewSearch).to(equal(false))
                     expect(viewModel.stopFetching.value).to(equal(false))
-                    expect(viewModel.beersDataSource.value.count).to(equal(6))
+                    expect(viewModel.beersDataSource.value.count).to(equal(50))
                 }
                 
                 it("when the API returns zero results in the page, the ViewModel should stop to fetch new data") {
@@ -67,12 +67,12 @@ class BeersViewModelTest: QuickSpec {
                     
                     expect(viewModel.currentPage).to(equal(101))
                     expect(viewModel.stopFetching.value).to(equal(true))
-                    expect(viewModel.beersDataSource.value.count).to(equal(0))
+                    expect(viewModel.beersDataSource.value.count).to(equal(3))
                     
                     viewModel.getBeers()
                     expect(viewModel.currentPage).to(equal(101))
                     expect(viewModel.stopFetching.value).to(equal(true))
-                    expect(viewModel.beersDataSource.value.count).to(equal(0))
+                    expect(viewModel.beersDataSource.value.count).to(equal(3))
                 }
             }
             
@@ -87,7 +87,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.isNewSearch).to(equal(false))
                     expect(viewModel.appliedFilter).to(equal(filter))
                     expect(viewModel.stopFetching.value).to(equal(false))
-                    expect(viewModel.beersDataSource.value.count).to(equal(3))
+                    expect(viewModel.beersDataSource.value.count).to(equal(25))
                 }
             }
             
@@ -102,7 +102,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.isNewSearch).to(equal(false))
                     expect(viewModel.appliedFilter).to(equal(filter))
                     expect(viewModel.stopFetching.value).to(equal(false))
-                    expect(viewModel.beersDataSource.value.count).to(equal(3))
+                    expect(viewModel.beersDataSource.value.count).to(equal(25))
                     
                     viewModel.getBeersByNameSearch("test")
                     expect(viewModel.currentPage).to(equal(2))
@@ -111,7 +111,7 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.isNewSearch).to(equal(false))
                     expect(viewModel.appliedFilter).to(equal(filter))
                     expect(viewModel.stopFetching.value).to(equal(false))
-                    expect(viewModel.beersDataSource.value.count).to(equal(3))
+                    expect(viewModel.beersDataSource.value.count).to(equal(25))
                 }
             }
         }

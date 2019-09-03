@@ -39,7 +39,7 @@ class SearchViewModelTest: QuickSpec {
                     beersViewModel.getBeersByNameSearch("test string")
                     
                     expect(beersViewModel.isNewSearch).to(equal(false))
-                    expect(beersViewModel.beersDataSource.value.count).to(equal(3))
+                    expect(beersViewModel.beersDataSource.value.count).to(equal(25))
                     expect(beersViewModel.searchViewModel.searchString).to(equal("test_string"))
                 }
             }

@@ -42,6 +42,6 @@ class FilterTest: XCTestCase {
         
         collectionView.cells.firstMatch.tap()
         
-        XCTAssertEqual(startVC.tables["BeersTableView"].cells.count, 3)
+        XCTAssertEqual(startVC.tables["BeersTableView"].cells.count, 25)
     }
 }

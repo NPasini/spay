@@ -23,7 +23,7 @@ class BeersTableViewTest: XCTestCase {
         let tableView = startVC.tables["BeersTableView"]
         
         XCTAssertTrue(tableView.exists)
-        XCTAssertEqual(tableView.cells.count, 3)
+        XCTAssertEqual(tableView.cells.count, 25)
     }
     
     func testTableViewCell() {
@@ -43,24 +43,6 @@ class BeersTableViewTest: XCTestCase {
         
         let moreButton = firstCell.buttons["MoreInfoButton"]
         XCTAssertTrue(moreButton.exists)
-        
-        //Swipe
-        tableView.swipeUp()
-        
-        //Check last mocked Beer
-        let lastCell = tableView.cells.containing(.staticText, identifier: "Fake Beer 3")
-        
-        let lastCellName = lastCell.staticTexts.element(matching:.any, identifier: "Name")
-        XCTAssertEqual(lastCellName.label, "Fake Beer 3")
-        
-        let lastCellTagline = lastCell.staticTexts.element(matching:.any, identifier: "Tagline")
-        XCTAssertEqual(lastCellTagline.label, "Fake tagline 3")
-        
-        let lastCellDescription = lastCell.staticTexts.element(matching:.any, identifier: "Description")
-        XCTAssertEqual(lastCellDescription.label, "Fake description 3")
-        
-        let lastCellMoreButton = lastCell.buttons["MoreInfoButton"]
-        XCTAssertTrue(lastCellMoreButton.exists)
     }
     
     func testTapOnShowMore() {

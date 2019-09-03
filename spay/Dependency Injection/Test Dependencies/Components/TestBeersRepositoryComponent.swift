@@ -11,6 +11,7 @@ import ReactiveSwift
 
 class TestBeersRepositorycontent: BeersRepositoryService {
     let fakeBeers: [Beer]
+    let fake25Beers: [Beer]
     
     init() {
         let fakeMalt1 = Malt(name: "M1", amount: Amount(unit: "kg", value: 10))
@@ -28,6 +29,7 @@ class TestBeersRepositorycontent: BeersRepositoryService {
         let fakeBeer3 = Beer(id: 3, hops: [fakeHop3], name: "Fake Beer 3", yeast: "Y3", malts: [fakeMalt2, fakeMalt3], tagline: "Fake tagline 3", imageUrl: nil, description: "Fake description 3")
         
         self.fakeBeers = [fakeBeer1, fakeBeer2, fakeBeer3]
+        self.fake25Beers = [fakeBeer1, fakeBeer2, fakeBeer3, fakeBeer1, fakeBeer2, fakeBeer3, fakeBeer1, fakeBeer2, fakeBeer3, fakeBeer1, fakeBeer2, fakeBeer3, fakeBeer1, fakeBeer2, fakeBeer3, fakeBeer1, fakeBeer2, fakeBeer3, fakeBeer1, fakeBeer2, fakeBeer3, fakeBeer1, fakeBeer2, fakeBeer3, fakeBeer1]
     }
     
     func getBeers(page: Int = 1, searchString: String? = nil, maltFilter: String? = nil) -> SignalProducer<Result<[Beer], NSError>, Never> {
@@ -35,9 +37,9 @@ class TestBeersRepositorycontent: BeersRepositoryService {
             if (page == 0) {
                 observer.send(value: (Result(failure: SPError(networkError: .unknownError))))
             } else if (page > 0 && page < 100) {
-                observer.send(value: Result(success: self?.fakeBeers ?? []))
+                observer.send(value: Result(success: self?.fake25Beers ?? []))
             } else if (page >= 100) {
-                observer.send(value: Result(success: []))
+                observer.send(value: Result(success: self?.fakeBeers ?? []))
             }
             
             observer.sendCompleted()
