@@ -98,7 +98,7 @@ class BeersViewModel {
                 serialDisposable.inner = beers <~ beersRepository.getBeers(page: currentPage, searchString: searchViewModel.searchString, maltFilter: appliedFilter?.filterValue).map({ [weak self] (result: Result<[Beer], NSError>) -> [Beer] in
                     switch result {
                     case .success(let newBeers):
-                        let fetchingValue = newBeers.count == 0 ? true : false
+                        let fetchingValue = newBeers.count < 25 ? true : false
                         self?.stopFetchingPipe.input.send(value: fetchingValue)
                         return newBeers
                     case .failure:
