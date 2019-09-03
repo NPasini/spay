@@ -14,7 +14,7 @@ This project has been created using XCode 10.3 and Swift 5.
 ## Organization of the Project
 
 The main target is spay, which is structured in the following way:
-* Beers Page folder: contains all the files created for the the Beers Page;
+* Beers Page: contains all the files created for the the Beers Page which are organized in sub-folders by the purpose of each file;
 * Dependency Injection: this folder contains all the service that are going to be injected when needed and also their implemntation used for the tests;
 * Network Manage: here is contained the implementation of the Network Manager;
 * Utilities: this folder contains some useful classes used by the application such as the Logger and Extensions.
