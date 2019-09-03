@@ -23,14 +23,12 @@ class BeersTableViewTest: XCTestCase {
         let tableView = startVC.tables["BeersTableView"]
         
         XCTAssertTrue(tableView.exists)
-        XCTAssertTrue(tableView.cells.count == 3)
+        XCTAssertEqual(tableView.cells.count, 3)
     }
     
     func testTableViewCell() {
         let startVC = app.otherElements["BeerListViewController"]
         let tableView = startVC.tables["BeersTableView"]
-        
-        XCTAssertEqual(tableView.cells.count, 3)
         
         //Check first mocked Beer
         let firstCell = tableView.cells.firstMatch
