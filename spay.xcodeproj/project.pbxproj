@@ -457,13 +457,13 @@
 			path = "Beers Page Test";
 			sourceTree = "<group>";
 		};
-		74C494F323148B2E006CD277 /* Test */ = {
+		74C494F323148B2E006CD277 /* Test Depepndencies */ = {
 			isa = PBXGroup;
 			children = (
 				74C494F423148B4B006CD277 /* Assemblies */,
 				74C494F523148B51006CD277 /* Components */,
 			);
-			path = Test;
+			path = "Test Depepndencies";
 			sourceTree = "<group>";
 		};
 		74C494F423148B4B006CD277 /* Assemblies */ = {
@@ -549,7 +549,7 @@
 				743C6A87230C97A800646300 /* AssemblerWrapper.swift */,
 				743C6A84230C94D800646300 /* Assemblies */,
 				74E98E7E230BB3C000EB41E0 /* Services */,
-				74C494F323148B2E006CD277 /* Test */,
+				74C494F323148B2E006CD277 /* Test Depepndencies */,
 			);
 			path = "Dependency Injection";
 			sourceTree = "<group>";
