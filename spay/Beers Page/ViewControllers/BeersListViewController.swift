@@ -214,9 +214,9 @@ extension BeersListViewController: UICollectionViewDelegate {
                 cell.tapOnFilter()
                 
                 if (filter.selected) {
-                    viewModel?.applyFilter(filter)
+                    viewModel?.getBeersWithFilter(filter)
                 } else {
-                    viewModel?.applyFilter(nil)
+                    viewModel?.getBeersWithFilter(nil)
                 }
             }
         }
@@ -225,7 +225,7 @@ extension BeersListViewController: UICollectionViewDelegate {
 
 extension BeersListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel?.getBeersBy(beerName: searchText.trimmingCharacters(in: .newlines))
+        viewModel?.getBeersByNameSearch(searchText.trimmingCharacters(in: .newlines))
     }
 }
 

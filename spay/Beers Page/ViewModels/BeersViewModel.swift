@@ -67,7 +67,7 @@ class BeersViewModel {
         return filtersRepository?.getFilters()
     }
     
-    func applyFilter(_ filter: Filter?) {
+    func getBeersWithFilter(_ filter: Filter?) {
         if (filter != appliedFilter) {
             isNewFilter = true
             appliedFilter = filter
@@ -77,7 +77,7 @@ class BeersViewModel {
         getBeers()
     }
     
-    func getBeersBy(beerName: String) {
+    func getBeersByNameSearch(_ beerName: String) {
         searchViewModel.searchTextPipe.input.send(value: beerName)
     }
     
