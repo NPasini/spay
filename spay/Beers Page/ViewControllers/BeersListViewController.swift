@@ -58,17 +58,16 @@ class BeersListViewController: UIViewController {
     }
     
     private func setTitle() {
+        let fullTitle = NSMutableAttributedString(attributedString: NSAttributedString(string: "Beer", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .light), NSAttributedString.Key.foregroundColor: UIColor.white]))
+        fullTitle.append(NSAttributedString(string: " Box", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white]))
+        
         let titleLabel = UILabel()
-        let fullTitle = NSMutableAttributedString(string: "")
-        let title = NSAttributedString(string: "Beer", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .light), NSAttributedString.Key.foregroundColor: UIColor.white])
-        let boldTitle = NSAttributedString(string: " Box", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 25, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white])
-        fullTitle.append(title)
-        fullTitle.append(boldTitle)
         titleLabel.attributedText = fullTitle
         self.navigationItem.titleView = titleLabel
     }
     
     private func configureSearchBar() {
+        searchBar.delegate = self
         compositeDisposable += searchBar.reactive.continuousTextValues.throttle(0.5, on: QueueScheduler.init(qos: .background, name: "BeersViewModel.background.queue")).observeValues { [weak self] (text: String?) in
             if let searchText = text {
                 self?.viewModel?.getBeersByNameSearch(searchText)
@@ -82,7 +81,7 @@ class BeersListViewController: UIViewController {
         tableView.prefetchDataSource = self
         
         let spinnerView: UIActivityIndicatorView = UIActivityIndicatorView(style: .whiteLarge)
-        let footerView = UIView.init(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60))
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 60))
         spinnerView.translatesAutoresizingMaskIntoConstraints = false
         spinnerView.startAnimating()
         footerView.addSubview(spinnerView)
@@ -91,14 +90,10 @@ class BeersListViewController: UIViewController {
             spinnerView.centerYAnchor.constraint(equalTo: footerView.centerYAnchor)
             ])
         
-        tableView.tableFooterView = footerView
-        
-        tableView.backgroundColor = UIColor(named: "BackGroundDarkBlue")
-        
         tableView.rowHeight = 180
-        tableView.estimatedRowHeight = UITableView.automaticDimension
-        
+        tableView.tableFooterView = footerView
         tableView.register(viewType: BeerTableViewCell.self)
+        tableView.backgroundColor = UIColor(named: "BackGroundDarkBlue")
         
         if let vm = viewModel {
             compositeDisposable += tableView.reactive.reloadData <~ vm.beersDataSource.signal.map({_ in
@@ -122,14 +117,12 @@ class BeersListViewController: UIViewController {
     private func configureCollectionView() {
         filtersCollectionView.delegate = self
         filtersCollectionView.dataSource = self
-        
         filtersCollectionView.indicatorStyle = .white
+        filtersCollectionView.register(viewType: FilterCollectionViewCell.self)
         
         if let flowLayout = filtersCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
             flowLayout.estimatedItemSize = CGSize(width: 150, height: 45)
         }
-        
-        filtersCollectionView.register(viewType: FilterCollectionViewCell.self)
     }
     
     private func isLoadingCell(at indexPath: IndexPath) -> Bool {
@@ -224,6 +217,12 @@ extension BeersListViewController: UICollectionViewDelegate {
                 }
             }
         }
+    }
+}
+
+extension BeersListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
 
