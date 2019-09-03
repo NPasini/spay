@@ -69,7 +69,11 @@ class BeersListViewController: UIViewController {
     }
     
     private func configureSearchBar() {
-        searchBar.delegate = self
+        compositeDisposable += searchBar.reactive.continuousTextValues.throttle(0.5, on: QueueScheduler.init(qos: .background, name: "BeersViewModel.background.queue")).observeValues { [weak self] (text: String?) in
+            if let searchText = text {
+                self?.viewModel?.getBeersByNameSearch(searchText)
+            }
+        }
     }
     
     private func configureTableView() {
@@ -223,21 +227,17 @@ extension BeersListViewController: UICollectionViewDelegate {
     }
 }
 
-extension BeersListViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel?.getBeersByNameSearch(searchText.trimmingCharacters(in: .newlines))
-    }
-}
-
 extension BeersListViewController: BeerCellDelegate {
     func showMoreDetails(for model: Beer) {
         detailsView.isHidden = false
         beerDetailsView?.showDetails(for: model)
+        searchBar.isUserInteractionEnabled = false
     }
 }
 
 extension BeersListViewController: BeerDetailsViewDelegate {
     func closeDetailsView() {
         detailsView.isHidden = true
+        searchBar.isUserInteractionEnabled = true
     }
 }
