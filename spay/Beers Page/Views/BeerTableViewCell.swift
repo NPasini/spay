@@ -27,8 +27,8 @@ class BeerTableViewCell: UITableViewCell, Identifiable {
     override func prepareForReuse() {
         name.text = ""
         tagline.text = ""
+        beerImage.image = nil
         beerDescription.text = ""
-        beerImage.image = UIImage()
     }
     
     func configure(with model: Beer) {

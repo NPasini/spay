@@ -15,14 +15,14 @@ import Foundation
 class BeersResponseTest: QuickSpec {
     override func spec() {
         context("Testing the Get Beers API response") {
-            describe("The response should not be decoded"){
+            describe("the response should not be decoded"){
                 it("with empty data"){
                     let response = BeersResponse.decode(Data())
                     expect(response).to(beNil())
                 }
             }
             
-            describe("The response should be decoded") {
+            describe("the response should be decoded") {
                 it("with correct json to parse"){
                     let path = Bundle(for: type(of: self)).path(forResource: "beersResponse", ofType: "json") ?? ""
                     let data = (try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe))
@@ -48,7 +48,7 @@ class BeersResponseTest: QuickSpec {
                 }
             }
             
-            describe("The response should not be decoded") {
+            describe("the response should not be decoded") {
                 it("with a json where all the Beer objects have not all the mandatory fields"){
                     let path = Bundle(for: type(of: self)).path(forResource: "beersIncompleteResponse", ofType: "json") ?? ""
                     let data = (try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe))
@@ -63,7 +63,7 @@ class BeersResponseTest: QuickSpec {
                 }
             }
             
-            describe("The following beers model should be decoded") {
+            describe("the following beers model should be decoded") {
                 it("with a json where there is only a beer with empty malts array"){
                     let path = Bundle(for: type(of: self)).path(forResource: "oneBeerWithNoMalts", ofType: "json") ?? ""
                     let data = (try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe))
@@ -91,7 +91,7 @@ class BeersResponseTest: QuickSpec {
                 }
             }
             
-            describe("The following beers model should be decoded") {
+            describe("the following beers model should be decoded") {
                 it("with a json where there is only a beer with empty hops array"){
                     let path = Bundle(for: type(of: self)).path(forResource: "oneBeerWithNoHops", ofType: "json") ?? ""
                     let data = (try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe))
@@ -119,7 +119,7 @@ class BeersResponseTest: QuickSpec {
                 }
             }
             
-            describe("The following beers model should be decoded") {
+            describe("the following beers model should be decoded") {
                 it("with a json where there is only a beer with null yeats"){
                     let path = Bundle(for: type(of: self)).path(forResource: "oneBeerWithNoYeats", ofType: "json") ?? ""
                     let data = (try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe))

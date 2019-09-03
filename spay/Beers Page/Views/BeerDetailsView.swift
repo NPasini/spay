@@ -55,7 +55,7 @@ class BeerDetailsView: UIView {
                 self?.beerImage.image = image
             }
         } else {
-            beerImage.image = UIImage()
+            beerImage.image = nil
         }
         
         insertMalts(model.malts)

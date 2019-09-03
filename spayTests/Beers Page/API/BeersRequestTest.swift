@@ -15,7 +15,7 @@ import Foundation
 class BeersRequestTest: QuickSpec {
     override func spec() {
         context("Testing the Get Beers API request"){
-            describe("An istance of the request should contain correct endpoint and parameters"){
+            describe("an istance of the request should contain correct endpoint and parameters"){
                 it("when is created specifying the page"){
                     let request = BeersRequest(page: 1, searchString: nil, maltFilter: nil)
                     
