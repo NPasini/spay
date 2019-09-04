@@ -38,8 +38,10 @@ class TestBeersRepositorycontent: BeersRepositoryService {
                 observer.send(value: (Result(failure: SPError(networkError: .unknownError))))
             } else if (page > 0 && page < 100) {
                 observer.send(value: Result(success: self?.fake25Beers ?? []))
-            } else if (page >= 100) {
+            } else if (page == 100) {
                 observer.send(value: Result(success: self?.fakeBeers ?? []))
+            } else if (page > 100) {
+                observer.send(value: Result(failure: SPError(networkError: .invalidResponse)))
             }
             
             observer.sendCompleted()

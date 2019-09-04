@@ -74,6 +74,32 @@ class BeersViewModelTest: QuickSpec {
                     expect(viewModel.stopFetching.value).to(equal(true))
                     expect(viewModel.beersDataSource.value.count).to(equal(3))
                 }
+                
+                it("when the API returns an invalid response, the ViewModel should stop to fetch new data") {
+                    viewModel.getBeersForPage(101)
+                    
+                    expect(viewModel.currentPage).to(equal(102))
+                    expect(viewModel.stopFetching.value).to(equal(true))
+                    expect(viewModel.beersDataSource.value.count).to(equal(0))
+                    
+                    viewModel.getBeers()
+                    expect(viewModel.currentPage).to(equal(102))
+                    expect(viewModel.stopFetching.value).to(equal(true))
+                    expect(viewModel.beersDataSource.value.count).to(equal(0))
+                }
+                
+                it("the ViewModel should return new data after stopped fetching when the parameters of the search changes") {
+                    viewModel.getBeersForPage(101)
+                    
+                    expect(viewModel.currentPage).to(equal(102))
+                    expect(viewModel.stopFetching.value).to(equal(true))
+                    expect(viewModel.beersDataSource.value.count).to(equal(0))
+                    
+                    viewModel.getBeersByNameSearch("test")
+                    expect(viewModel.currentPage).to(equal(2))
+                    expect(viewModel.stopFetching.value).to(equal(false))
+                    expect(viewModel.beersDataSource.value.count).to(equal(25))
+                }
             }
             
             describe("when the ViewModel Instance is required to retrieve the Beers matching a Malt filter") {
