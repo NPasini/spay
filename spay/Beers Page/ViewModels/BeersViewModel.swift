@@ -102,6 +102,7 @@ class BeersViewModel {
                         self?.stopFetchingPipe.input.send(value: fetchingValue)
                         return newBeers
                     case .failure:
+                        self?.stopFetchingPipe.input.send(value: true)
                         return []
                     }
                 }).on(completed: { [weak self] in
