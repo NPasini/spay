@@ -16,9 +16,9 @@ spay is the main target, which is structured in the following way:
 * Beers Page: this folder contain all the files related to the page which displays the list of beers. Each file is added to a subfolder organized by the file types (e.g. Views, ViewControllers, Xibs, ...);
 * Dependency Injection: is the folder containing the definitions of the services that will be injected, their registration and mock for tests;
 * Network Manager: this folder contains the implementation of the Network Manager;
-* Utilities: in this folder you can find the Logger class used in the project, some Extensions and the definition of the Errors.
+* Utilities: in this folder you can find the Logger class used in the project, some Extensions and the definition of the Errors used.
 
-Inside the main target two Test targets are included: spayTest which contains the implementation of the Unit Tests and spayUITest which contains the implementations of different UI Tests.
+Inside the main target, two Test targets are included: spayTest which contains the implementation of the Unit Tests and spayUITest which contains the implementation of UI Tests.
 
 ## Author
 
