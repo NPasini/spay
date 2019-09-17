@@ -13,6 +13,7 @@ class APIRequest<T>: Requestable, Validatable, Processable where T: CustomDecoda
     let path: String
     let version: String
     let method: HTTPMethod
+    let timeout: TimeInterval?
     let headerParameters: HTTPHeaders?
     let bodyParameters: HTTPBodyParameters?
     let queryParameters: HTTPQueryParameters?
@@ -27,6 +28,7 @@ class APIRequest<T>: Requestable, Validatable, Processable where T: CustomDecoda
          path: String,
          version: String,
          method: HTTPMethod,
+         timeout: TimeInterval? = nil,
          headerParameters: HTTPHeaders? = nil,
          bodyParameters: HTTPBodyParameters? = nil,
          queryParameters: HTTPQueryParameters? = nil) {
@@ -35,6 +37,7 @@ class APIRequest<T>: Requestable, Validatable, Processable where T: CustomDecoda
         self.path = path
         self.method = method
         self.version = version
+        self.timeout = timeout
         self.bodyParameters = bodyParameters
         self.queryParameters = queryParameters
         
@@ -71,10 +74,11 @@ class GetRequest<T>: APIRequest<T> where T: CustomDecodable {
     init(host: String,
          path: String,
          version: String,
+         timeout: TimeInterval? = nil,
          headerParameters: HTTPHeaders? = nil,
          bodyParameters: HTTPBodyParameters? = nil,
          queryParameters: HTTPQueryParameters? = nil) {
         
-        super.init(host: host, path: path, version: version, method: HTTPMethod.get, headerParameters: headerParameters, bodyParameters: bodyParameters, queryParameters: queryParameters)
+        super.init(host: host, path: path, version: version, method: HTTPMethod.get, timeout: timeout, headerParameters: headerParameters, bodyParameters: bodyParameters, queryParameters: queryParameters)
     }
 }

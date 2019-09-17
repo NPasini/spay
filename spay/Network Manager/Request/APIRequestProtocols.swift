@@ -14,6 +14,7 @@ protocol Requestable {
     var path: String { get }
     var version: String { get }
     var method: HTTPMethod { get }
+    var timeout: TimeInterval? { get }
     var headerParameters: HTTPHeaders? { get }
     var bodyParameters: HTTPBodyParameters? { get }
     var queryParameters: HTTPQueryParameters? { get }

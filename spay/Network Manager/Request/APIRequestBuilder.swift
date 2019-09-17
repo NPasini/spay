@@ -20,6 +20,7 @@ class APIRequestBuilder: APIRequestBuilderProtocol {
         var request = URLRequest(url: url)
         
         request.httpMethod = requestable.method.rawValue
+        request.timeoutInterval = requestable.timeout ?? 15
         
         addHeaderParameters(from: requestable, to: &request)
         addBody(from: requestable, to: &request)
