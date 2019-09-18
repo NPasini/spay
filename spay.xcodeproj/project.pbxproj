@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,7 @@
 		7461CEE8230DF2E600168408 /* BeersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461CEE7230DF2E600168408 /* BeersViewModel.swift */; };
 		7461CEEB230DF30200168408 /* BeersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461CEEA230DF30200168408 /* BeersRepository.swift */; };
 		7461CEED230DF89E00168408 /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461CEEC230DF89E00168408 /* GenericError.swift */; };
+		7468281B23321E4C00953311 /* OSLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 7468281A23321E4C00953311 /* OSLogger */; };
 		74ADB53F23166CE2008B2384 /* Hop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADB53E23166CE2008B2384 /* Hop.swift */; };
 		74ADB54123166CFC008B2384 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADB54023166CFC008B2384 /* Amount.swift */; };
 		74ADB54523169D97008B2384 /* oneBeerWithNoMalts.json in Resources */ = {isa = PBXBuildFile; fileRef = 74ADB54423169D97008B2384 /* oneBeerWithNoMalts.json */; };
@@ -73,10 +74,6 @@
 		74E98E6A2309F21200EB41E0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E682309F21200EB41E0 /* APIResponse.swift */; };
 		74E98E6B2309F21200EB41E0 /* ResponseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E692309F21200EB41E0 /* ResponseProtocols.swift */; };
 		74E98E6E2309F29100EB41E0 /* APIPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E6D2309F29100EB41E0 /* APIPerformer.swift */; };
-		74E98E732309F9BC00EB41E0 /* LogAccessLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E702309F9BC00EB41E0 /* LogAccessLevel.swift */; };
-		74E98E742309F9BC00EB41E0 /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E712309F9BC00EB41E0 /* LogType.swift */; };
-		74E98E752309F9BC00EB41E0 /* LogCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E722309F9BC00EB41E0 /* LogCategory.swift */; };
-		74E98E772309FA2A00EB41E0 /* OSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E762309FA2A00EB41E0 /* OSLogger.swift */; };
 		74E98E7B230B01D700EB41E0 /* SPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E7A230B01D700EB41E0 /* SPError.swift */; };
 		74E98E82230BB89000EB41E0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E81230BB89000EB41E0 /* NetworkService.swift */; };
 		A9A3E26EEA1C4E9DC76FAD0C /* Pods_spayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0196545CA1395A9367AA6F71 /* Pods_spayTests.framework */; };
@@ -180,10 +177,6 @@
 		74E98E682309F21200EB41E0 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		74E98E692309F21200EB41E0 /* ResponseProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseProtocols.swift; sourceTree = "<group>"; };
 		74E98E6D2309F29100EB41E0 /* APIPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPerformer.swift; sourceTree = "<group>"; };
-		74E98E702309F9BC00EB41E0 /* LogAccessLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogAccessLevel.swift; sourceTree = "<group>"; };
-		74E98E712309F9BC00EB41E0 /* LogType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
-		74E98E722309F9BC00EB41E0 /* LogCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCategory.swift; sourceTree = "<group>"; };
-		74E98E762309FA2A00EB41E0 /* OSLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSLogger.swift; sourceTree = "<group>"; };
 		74E98E7A230B01D700EB41E0 /* SPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPError.swift; sourceTree = "<group>"; };
 		74E98E81230BB89000EB41E0 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		89ADC381C74425773FEB2F97 /* Pods-spay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay.debug.xcconfig"; path = "Target Support Files/Pods-spay/Pods-spay.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7468281B23321E4C00953311 /* OSLogger in Frameworks */,
 				C10BA96057A85C409AEFA8BA /* Pods_spay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,23 +500,11 @@
 			path = Dispatcher;
 			sourceTree = "<group>";
 		};
-		74E98E6F2309F88900EB41E0 /* Log */ = {
-			isa = PBXGroup;
-			children = (
-				74E98E702309F9BC00EB41E0 /* LogAccessLevel.swift */,
-				74E98E722309F9BC00EB41E0 /* LogCategory.swift */,
-				74E98E712309F9BC00EB41E0 /* LogType.swift */,
-				74E98E762309FA2A00EB41E0 /* OSLogger.swift */,
-			);
-			path = Log;
-			sourceTree = "<group>";
-		};
 		74E98E78230B005500EB41E0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				74E98E79230B01C400EB41E0 /* Errors */,
 				740A421E2311AE1F000AE63C /* Extensions */,
-				74E98E6F2309F88900EB41E0 /* Log */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -599,6 +581,9 @@
 			dependencies = (
 			);
 			name = spay;
+			packageProductDependencies = (
+				7468281A23321E4C00953311 /* OSLogger */,
+			);
 			productName = spay;
 			productReference = 745A727D2309E2320000C436 /* spay.app */;
 			productType = "com.apple.product-type.application";
@@ -675,6 +660,9 @@
 				Base,
 			);
 			mainGroup = 745A72742309E2320000C436;
+			packageReferences = (
+				7468281923321E4C00953311 /* XCRemoteSwiftPackageReference "OSLogger" */,
+			);
 			productRefGroup = 745A727E2309E2320000C436 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -890,11 +878,8 @@
 				74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */,
 				74DA39992315237400EB6764 /* SearchViewModel.swift in Sources */,
 				74174D5D231DA2EC00A8D2CA /* BeersRepositoryService.swift in Sources */,
-				74E98E772309FA2A00EB41E0 /* OSLogger.swift in Sources */,
 				74DA39A12315562700EB6764 /* Filter.swift in Sources */,
-				74E98E732309F9BC00EB41E0 /* LogAccessLevel.swift in Sources */,
 				74174D61231DA7C500A8D2CA /* TestBeersRepositoryComponent.swift in Sources */,
-				74E98E742309F9BC00EB41E0 /* LogType.swift in Sources */,
 				74E98E6A2309F21200EB41E0 /* APIResponse.swift in Sources */,
 				74E98E5B2309F0D900EB41E0 /* DispatchWorkItemSubscription.swift in Sources */,
 				7461CEE4230DE5FC00168408 /* BeerTableViewCell.swift in Sources */,
@@ -915,7 +900,6 @@
 				743C6A8C230C992B00646300 /* Beer.swift in Sources */,
 				740A42262313B8FC000AE63C /* UICollectionView+Registrable.swift in Sources */,
 				745A72812309E2320000C436 /* AppDelegate.swift in Sources */,
-				74E98E752309F9BC00EB41E0 /* LogCategory.swift in Sources */,
 				74E98E652309F1C400EB41E0 /* APIRequest.swift in Sources */,
 				74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */,
 				740A42242313B8CC000AE63C /* UITableView+Registrable.swift in Sources */,
@@ -1269,6 +1253,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7468281923321E4C00953311 /* XCRemoteSwiftPackageReference "OSLogger" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NPasini/OSLogger.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7468281A23321E4C00953311 /* OSLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7468281923321E4C00953311 /* XCRemoteSwiftPackageReference "OSLogger" */;
+			productName = OSLogger;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 745A72752309E2320000C436 /* Project object */;
 }

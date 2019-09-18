@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OSLogger
 import ReactiveCocoa
 import ReactiveSwift
 

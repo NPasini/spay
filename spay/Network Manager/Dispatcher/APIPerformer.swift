@@ -6,6 +6,7 @@
 //  Copyright © 2019 Pasini, Nicolò. All rights reserved.
 //
 
+import OSLogger
 import Foundation
 
 private extension QualityOfService {

@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "OSLogger",
+        "repositoryURL": "https://github.com/NPasini/OSLogger.git",
+        "state": {
+          "branch": "master",
+          "revision": "937d6483ff96d1409e76d12c454ee73f8fd22665",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
