@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/NPasini/NetworkManager.git",
         "state": {
           "branch": "master",
-          "revision": "15ffbe29418434190d2b284410bb714709f31b0f",
+          "revision": "dc862b482a6af1b2aec4a426cd2bad1f1488a429",
           "version": null
         }
       },
@@ -42,7 +42,7 @@
         "repositoryURL": "https://github.com/NPasini/OSLogger.git",
         "state": {
           "branch": "master",
-          "revision": "a5f43efb129092018328335aecf8a1897937d03d",
+          "revision": "d45f9eadeae4a608edfa5f0fdefd88dba17d7202",
           "version": null
         }
       },
