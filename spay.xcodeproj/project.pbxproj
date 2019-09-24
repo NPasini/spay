@@ -27,7 +27,6 @@
 		74174D63231DB96A00A8D2CA /* FiltersRepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74174D62231DB96A00A8D2CA /* FiltersRepositoryService.swift */; };
 		74174D65231DB9A800A8D2CA /* FilterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74174D64231DB9A800A8D2CA /* FilterRepository.swift */; };
 		74174D67231DBA4200A8D2CA /* TestFilterRepositoryComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74174D66231DBA4200A8D2CA /* TestFilterRepositoryComponent.swift */; };
-		743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A85230C952B00646300 /* NetworkAssembly.swift */; };
 		743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A87230C97A800646300 /* AssemblerWrapper.swift */; };
 		743C6A8C230C992B00646300 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8B230C992B00646300 /* Beer.swift */; };
 		743C6A8F230C997100646300 /* BeersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C6A8E230C997100646300 /* BeersRequest.swift */; };
@@ -48,6 +47,7 @@
 		7461CEEB230DF30200168408 /* BeersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461CEEA230DF30200168408 /* BeersRepository.swift */; };
 		7461CEED230DF89E00168408 /* GenericError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461CEEC230DF89E00168408 /* GenericError.swift */; };
 		7468281B23321E4C00953311 /* OSLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 7468281A23321E4C00953311 /* OSLogger */; };
+		7468281E233273D300953311 /* NetworkManager in Frameworks */ = {isa = PBXBuildFile; productRef = 7468281D233273D300953311 /* NetworkManager */; };
 		74ADB53F23166CE2008B2384 /* Hop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADB53E23166CE2008B2384 /* Hop.swift */; };
 		74ADB54123166CFC008B2384 /* Amount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74ADB54023166CFC008B2384 /* Amount.swift */; };
 		74ADB54523169D97008B2384 /* oneBeerWithNoMalts.json in Resources */ = {isa = PBXBuildFile; fileRef = 74ADB54423169D97008B2384 /* oneBeerWithNoMalts.json */; };
@@ -61,21 +61,8 @@
 		74DA399E231550E100EB6764 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA399C231550E100EB6764 /* FilterCollectionViewCell.swift */; };
 		74DA399F231550E100EB6764 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74DA399D231550E100EB6764 /* FilterCollectionViewCell.xib */; };
 		74DA39A12315562700EB6764 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DA39A02315562700EB6764 /* Filter.swift */; };
-		74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4D2309F0D900EB41E0 /* APISubscription.swift */; };
-		74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */; };
-		74E98E572309F0D900EB41E0 /* NetworkProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */; };
 		74E98E5A2309F0D900EB41E0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E522309F0D900EB41E0 /* NetworkError.swift */; };
-		74E98E5B2309F0D900EB41E0 /* DispatchWorkItemSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E532309F0D900EB41E0 /* DispatchWorkItemSubscription.swift */; };
-		74E98E622309F1C400EB41E0 /* APIRequestProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E5D2309F1C400EB41E0 /* APIRequestProtocols.swift */; };
-		74E98E632309F1C400EB41E0 /* APIRequestPerformerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E5E2309F1C400EB41E0 /* APIRequestPerformerFactory.swift */; };
-		74E98E642309F1C400EB41E0 /* APIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E5F2309F1C400EB41E0 /* APIRequestBuilder.swift */; };
-		74E98E652309F1C400EB41E0 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E602309F1C400EB41E0 /* APIRequest.swift */; };
-		74E98E662309F1C400EB41E0 /* APIRequestPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E612309F1C400EB41E0 /* APIRequestPerformer.swift */; };
-		74E98E6A2309F21200EB41E0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E682309F21200EB41E0 /* APIResponse.swift */; };
-		74E98E6B2309F21200EB41E0 /* ResponseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E692309F21200EB41E0 /* ResponseProtocols.swift */; };
-		74E98E6E2309F29100EB41E0 /* APIPerformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E6D2309F29100EB41E0 /* APIPerformer.swift */; };
 		74E98E7B230B01D700EB41E0 /* SPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E7A230B01D700EB41E0 /* SPError.swift */; };
-		74E98E82230BB89000EB41E0 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E98E81230BB89000EB41E0 /* NetworkService.swift */; };
 		A9A3E26EEA1C4E9DC76FAD0C /* Pods_spayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0196545CA1395A9367AA6F71 /* Pods_spayTests.framework */; };
 		C10BA96057A85C409AEFA8BA /* Pods_spay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1EC9A9725F77AE2D988217 /* Pods_spay.framework */; };
 /* End PBXBuildFile section */
@@ -125,7 +112,6 @@
 		74174D62231DB96A00A8D2CA /* FiltersRepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRepositoryService.swift; sourceTree = "<group>"; };
 		74174D64231DB9A800A8D2CA /* FilterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRepository.swift; sourceTree = "<group>"; };
 		74174D66231DBA4200A8D2CA /* TestFilterRepositoryComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFilterRepositoryComponent.swift; sourceTree = "<group>"; };
-		743C6A85230C952B00646300 /* NetworkAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkAssembly.swift; sourceTree = "<group>"; };
 		743C6A87230C97A800646300 /* AssemblerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblerWrapper.swift; sourceTree = "<group>"; };
 		743C6A8B230C992B00646300 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		743C6A8E230C997100646300 /* BeersRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeersRequest.swift; sourceTree = "<group>"; };
@@ -164,21 +150,8 @@
 		74DA399C231550E100EB6764 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		74DA399D231550E100EB6764 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		74DA39A02315562700EB6764 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
-		74E98E4D2309F0D900EB41E0 /* APISubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APISubscription.swift; sourceTree = "<group>"; };
-		74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTypes.swift; sourceTree = "<group>"; };
-		74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocols.swift; sourceTree = "<group>"; };
 		74E98E522309F0D900EB41E0 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
-		74E98E532309F0D900EB41E0 /* DispatchWorkItemSubscription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchWorkItemSubscription.swift; sourceTree = "<group>"; };
-		74E98E5D2309F1C400EB41E0 /* APIRequestProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestProtocols.swift; sourceTree = "<group>"; };
-		74E98E5E2309F1C400EB41E0 /* APIRequestPerformerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestPerformerFactory.swift; sourceTree = "<group>"; };
-		74E98E5F2309F1C400EB41E0 /* APIRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestBuilder.swift; sourceTree = "<group>"; };
-		74E98E602309F1C400EB41E0 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		74E98E612309F1C400EB41E0 /* APIRequestPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestPerformer.swift; sourceTree = "<group>"; };
-		74E98E682309F21200EB41E0 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
-		74E98E692309F21200EB41E0 /* ResponseProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseProtocols.swift; sourceTree = "<group>"; };
-		74E98E6D2309F29100EB41E0 /* APIPerformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIPerformer.swift; sourceTree = "<group>"; };
 		74E98E7A230B01D700EB41E0 /* SPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPError.swift; sourceTree = "<group>"; };
-		74E98E81230BB89000EB41E0 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		89ADC381C74425773FEB2F97 /* Pods-spay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spay.debug.xcconfig"; path = "Target Support Files/Pods-spay/Pods-spay.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +162,7 @@
 			files = (
 				7468281B23321E4C00953311 /* OSLogger in Frameworks */,
 				C10BA96057A85C409AEFA8BA /* Pods_spay.framework in Frameworks */,
+				7468281E233273D300953311 /* NetworkManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +218,6 @@
 		743C6A84230C94D800646300 /* Assemblies */ = {
 			isa = PBXGroup;
 			children = (
-				743C6A85230C952B00646300 /* NetworkAssembly.swift */,
 				74174D5A231DA2B900A8D2CA /* RepositoriesAssembly.swift */,
 			);
 			path = Assemblies;
@@ -357,7 +330,6 @@
 				74E98E7C230BB36E00EB41E0 /* Dependency Injection */,
 				745A728C2309E2330000C436 /* LaunchScreen.storyboard */,
 				745A72842309E2320000C436 /* Main.storyboard */,
-				745A72B12309EF7B0000C436 /* Network Manager */,
 				74E98E78230B005500EB41E0 /* Utilities */,
 			);
 			path = spay;
@@ -380,20 +352,6 @@
 				74C494D62314703A006CD277 /* Beers Page Test */,
 			);
 			path = spayUITests;
-			sourceTree = "<group>";
-		};
-		745A72B12309EF7B0000C436 /* Network Manager */ = {
-			isa = PBXGroup;
-			children = (
-				74E98E4D2309F0D900EB41E0 /* APISubscription.swift */,
-				74E98E532309F0D900EB41E0 /* DispatchWorkItemSubscription.swift */,
-				74E98E4F2309F0D900EB41E0 /* NetworkProtocols.swift */,
-				74E98E4E2309F0D900EB41E0 /* NetworkTypes.swift */,
-				74E98E6C2309F25700EB41E0 /* Dispatcher */,
-				74E98E5C2309F16A00EB41E0 /* Request */,
-				74E98E672309F1CA00EB41E0 /* Response */,
-			);
-			path = "Network Manager";
 			sourceTree = "<group>";
 		};
 		7461CEE0230DE5CC00168408 /* Views */ = {
@@ -471,35 +429,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		74E98E5C2309F16A00EB41E0 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				74E98E602309F1C400EB41E0 /* APIRequest.swift */,
-				74E98E5F2309F1C400EB41E0 /* APIRequestBuilder.swift */,
-				74E98E612309F1C400EB41E0 /* APIRequestPerformer.swift */,
-				74E98E5E2309F1C400EB41E0 /* APIRequestPerformerFactory.swift */,
-				74E98E5D2309F1C400EB41E0 /* APIRequestProtocols.swift */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		74E98E672309F1CA00EB41E0 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				74E98E682309F21200EB41E0 /* APIResponse.swift */,
-				74E98E692309F21200EB41E0 /* ResponseProtocols.swift */,
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		74E98E6C2309F25700EB41E0 /* Dispatcher */ = {
-			isa = PBXGroup;
-			children = (
-				74E98E6D2309F29100EB41E0 /* APIPerformer.swift */,
-			);
-			path = Dispatcher;
-			sourceTree = "<group>";
-		};
 		74E98E78230B005500EB41E0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,7 +464,6 @@
 			children = (
 				74174D5C231DA2EC00A8D2CA /* BeersRepositoryService.swift */,
 				74174D62231DB96A00A8D2CA /* FiltersRepositoryService.swift */,
-				74E98E81230BB89000EB41E0 /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -583,6 +511,7 @@
 			name = spay;
 			packageProductDependencies = (
 				7468281A23321E4C00953311 /* OSLogger */,
+				7468281D233273D300953311 /* NetworkManager */,
 			);
 			productName = spay;
 			productReference = 745A727D2309E2320000C436 /* spay.app */;
@@ -662,6 +591,7 @@
 			mainGroup = 745A72742309E2320000C436;
 			packageReferences = (
 				7468281923321E4C00953311 /* XCRemoteSwiftPackageReference "OSLogger" */,
+				7468281C233273D300953311 /* XCRemoteSwiftPackageReference "NetworkManager" */,
 			);
 			productRefGroup = 745A727E2309E2320000C436 /* Products */;
 			projectDirPath = "";
@@ -864,44 +794,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E98E572309F0D900EB41E0 /* NetworkProtocols.swift in Sources */,
 				74ADB54123166CFC008B2384 /* Amount.swift in Sources */,
 				7461CEE8230DF2E600168408 /* BeersViewModel.swift in Sources */,
 				74E98E7B230B01D700EB41E0 /* SPError.swift in Sources */,
 				743C6A8F230C997100646300 /* BeersRequest.swift in Sources */,
-				74E98E622309F1C400EB41E0 /* APIRequestProtocols.swift in Sources */,
-				74E98E662309F1C400EB41E0 /* APIRequestPerformer.swift in Sources */,
 				74E98E5A2309F0D900EB41E0 /* NetworkError.swift in Sources */,
-				74E98E642309F1C400EB41E0 /* APIRequestBuilder.swift in Sources */,
 				7461CEED230DF89E00168408 /* GenericError.swift in Sources */,
 				745A72832309E2320000C436 /* BeersListViewController.swift in Sources */,
-				74E98E562309F0D900EB41E0 /* NetworkTypes.swift in Sources */,
 				74DA39992315237400EB6764 /* SearchViewModel.swift in Sources */,
 				74174D5D231DA2EC00A8D2CA /* BeersRepositoryService.swift in Sources */,
 				74DA39A12315562700EB6764 /* Filter.swift in Sources */,
 				74174D61231DA7C500A8D2CA /* TestBeersRepositoryComponent.swift in Sources */,
-				74E98E6A2309F21200EB41E0 /* APIResponse.swift in Sources */,
-				74E98E5B2309F0D900EB41E0 /* DispatchWorkItemSubscription.swift in Sources */,
 				7461CEE4230DE5FC00168408 /* BeerTableViewCell.swift in Sources */,
 				74174D63231DB96A00A8D2CA /* FiltersRepositoryService.swift in Sources */,
 				74DA399E231550E100EB6764 /* FilterCollectionViewCell.swift in Sources */,
 				743C6A91230C99D700646300 /* BeersResponse.swift in Sources */,
 				74174D52231CE86300A8D2CA /* ReactiveExtensions.swift in Sources */,
-				74E98E82230BB89000EB41E0 /* NetworkService.swift in Sources */,
-				74E98E6E2309F29100EB41E0 /* APIPerformer.swift in Sources */,
 				74174D5F231DA7B100A8D2CA /* TestRepositoryAssembly.swift in Sources */,
-				74E98E632309F1C400EB41E0 /* APIRequestPerformerFactory.swift in Sources */,
 				740A42292313DF05000AE63C /* ViewProtocols.swift in Sources */,
 				74174D65231DB9A800A8D2CA /* FilterRepository.swift in Sources */,
-				743C6A86230C952B00646300 /* NetworkAssembly.swift in Sources */,
-				74E98E6B2309F21200EB41E0 /* ResponseProtocols.swift in Sources */,
 				743C6A88230C97A800646300 /* AssemblerWrapper.swift in Sources */,
 				74174D5B231DA2B900A8D2CA /* RepositoriesAssembly.swift in Sources */,
 				743C6A8C230C992B00646300 /* Beer.swift in Sources */,
 				740A42262313B8FC000AE63C /* UICollectionView+Registrable.swift in Sources */,
 				745A72812309E2320000C436 /* AppDelegate.swift in Sources */,
-				74E98E652309F1C400EB41E0 /* APIRequest.swift in Sources */,
-				74E98E552309F0D900EB41E0 /* APISubscription.swift in Sources */,
 				740A42242313B8CC000AE63C /* UITableView+Registrable.swift in Sources */,
 				74ADB53F23166CE2008B2384 /* Hop.swift in Sources */,
 				740A42202311AE34000AE63C /* UIView+Nib.swift in Sources */,
@@ -1263,6 +1179,14 @@
 				kind = branch;
 			};
 		};
+		7468281C233273D300953311 /* XCRemoteSwiftPackageReference "NetworkManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NPasini/NetworkManager.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1270,6 +1194,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7468281923321E4C00953311 /* XCRemoteSwiftPackageReference "OSLogger" */;
 			productName = OSLogger;
+		};
+		7468281D233273D300953311 /* NetworkManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7468281C233273D300953311 /* XCRemoteSwiftPackageReference "NetworkManager" */;
+			productName = NetworkManager;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

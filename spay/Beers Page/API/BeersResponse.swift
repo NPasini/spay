@@ -8,6 +8,7 @@
 
 import OSLogger
 import Foundation
+import NetworkManager
 
 struct BeersResponse {
     let beers: [Beer]

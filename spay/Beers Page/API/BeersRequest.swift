@@ -8,6 +8,7 @@
 
 import OSLogger
 import Foundation
+import NetworkManager
 
 class BeersRequest: GetRequest<BeersResponse> {
     init(page: Int, searchString: String?, maltFilter: String?) {

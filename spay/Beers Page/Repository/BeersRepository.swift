@@ -9,10 +9,9 @@
 import OSLogger
 import Foundation
 import ReactiveSwift
+import NetworkManager
 
 class BeerRepository: BeersRepositoryService {
-    let networkManager: NetworkService? = AssemblerWrapper.shared.resolve(NetworkService.self)
-    
     //MARK: Public Functions
     func getBeers(page: Int = 1, searchString: String? = nil, maltFilter: String? = nil) -> SignalProducer<Result<[Beer], NSError>, Never> {
         let request = BeersRequest(page: page, searchString: searchString, maltFilter: maltFilter)
@@ -24,26 +23,20 @@ class BeerRepository: BeersRepositoryService {
         return SignalProducer {
             (observer, lifetime) in
             
-            if let networkManager = self.networkManager {
-                let subscription = networkManager.performApi(request, QoS: .default, completionQueue: .global(qos: .userInteractive)) { (result: Result<BeersResponse, NSError>) in
-                    
-                    switch result {
-                    case .success(let response):
-                        observer.send(value: Result(success: response.beers))
-                        observer.sendCompleted()
-                    case .failure(let error):
-                        observer.send(value: (Result(failure: error)))
-                        observer.sendCompleted()
-                    }
-                }
+            let subscription = APIPerformer.shared.performApi(request, QoS: .default, completionQueue: .global(qos: .userInteractive)) { (result: Result<BeersResponse, NSError>) in
                 
-                lifetime.observeEnded {
-                    subscription.dispose()
+                switch result {
+                case .success(let response):
+                    observer.send(value: Result.success(response.beers))
+                    observer.sendCompleted()
+                case .failure(let error):
+                    observer.send(value: Result.failure(error))
+                    observer.sendCompleted()
                 }
-            } else {
-                OSLogger.dependencyInjectionLog(message: "Unable to retrieve implementation of Newtork Service", access: .public, type: .debug)
-                observer.send(value: Result(failure: SPError(genericError: .networkServiceNotFound)))
-                observer.sendCompleted()
+            }
+            
+            lifetime.observeEnded {
+                subscription.dispose()
             }
         }
     }

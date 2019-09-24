@@ -35,13 +35,13 @@ class TestBeersRepositorycontent: BeersRepositoryService {
     func getBeers(page: Int = 1, searchString: String? = nil, maltFilter: String? = nil) -> SignalProducer<Result<[Beer], NSError>, Never> {
         return SignalProducer { [weak self] (observer, lifetime) in
             if (page == 0) {
-                observer.send(value: (Result(failure: SPError(networkError: .unknownError))))
+                observer.send(value: Result.failure(SPError(networkError: .unknownError)))
             } else if (page > 0 && page < 100) {
-                observer.send(value: Result(success: self?.fake25Beers ?? []))
+                observer.send(value: Result.success(self?.fake25Beers ?? []))
             } else if (page == 100) {
-                observer.send(value: Result(success: self?.fakeBeers ?? []))
+                observer.send(value: Result.success(self?.fakeBeers ?? []))
             } else if (page > 100) {
-                observer.send(value: Result(failure: SPError(networkError: .invalidResponse)))
+                observer.send(value: Result.failure(SPError(networkError: .invalidResponse)))
             }
             
             observer.sendCompleted()
