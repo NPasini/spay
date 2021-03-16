@@ -13,8 +13,8 @@ import NetworkManager
 class BeersRequest: GetRequest<BeersResponse> {
     init(page: Int, searchString: String?, maltFilter: String?) {
         let host = "api.punkapi.com"
-        let version = "/v2"
-        let path = "/beers"
+        let version = "v2"
+        let path = "beers"
         
         var queryParameters: [String : CustomStringConvertible] = ["page": page]
         if let string = searchString, string.count > 0 {
