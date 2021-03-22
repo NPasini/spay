@@ -26,7 +26,7 @@ class BeersViewModel {
     private let beers: MutableProperty<[Beer]>
     private let serialDisposable: SerialDisposable
     private var beersDataSourceDisposable: Disposable?
-    private let stopFetchingPipe: (input: BoolSignal.Observer, output: BoolSignal)
+    private let stopFetchingPipe: (output: BoolSignal, input: BoolSignal.Observer)
     
     private let beersRepository: BeersRepositoryService? = AssemblerWrapper.shared.resolve(BeersRepositoryService.self)
     private let filtersRepository: FiltersRepositoryService? = AssemblerWrapper.shared.resolve(FiltersRepositoryService.self)

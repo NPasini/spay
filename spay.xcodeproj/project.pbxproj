@@ -1009,7 +1009,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 93FSRYEFUM;
+				DEVELOPMENT_TEAM = GH7UH23B4Z;
 				INFOPLIST_FILE = spay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
